@@ -43,7 +43,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<a class="nav-link " href="<?= base_url(); ?>index.php/bienvenido">Inicio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url() ?>index.php/bienvenido/ubicacion">Ubicación</a>
+						<a class="nav-link" href="<?= base_url(); ?>index.php/bienvenido/ubicacion">Ubicación</a>
 					</li>
 				</ul>
 
