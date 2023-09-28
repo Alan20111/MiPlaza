@@ -1,8 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class login extends CI_Model
-{
+class login extends CI_Model{
     public function __construct()
     {
         parent::__construct();
@@ -12,7 +11,7 @@ class login extends CI_Model
     public function leerUser($usuario, $contrasena)
     {
 
-        $this->db->where('usuario', $usuario);
+        $this->db->where('user', $usuario);
         $this->db->where('contrasena', $contrasena);
         $query = $this->db->get('usuarios');
 

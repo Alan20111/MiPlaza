@@ -17,17 +17,12 @@ class Admin extends CI_Controller
     {
         $this->load->view('login-admin');
     }
-    public function tarjetas()
-    {
-        $this->load->view('tarjetas');
-    }
-
     public function login()
     {
-        $usuario = $this->input->post('usuario');
+        $user = $this->input->post('user');
         $contrasena = $this->input->post('contrasena');
 
-        $checkUser = $this->login->leerUser($usuario, $contrasena);
+        $checkUser = $this->login->leerUser($user, $contrasena);
 
         if ($checkUser) {
             $data = array(
