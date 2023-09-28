@@ -43,7 +43,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<a class="nav-link " href="<?= base_url(); ?>index.php/bienvenido">Inicio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url() ?>index.php/bienvenido/ubicacion">Ubicación</a>
+						<a class="nav-link" href="<?= base_url(); ?>index.php/bienvenido/ubicacion">Ubicación</a>
 					</li>
 				</ul>
 
@@ -81,6 +81,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="card card-body">
 						Some placeholder content for the collapse component. This panel is hidden by default but
 						revealed when the user activates the relevant trigger.
+
+						
 					</div>
 				</div>
 			</div>

@@ -116,50 +116,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item icon-link-hover" style=" --bs-icon-link-transform: translate3d(0,
                                         -.170rem, 0);">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            fill="currentColor" class="bi bi-award-fill" viewBox="0 0 16 16">
-                                            <path
-                                                d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z" />
-                                            <path
-                                                d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z" />
-                                        </svg>Control de asistencia
+                                        Control de asistencia
                                     </li>
                                     <li class="list-group-item icon-link-hover" style=" --bs-icon-link-transform: translate3d(0,
                                         -.170rem, 0);">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            fill="currentColor" class="bi bi-tags-fill" viewBox="0 0 16 16">
-                                            <path
-                                                d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                                            <path
-                                                d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043-7.457-7.457z" />
-                                        </svg>Control de uniformes
+                                        Control de uniformes
                                     </li>
                                     <li class="list-group-item icon-link-hover" style=" --bs-icon-link-transform: translate3d(0,
                                         -.170rem, 0);">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
-                                            <path
-                                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z" />
-                                        </svg>Gestión de inventario
+                                        Gestión de inventario
                                     </li>
                                     <li class="list-group-item icon-link-hover" style=" --bs-icon-link-transform: translate3d(0,
                                         -.170rem, 0);">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
-                                            <path
-                                                d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
-                                            <path
-                                                d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z" />
-                                        </svg>Gestión de finanzas
+                                        Gestión de finanzas
                                     </li>
                                     <li class="list-group-item icon-link-hover" style=" --bs-icon-link-transform: translate3d(0,
                                         -.170rem, 0);">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-                                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                                            <path
-                                                d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                                        </svg>Supervisión general
+                                        Supervisión general
                                     </li>
                                 </ul>
                             </div>
@@ -308,8 +281,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <li class="list-group-item">And a fifth one</li>
                                 </ul>
                             </div>
-
                         </div>
+
                     </div>
                     <footer>
                         <ul class="nav justify-content-center">
@@ -343,9 +316,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="line"></div>
                         <p>© MiPlaza.com © 2023 - Todos los derechos reservados</p>
                     </footer>
-
-
-
                 </div>
             </div>
         </div>
