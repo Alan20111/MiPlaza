@@ -60,7 +60,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</div>
 	</main>
-	<footer>
+	<footer class="position-relative">
 		<ul class="nav justify-content-center">
 			<li class="nav-item">
 				<a href="https://www.facebook.com/profile.php?id=100053143824005">
@@ -70,13 +70,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
 					</svg>
 				</a>
-			</li>
-			<li class="nav-item">
-				<a href="<?= base_url() ?>index.php/admin"><svg xmlns="http://www.w3.org/2000/svg" width="28"
-						height="28" fill="#795548" class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
-						<path fill-rule="evenodd"
-							d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z" />
-					</svg></a>
 			</li>
 			<li class="nav-item">
 				<a href="https://www.facebook.com/profile.php?id=100053143824005">
@@ -90,6 +83,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</ul>
 		<div class="line"></div>
 		<p>© MiPlaza.com © 2023 - Todos los derechos reservados</p>
+		<div class="position-absolute bottom-0 end-0 m-2"><a href="<?= base_url() ?>index.php/admin"><svg
+					xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#795548"
+					class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
+					<path fill-rule="evenodd"
+						d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z" />
+				</svg></a></div>
 	</footer>
 </body>
 
