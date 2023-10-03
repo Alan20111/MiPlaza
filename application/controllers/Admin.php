@@ -17,6 +17,10 @@ class Admin extends CI_Controller
     {
         $this->load->view('login-admin');
     }
+    function addcard()
+    {
+        $this->load->view('addcard');
+    }
     public function login()
     {
         $user = $this->input->post('user');
@@ -26,7 +30,7 @@ class Admin extends CI_Controller
 
         if ($checkUser) {
             $data = array(
-                'usuario' => $checkUser->usuario,
+                'user' => $checkUser->user,
                 'status' => 'true'
             );
         } else {

@@ -2,12 +2,13 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="<?= base_url() ?>public/img/miplaza-logo.png" type="image/x-icon">
+    <title>Login - Miplaza</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -36,7 +37,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 Ingresa un usuario valido.
             </div>
             <label for="validationCustom05" class="form-label">Contraseña:</label>
-            <input type="text"
+            <input type="password"
                 class="form-control d-inline-flex focus-ring focus-ring-danger py-1 px-2 text-decoration-none border rounded-2"
                 required id="contrasena">
             <div class="invalid-feedback">

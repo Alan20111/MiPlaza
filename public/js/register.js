@@ -11,7 +11,6 @@ function loginUser() {
     console.log(jsonLogin)
     checkLogin(jsonLogin);
 }
-
 function checkLogin(jsonLogin) {
     $.ajax({
         url: base_url + "index.php/Admin/login",
@@ -22,12 +21,16 @@ function checkLogin(jsonLogin) {
             console.log(datos);
 
             if (datos.status == "true") {
-                alert = "todos salio bien"
-                // window.location.href = base_url + "index.php/admin/tarjetas";
+                localStorage.setItem("user", jsonLogin.user);
+                localStorage.setItem("contrasena", jsonLogin.contrasena);
+                window.location.href = base_url+"index.php/admin/addcard";
             } else {
-                alert('Datos Incorrectos');
+                if (jsonLogin.user == "" || jsonLogin.contrasena == "") {
+                    alert('Completa todos los datos');
+                } else {
+                    alert('Datos Incorrectos');
+                }
             }
-
         },
         error: function (jhrx, estado, errorA) {
             console.log(errorA);
