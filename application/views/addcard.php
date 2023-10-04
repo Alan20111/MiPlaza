@@ -13,29 +13,31 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" href="<?= base_url() ?>public/css/addcard/index.css">
 </head>
 
-<body>
-    <ul class="nav justify-content-center position-relative bg-danger p-2">
-        <img src="<?= base_url() ?>public/img/miplaza-logo.png" alt=""
-            class="img-fluid position-absolute top-50 start-0 translate-middle-y mx-2" id="icon-nav" style="width:45px">
-        <li class="nav-item">
-            <p class="fw-low fs-4 m-1 text-light">Administrador</p>
-        </li>
-    </ul>
-    <ul class="nav justify-content-center position-relative bg-light">
-        <li class="nav-item">
-            <a href="" class="nav-link py-2 text-danger">Targetas</a>
-        </li>
-        <li class="nav-item">
-            <a href="" class="nav-link py-2 text-danger">Organigrama</a>
-        </li>
-    </ul>
-    <div class="conteiner m-4 p-4 w-auto bg-light bg-opacity-75 rounded shadow  text-light"
-        style="height: calc(100vh - 140px);">
+<body class="overflow-auto">
+    <header>
+        <ul class="nav justify-content-center position-relative bg-danger p-2">
+            <img src="<?= base_url() ?>public/img/miplaza-logo.png" alt=""
+                class="img-fluid position-absolute top-50 start-0 translate-middle-y mx-2" id="icon-nav"
+                style="width:45px">
+            <li class="nav-item">
+                <p class="fw-low fs-4 m-1 text-light">Administrador</p>
+            </li>
+        </ul>
+        <ul class="nav justify-content-center position-relative bg-light">
+            <li class="nav-item">
+                <a href="" class="nav-link py-2 text-danger">Targetas</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link py-2 text-danger">Organigrama</a>
+            </li>
+        </ul>
+    </header>
+    <div class="conteiner m-4 p-4 w-auto h-auto bg-light bg-opacity-75 rounded shadow  text-light">
         <div class="w-100 h-100 row">
-            <div class="col-6 bg-danger h-100 shadow rounded p-3 text-center">
+            <div class="col-lg-6 col-sm-12 bg-danger h-100 shadow rounded p-3 text-center">
                 <p class="fs-3 badge bg-light text-wrap text-danger">Formulario para agregar targetas de personal</p>
                 <div class="row">
-                    <div class="col w-50 h-100">
+                    <div class="col-md-6 col-sm-12  h-100">
                         <div class="mb-3">
                             <label for="formFile" class="form-label fw-medium">Imagen de personal:</label>
                             <img class="img-fluid w-100 h-100  rounded-top"
@@ -78,7 +80,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                         </div>
                     </div>
-                    <div class="col w-50 h-100">
+                    <div class="col-md-6 col-sm-12 h-100">
                         <div class="m-0">
                             <label for="tittle" class="form-label fw-medium">Titulo principal:</label>
                             <input type="text"
@@ -97,7 +99,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 class="form-control rounded-1 focus-ring focus-ring-light border border-0 rounded-1"
                                 id="descrip" rows="10"></textarea>
                         </div>
-                        <div class="mb-4 row px-5">
+                        <div class="mb-4 row px-3">
                             <label for="exampleColorInput" class="form-label fw-medium">Color de fondo:</label>
                             <input type="color"
                                 class="form-control form-control-color col-5 border border-0 rounded-0 rounded-start w-25 focus-ring focus-ring-light"
@@ -110,17 +112,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                         </div>
                         <div class="row text-center">
-                            <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium">Dark</button>
-                            <button type="button" class="btn btn-outline-light col-5 m-auto">Dark</button>
+                            <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium">Borrar</button>
+                            <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium">Guardar</button>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="col-6 h-100 ps-5 pe-2">
+            <div class="col-lg-6 col-sm-12 h-100 ps-5 pe-2 my-sm-5 my-lg-0  overflow-y-auto overflow-x-hidden">
                 <div class="row w-auto h-auto">
                     <div class="col-6 p-0 z-2">
-                        <img src="<?= base_url() ?>public/img/referencia.jpg" class="w-100 rounded-start-pill shadow" alt="">
+                        <img src="<?= base_url() ?>public/img/referencia.jpg"
+                            class="w-100 h-100  object-fit-cover rounded-start-pill shadow" alt="">
                     </div>
                     <div class="col-6 text-center bg-danger shadow  z-2">
                         <p class="fs-5 badge bg-light text-wrap text-danger rounded-1 mt-3 mb-0 shadow z-1">Formulario
@@ -128,7 +131,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             de
                             personal
                         </p>
-                        <p class="fs-6 fw-normal badge text-light text-wrap text-danger rounded-0 m-0 w-75 z-0">
+                        <p class="fs-6 fw-normal badge text-light text-wrap text-danger rounded-0 m-0 w-75 z-0"
+                            style="max-width: 150px;">
                             Descripcion larga
                             Xxxxxx xxxxx
                             xxxxxxxxxxx xxxxx xxxxx x xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xxx
@@ -142,11 +146,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 aria-controls="collapseExample">
                                 Mas. . .
                             </button>
-                            <div class="collapse text-light bg-danger p-0 rounded-0" id="collapseExample">
+                            <div class="collapse text-light bg-danger p-0 " id="collapseExample">
                                 <div class="row  card-body">
                                     <div class="col-6">
                                         <ul class="list-group list-group-flush  bg-light text-danger">
-                                            Actividades:
+                                            <p class="my-0 mx-2">Actividades:</p>
                                             <li class="list-group-item bg-danger text-light">An item</li>
                                             <li class="list-group-item bg-danger text-light">A second item</li>
                                             <li class="list-group-item bg-danger text-light">A third item</li>
@@ -154,7 +158,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                             <li class="list-group-item bg-danger text-light">And a fifth one</li>
                                         </ul>
                                     </div>
-                                    <div class="col-6">q</div>
+                                    <div class="col-6 position-relative">
+                                        <ul class="list-group list-group-flush  bg-light text-danger">
+                                            <p class="my-0 mx-2">Titulo de navegador:</p>
+                                            <li class="list-group-item bg-danger text-light">Titulo cortoo</li>
+                                        </ul>
+                                        <button type="button"
+                                            class="btn btn-outline-light m-auto fw-medium position-absolute bottom-0 start-50 translate-middle w-75">Editar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
