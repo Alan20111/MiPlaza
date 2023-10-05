@@ -33,3 +33,24 @@ body::before {
         transform: translate(0, 0);
     }
 }
+
+@media (max-width:768px) {
+    .img-list img {
+        border-radius: 0;
+        border-top-right-radius: 0 !important;
+        border-top-left-radius: 100px !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+
+    }
+}
+
+@media (max-width:576px) {
+    .img-list img {
+        border-radius: 0;
+        border-top-right-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+}

@@ -13,8 +13,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" href="<?= base_url() ?>public/css/addcard/index.css">
 </head>
 
-<body class="overflow-auto">
-    <header>
+<body class="overflow-y-auto">
+    <header class="shadow">
         <ul class="nav justify-content-center position-relative bg-danger p-2">
             <img src="<?= base_url() ?>public/img/miplaza-logo.png" alt=""
                 class="img-fluid position-absolute top-50 start-0 translate-middle-y mx-2" id="icon-nav"
@@ -32,9 +32,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </li>
         </ul>
     </header>
-    <div class="conteiner m-4 p-4 w-auto h-auto bg-light bg-opacity-75 rounded shadow  text-light">
-        <div class="w-100 h-100 row">
-            <div class="col-lg-6 col-sm-12 bg-danger h-100 shadow rounded p-3 text-center">
+    <div class="conteiner m-md-4 p-md-4 m-sm-0 p-sm-4 w-auto h-auto bg-light bg-opacity-75 rounded shadow  text-light">
+        <div class="row w-100 h-100 m-0">
+            <div class="col-lg-6 col-sm-12 bg-danger h-100 shadow p-3 text-center  rounded-1">
                 <p class="fs-3 badge bg-light text-wrap text-danger">Formulario para agregar targetas de personal</p>
                 <div class="row">
                     <div class="col-md-6 col-sm-12  h-100">
@@ -119,20 +119,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </div>
 
             </div>
-            <div class="col-lg-6 col-sm-12 h-100 ps-5 pe-2 my-sm-5 my-lg-0  overflow-y-auto overflow-x-hidden">
+            <div class="col-lg-6 col-sm-12 h-100 py-5 py-lg-0 px-sm-5 px-lg-4 overflow-y-auto overflow-x-hidden">
                 <div class="row w-auto h-auto">
-                    <div class="col-6 p-0 z-2">
+                    <div class="col-md-6 col-sm-12 p-0 z-2 img-list">
                         <img src="<?= base_url() ?>public/img/referencia.jpg"
-                            class="w-100 h-100  object-fit-cover rounded-start-pill shadow" alt="">
+                            class="w-100 h-100 img-fluid object-fit-cover rounded-start-pill shadow" alt="">
                     </div>
-                    <div class="col-6 text-center bg-danger shadow  z-2">
+                    <div class="col-md-6 col-sm-12 text-center bg-danger shadow  z-2">
                         <p class="fs-5 badge bg-light text-wrap text-danger rounded-1 mt-3 mb-0 shadow z-1">Formulario
                             para agregar targetas
                             de
                             personal
                         </p>
-                        <p class="fs-6 fw-normal badge text-light text-wrap text-danger rounded-0 m-0 w-75 z-0"
-                            style="max-width: 150px;">
+                        <p class="fs-6 fw-normal badge text-light text-wrap text-danger rounded-0 m-0 w-10 text-start"
+                            >
                             Descripcion larga
                             Xxxxxx xxxxx
                             xxxxxxxxxxx xxxxx xxxxx x xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xxx
@@ -146,8 +146,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 aria-controls="collapseExample">
                                 Mas. . .
                             </button>
-                            <div class="collapse text-light bg-danger p-0 " id="collapseExample">
-                                <div class="row  card-body">
+                            <div class="collapse text-light bg-danger p-0 " id="collapseExample"
+                                data-bs-target="id">
+                                <div class="row  card-body" id="id">
                                     <div class="col-6">
                                         <ul class="list-group list-group-flush  bg-light text-danger">
                                             <p class="my-0 mx-2">Actividades:</p>
