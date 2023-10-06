@@ -1,29 +1,35 @@
-const base_url = "http://localhost/Miplaza/";
+const base_url = "http://localhost/Miplaza";
+
+if(localStorage.getItem('recordar')){
+    window.location.href = base_url + "/index.php/admin/addcard";
+}
 
 function loginUser() {
     var user = $("#user").val();
     var contrasena = $("#contrasena").val();
 
+    // Mueve la obtención del valor del checkbox aquí
+    var checkbox = document.getElementById('recordar').checked;
+
     var jsonLogin = {
         user: user,
         contrasena: contrasena
     }
-    console.log(jsonLogin)
-    checkLogin(jsonLogin);
+    checkLogin(jsonLogin, checkbox);
 }
-function checkLogin(jsonLogin) {
+
+function checkLogin(jsonLogin, checkbox) {
     $.ajax({
-        url: base_url + "index.php/Admin/login",
+        url: base_url + "/index.php/Admin/login",
         dataType: "json",
         type: "post",
         data: jsonLogin,
         success: function (datos, estado, jhrx) {
-            console.log(datos);
-
             if (datos.status == "true") {
+                localStorage.setItem("recordar", checkbox);
                 localStorage.setItem("user", jsonLogin.user);
                 localStorage.setItem("contrasena", jsonLogin.contrasena);
-                window.location.href = base_url+"index.php/admin/addcard";
+                window.location.href = base_url + "/index.php/admin/addcard";
             } else {
                 if (jsonLogin.user == "" || jsonLogin.contrasena == "") {
                     alert('Completa todos los datos');

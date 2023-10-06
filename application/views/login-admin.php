@@ -29,19 +29,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <li>Inicar Sesión</li>
         </nav>
         <form action="" method="post" class="conteiner">
-            <label for="validationCustom05" class="form-label">Usuario:</label>
+            <label for="user" class="form-label">Usuario:</label>
             <input type="text"
                 class="form-control d-inline-flex focus-ring focus-ring-danger py-1 px-2 text-decoration-none border rounded-2"
                 required id="user">
-            <div class="invalid-feedback">
-                Ingresa un usuario valido.
-            </div>
-            <label for="validationCustom05" class="form-label">Contraseña:</label>
+            <label for="contrasena" class="form-label">Contraseña:</label>
             <input type="password"
                 class="form-control d-inline-flex focus-ring focus-ring-danger py-1 px-2 text-decoration-none border rounded-2"
                 required id="contrasena">
-            <div class="invalid-feedback">
-                Ingresa una contraseña valida.
+            <div class="conteiner p-0 mt-1">
+                <input class="form-check-input bg-danger border-danger focus-ring focus-ring-danger" type="checkbox"
+                    value="" id="recordar">
+                <label class="form-check-label" for="recordar">
+                    Recordarme
+                </label>
             </div>
             <input type="button" value="Iniciar" class="btn btn-danger" onclick="loginUser();">
         </form>
@@ -50,7 +51,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
-<script src="<?= base_url(); ?>public/js/register.js"></script>
 <script src="<?= base_url(); ?>public/js/code.jquery.com_jquery-3.7.1.min.js"></script>
+<script src="<?= base_url(); ?>public/js/register.js"></script>
 
 </html>

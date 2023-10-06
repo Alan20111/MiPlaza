@@ -16,9 +16,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body class="overflow-y-auto">
     <header class="shadow">
         <ul class="nav justify-content-center position-relative bg-danger p-2">
-            <img src="<?= base_url() ?>public/img/miplaza-logo.png" alt=""
-                class="img-fluid position-absolute top-50 start-0 translate-middle-y mx-2" id="icon-nav"
-                style="width:45px">
+            <a href="<?= base_url() ?>index.php/bienvenido/"><img src="<?= base_url() ?>public/img/miplaza-logo.png"
+                    alt="" class="img-fluid position-absolute top-50 start-0 translate-middle-y mx-2" id="icon-nav"
+                    style="width:45px"></a>
             <li class="nav-item">
                 <p class="fw-low fs-4 m-1 text-light">Administrador</p>
             </li>
@@ -36,12 +36,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="row w-100 h-100 m-0">
             <div class="col-lg-6 col-sm-12 bg-danger h-100 shadow p-3 text-center  rounded-1">
                 <p class="fs-3 badge bg-light text-wrap text-danger">Formulario para agregar targetas de personal</p>
-                <div class="row">
+                <form class="row" action="<?= base_url() ?>application/models/login.php" method="POST"
+                    enctype="multipart/form-data">
                     <div class="col-md-6 col-sm-12  h-100">
                         <div class="mb-3">
                             <label for="formFile" class="form-label fw-medium">Imagen de personal:</label>
                             <img class="img-fluid w-100 h-100  rounded-top"
-                                src="<?= base_url() ?>public/img/referencia.jpg" alt="">
+                                src="<?= base_url() ?>public/img/referencia.jpg" alt="" id="imagePreview">
                             <input class="form-control focus-ring focus-ring-light rounded-0 rounded-bottom border "
                                 type="file" id="formFile">
                         </div>
@@ -94,29 +95,31 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 id="tittle-nav" placeholder="">
                         </div>
                         <div class="mb-4">
-                            <label for="descrip" class="form-label fw-medium">Example textarea</label>
+                            <label for="descrip" class="form-label fw-medium">Descripcion del personal:</label>
                             <textarea
                                 class="form-control rounded-1 focus-ring focus-ring-light border border-0 rounded-1"
                                 id="descrip" rows="10"></textarea>
                         </div>
                         <div class="mb-4 row px-3">
-                            <label for="exampleColorInput" class="form-label fw-medium">Color de fondo:</label>
+                            <label for="bg-color" class="form-label fw-medium">Color de fondo:</label>
                             <input type="color"
                                 class="form-control form-control-color col-5 border border-0 rounded-0 rounded-start w-25 focus-ring focus-ring-light"
-                                id="exampleColorInput" value="#dc3545" title="Choose your color">
+                                id="bg-color" value="#dc3545" title="Choose your color">
                             <div class="bg-light col-6 w-75 rounded-end">
-                                <div class="row">
-                                    <div class="col-6 text-dark p-1 fw-medium">Principal</div>
-                                    <div class="col-6 text-dark p-1 fw-medium">Secudario</div>
+                                <div class="row h-100">
+                                    <div class="col-6 text-dark p-1 fw-medium" id="principal-color">Titulo</div>
+                                    <div class="col-6 text-dark p-1 fw-medium" id="secundario-color"">Fondo</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row text-center">
-                            <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium">Borrar</button>
-                            <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium">Guardar</button>
-                        </div>
-                    </div>
-                </div>
+                        <div class=" row text-center">
+                                        <button type="button"
+                                            class="btn btn-outline-light col-5 m-auto fw-medium">Borrar</button>
+                                        <button type="button"
+                                            class="btn btn-outline-light col-5 m-auto fw-medium">Guardar</button>
+                                    </div>
+                                </div>
+                </form>
 
             </div>
             <div class="col-lg-6 col-sm-12 h-100 py-5 py-lg-0 px-sm-5 px-lg-4 overflow-y-auto overflow-x-hidden">
@@ -131,8 +134,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             de
                             personal
                         </p>
-                        <p class="fs-6 fw-normal badge text-light text-wrap text-danger rounded-0 m-0 w-10 text-start"
-                            >
+                        <p class="fs-6 fw-normal badge text-light text-wrap text-danger rounded-0 m-0 w-10 text-start">
                             Descripcion larga
                             Xxxxxx xxxxx
                             xxxxxxxxxxx xxxxx xxxxx x xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xxx
@@ -146,8 +148,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 aria-controls="collapseExample">
                                 Mas. . .
                             </button>
-                            <div class="collapse text-light bg-danger p-0 " id="collapseExample"
-                                data-bs-target="id">
+                            <div class="collapse text-light bg-danger p-0 " id="collapseExample" data-bs-target="id">
                                 <div class="row  card-body" id="id">
                                     <div class="col-6">
                                         <ul class="list-group list-group-flush  bg-light text-danger">
@@ -183,5 +184,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
 <script src="<?= base_url(); ?>public/js/code.jquery.com_jquery-3.7.1.min.js"></script>
+<script src="<?= base_url(); ?>public/js/admin.js"></script>
+
 
 </html>
