@@ -1,5 +1,5 @@
 const base_url = "http://localhost/Miplaza/";
-loginUser();
+//Face de verifiacion de datos en localStorage
 function loginUser() {
     var user = localStorage.getItem('user');
     var contrasena = localStorage.getItem('contrasena');
@@ -19,7 +19,7 @@ function checkLogin(jsonLogin) {
         success: function (datos, estado, jhrx) {
             if (datos.Status == "False") {
                 window.location.href = base_url + "index.php/bienvenido/";
-            }else{
+            } else {
                 console.log(datos);
             }
         },
@@ -28,49 +28,65 @@ function checkLogin(jsonLogin) {
         }
     })
 }
-//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX//
-// Obtén una referencia al elemento input y al elemento img de vista previa
+function cleanstorage() {
+    localStorage.clear();
+}
+//Face de subida de datos del formulario
+function saveData() {
+    var formDatajson = new FormData($("#formData")[0]);
+
+    sendData(formDatajson);
+}
+
+function sendData(jsonTarjeta) {
+    $.ajax({
+        url: base_url + "index.php/Admin/uploadData",
+        dataType: "json",
+        type: "post",
+        data: jsonTarjeta,
+        contentType: false,
+        processData: false,
+        success: function (datos, estado, jhrx) {
+            console.log(datos);
+        },
+        error: function (jhrx, estado, error) { },
+    });
+}
+//Trabajar con imagenes
 const fileInput = document.getElementById('formFile');
 const imagePreview = document.getElementById('imagePreview');
 const bgColorInput = document.getElementById('bg-color');
 const principalDiv = document.getElementById('principal-color');
 const secundarioDiv = document.getElementById('secundario-color');
+const formData = new FormData();
 
-// Agrega un evento 'change' al input para detectar cuando se selecciona un archivo
 fileInput.addEventListener('change', function () {
-    // Verifica si se seleccionó un archivo
     if (fileInput.files.length > 0) {
-        // Obtén el primer archivo seleccionado
         const file = fileInput.files[0];
 
-        // Verifica si el archivo es una imagen (puedes agregar más validaciones aquí)
         if (file.type.startsWith('image/')) {
-            // Crea un objeto URL para mostrar la imagen
             const imageUrl = URL.createObjectURL(file);
 
-            // Asigna la URL de la imagen al src del elemento img de vista previa
             imagePreview.src = imageUrl;
         } else {
             alert('Por favor, selecciona un archivo de imagen válido.');
         }
     } else {
-        // Restaura la imagen de referencia si no se seleccionó ningún archivo
         imagePreview.src = '<?= base_url() ?>public/img/referencia.jpg';
     }
 });
-// Agrega un evento 'input' al input de color
+
+
+//Face para editar color
 bgColorInput.addEventListener('input', function () {
-    // Obtiene el valor del color seleccionado
     const selectedColor = bgColorInput.value;
     const colordegrade = (reducirTono(selectedColor, 50));
-    // Aplica el color de fondo al div "Principal"
+
     principalDiv.style.backgroundColor = selectedColor;
     secundarioDiv.style.background = colordegrade;
 
-    // Calcula el color del texto en función del color de fondo
     determinarColorTexto(selectedColor, colordegrade);
 
-    // Aplica el color de texto al div "Principal"
     principalDiv.style.color = colorTexto;
 });
 function calcularLuminancia(color) {
@@ -86,41 +102,39 @@ function determinarColorTexto(colorFondo, colorDegrade) {
     const oscurancia = calcularLuminancia(colorDegrade);
 
     if (luminancia > 0.5) {
-        // Si el fondo es claro, el texto será negro
         principalDiv.classList.remove("text-light");
         principalDiv.classList.add("text-dark");
         secundarioDiv.classList.remove("text-light");
         secundarioDiv.classList.add("text-dark");
     } else {
-        // Si el fondo es oscuro, el texto será blanco
         principalDiv.classList.remove("text-dark");
         principalDiv.classList.add("text-light");
         secundarioDiv.classList.remove("text-dark");
         secundarioDiv.classList.add("text-light");
     }
     if (oscurancia > 0.5) {
-        // Si el fondo es claro, el texto será negro
         secundarioDiv.classList.remove("text-light");
         secundarioDiv.classList.add("text-dark");
     } else {
-        // Si el fondo es oscuro, el texto será blanco
         secundarioDiv.classList.remove("text-dark");
         secundarioDiv.classList.add("text-light");
     }
 }
 function reducirTono(colorHex, factor) {
-    // Obtén los valores RGB del color hexadecimal
     const r = parseInt(colorHex.slice(1, 3), 16);
     const g = parseInt(colorHex.slice(3, 5), 16);
     const b = parseInt(colorHex.slice(5, 7), 16);
 
-    // Reduce el tono de cada componente RGB
     const nuevoR = Math.max(0, r - factor);
     const nuevoG = Math.max(0, g - factor);
     const nuevoB = Math.max(0, b - factor);
 
-    // Convierte los nuevos valores RGB en un color hexadecimal
     const nuevoColorHex = `#${nuevoR.toString(16).padStart(2, '0')}${nuevoG.toString(16).padStart(2, '0')}${nuevoB.toString(16).padStart(2, '0')}`;
 
     return nuevoColorHex;
+}
+//Face ejecutar funciones
+loginUser();
+
+function saveData() {
 }

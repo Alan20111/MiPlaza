@@ -1,14 +1,12 @@
 const base_url = "http://localhost/Miplaza";
-
-if(localStorage.getItem('recordar')){
-    window.location.href = base_url + "/index.php/admin/addcard";
-}
+var recordar=localStorage.getItem('recordar');
+if(recordar=="true"){
+    window.location.href = base_url +"/index.php/admin/addcard";
+};
 
 function loginUser() {
     var user = $("#user").val();
     var contrasena = $("#contrasena").val();
-
-    // Mueve la obtención del valor del checkbox aquí
     var checkbox = document.getElementById('recordar').checked;
 
     var jsonLogin = {
