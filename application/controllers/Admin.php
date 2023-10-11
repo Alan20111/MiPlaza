@@ -53,7 +53,7 @@ class Admin extends CI_Controller
         $Shadow = $this->input->post("formShadow");
 
         $base_url = base_url();
-        $rutaImagenes = 'public/img/'; // Asegúrate de que esta sea la ruta correcta en el sistema de archivos
+        $rutaImagenes = 'public/img/db'; // Asegúrate de que esta sea la ruta correcta en el sistema de archivos
 
         $this->upload->do_upload("formFile");
         $nombreArchivo = $_FILES["formFile"]["name"];
@@ -67,14 +67,14 @@ class Admin extends CI_Controller
         // Mueve el archivo cargado a la ubicación deseada en el sistema de archivos del servidor
         if (move_uploaded_file($_FILES["formFile"]["tmp_name"], $pathFile)) {
             $formData = array(
-                'act-1' => $Act1,
-                'act-2' => $Act2,
-                'act-3' => $Act3,
-                'act-4' => $Act4,
-                'act-5' => $Act5,
+                'act1' => $Act1,
+                'act2' => $Act2,
+                'act3' => $Act3,
+                'act4' => $Act4,
+                'act5' => $Act5,
 
                 'tittle' => $Tittle,
-                'nav-tittle' => $Tittle_nav,
+                'navtittle' => $Tittle_nav,
 
                 'descripcion' => $Area,
                 'color' => $Color,
@@ -96,5 +96,16 @@ class Admin extends CI_Controller
         }
 
     }
-
+    public function readData()
+    {
+        $tarjetas = $this->login->readCards();
+        $formData = array();
+        if ($tarjetas) {
+            $formData["status"] = 'success';
+            $formData["tarjetas"] = $tarjetas;
+        } else {
+            $formData["status"] = 'error';
+        }
+        echo json_encode($formData, JSON_NUMERIC_CHECK);
+    }
 }

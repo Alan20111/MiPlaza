@@ -47,17 +47,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </ul>
     </header>
     <div class="conteiner m-md-4 p-md-4 m-sm-0 p-sm-4 w-auto h-auto bg-light bg-opacity-75 rounded shadow  text-light">
-        <div class="row w-100 h-100 m-0">
+        <div class="row w-100 h-100 m-0" id="contenedor">
             <div class="col-lg-6 col-sm-12 bg-danger h-100 shadow p-3 text-center rounded-1">
                 <p class="fs-3 badge bg-light text-wrap text-danger">Formulario para agregar tarjetas de personal</p>
                 <form class="row" id="formData">
                     <div class="col-md-6 col-sm-12 h-100">
                         <div class="mb-3">
-                            <label for="formFile" class="form-label fw-medium">Imagen de personal:</label>
-                            <img class="img-fluid w-100 h-100 rounded-top"
-                                src="<?= base_url() ?>public/img/referencia.jpg" alt="" id="imagePreview">
+                            <label for="formFile" class="form-label fw-medium mb-0">Imagen de personal:<img
+                                    class="img-fluid w-100 h-100 rounded-top" for="formFile"
+                                    src="<?= base_url() ?>public/img/imagenDefault.jpg" alt=""
+                                    id="imagePreview"></label>
+
                             <input class="form-control focus-ring focus-ring-light rounded-0 rounded-bottom border"
-                                type="file" id="formFile" name="formFile">
+                                type="file" id="formFile" name="formFile" onchange="previewImage(this)">
                         </div>
                         <div class="mb-3 text-dark">
                             <label for="" class="form-label text-light fw-medium">Actividades del puesto de
@@ -140,7 +142,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <!-- Botones -->
                         <div class="row text-center">
                             <!-- Botón Borrar -->
-                            <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium">Borrar</button>
+                            <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
+                                onclick="cleanInputs()">Borrar</button>
                             <!-- Botón Guardar -->
                             <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
                                 onclick="saveData()">Guardar</button>
@@ -148,60 +151,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                 </form>
             </div>
-            <div class="col-lg-6 col-sm-12 h-100 py-5 py-lg-0 px-sm-5 px-lg-4 overflow-y-auto overflow-x-hidden">
-                <div class="row w-auto h-auto">
-                    <div class="col-md-6 col-sm-12 p-0 z-2 img-list">
-                        <img src="<?= base_url() ?>public/img/referencia.jpg"
-                            class="w-100 h-100 img-fluid object-fit-cover rounded-start-pill shadow" alt="">
-                    </div>
-                    <div class="col-md-6 col-sm-12 text-center bg-danger shadow  z-2">
-                        <p class="fs-5 badge bg-light text-wrap text-danger rounded-1 mt-3 mb-0 shadow z-1">Formulario
-                            para agregar targetas
-                            de
-                            personal
-                        </p>
-                        <p class="fs-6 fw-normal badge text-light text-wrap text-danger rounded-0 m-0 w-10 text-start">
-                            Descripcion larga
-                            Xxxxxx xxxxx
-                            xxxxxxxxxxx xxxxx xxxxx x xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xxx
-                            xxxxxxxxxx
-                        </p>
-                    </div>
-                    <div class="d-flex align-items-end flex-column w-100 p-0">
-                        <div class="conteiner w-75 p-0">
-                            <button class="btn btn-outline-danger w-100 px-0 me-2 rounded-0" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
-                                aria-controls="collapseExample">
-                                Mas. . .
-                            </button>
-                            <div class="collapse text-light bg-danger p-0 " id="collapseExample" data-bs-target="id">
-                                <div class="row  card-body" id="id">
-                                    <div class="col-6">
-                                        <ul class="list-group list-group-flush  bg-light text-danger">
-                                            <p class="my-0 mx-2">Actividades:</p>
-                                            <li class="list-group-item bg-danger text-light">An item</li>
-                                            <li class="list-group-item bg-danger text-light">A second item</li>
-                                            <li class="list-group-item bg-danger text-light">A third item</li>
-                                            <li class="list-group-item bg-danger text-light">A fourth item</li>
-                                            <li class="list-group-item bg-danger text-light">And a fifth one</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-6 position-relative">
-                                        <ul class="list-group list-group-flush  bg-light text-danger">
-                                            <p class="my-0 mx-2">Titulo de navegador:</p>
-                                            <li class="list-group-item bg-danger text-light">Titulo cortoo</li>
-                                        </ul>
-                                        <button type="button"
-                                            class="btn btn-outline-light m-auto fw-medium position-absolute bottom-0 start-50 translate-middle w-75">Editar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-
-            </div>
         </div>
     </div>
     </div>

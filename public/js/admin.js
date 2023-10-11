@@ -1,6 +1,13 @@
 const base_url = "http://localhost/Miplaza/";
 var colorChange = false;
 var imgChange = false;
+
+const fileInput = document.getElementById('formFile');
+const bgColorInput = document.getElementById('formColor');
+const principalDiv = document.getElementById('principal-color');
+const secundarioDiv = document.getElementById('secundario-color');
+
+const formData = new FormData();
 //Face de verifiacion de datos en localStorage
 function loginUser() {
     var user = localStorage.getItem('user');
@@ -77,8 +84,9 @@ function saveData() {
         return;
     }
 
-    // Si todo está bien, envía los datos al servidor.
     sendData(formDatajson);
+    cleanInputs();
+    location.reload();
 }
 
 function sendData(jsonTarjeta) {
@@ -94,31 +102,102 @@ function sendData(jsonTarjeta) {
         error: function (jhrx, estado, error) { },
     });
 }
-//Trabajar con imagenes
-const fileInput = document.getElementById('formFile');
-const imagePreview = document.getElementById('imagePreview');
-const bgColorInput = document.getElementById('formColor');
-const principalDiv = document.getElementById('principal-color');
-const secundarioDiv = document.getElementById('secundario-color');
-const formData = new FormData();
-
-fileInput.addEventListener('change', function () {
-    imgChange = true;
-    if (fileInput.files.length > 0) {
-        const file = fileInput.files[0];
-
-        if (file.type.startsWith('image/')) {
-            const imageUrl = URL.createObjectURL(file);
-
-            imagePreview.src = imageUrl;
-        } else {
-            alert('Por favor, selecciona un archivo de imagen válido.');
-        }
-    } else {
-        imagePreview.src = '<?= base_url() ?>public/img/referencia.jpg';
+function cleanInputs() {
+    var inputs = document.querySelectorAll('input');
+    var area = document.getElementById('formArea');
+    area.value = '';
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].value = '';
     }
-});
+    clearFileInput();
+}
+function clearFileInput() {
+    var image = document.getElementById('imagePreview');
 
+    fileInput.value = '';
+
+    image.src = base_url + "public/img/imagenDefault.jpg";
+}
+function previewImage(input) {
+    imgChange = true;
+    var image = document.getElementById('imagePreview');
+    var file = input.files[0];
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        image.src = e.target.result;
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+
+//Insertar tarjetas
+
+function loadData() {
+    $.ajax({
+        url: base_url + "index.php/Admin/readData",
+        dataType: "json",
+        type: "post",
+        data: {},
+        success: function (datos, estado, jhrx) {
+            console.log(datos);
+            renderTarjetas(datos.tarjetas);
+        },
+        error: function (jhrx, estado, error) { },
+    });
+}
+function renderTarjetas(datosTarjetas) {
+    var contenedor = document.getElementById('contenedor');
+
+    datosTarjetas.forEach(function (valor, i, array) {
+        var tarjetaDiv = document.createElement('div');
+        tarjetaDiv.className = 'col-lg-6 col-sm-12 h-100 py-5 py-lg-0 px-sm-5 px-lg-4 overflow-y-auto overflow-x-hidden';
+
+        tarjetaDiv.innerHTML = `
+            <div class="row w-auto h-auto">
+                <div class="col-md-6 col-sm-12 p-0 z-2 img-list">
+                    <img src="${base_url + valor.img}" class="w-100 h-100 img-fluid object-fit-cover rounded-start-pill shadow" alt="">
+                </div>
+                <div class="col-md-6 col-sm-12 text-center bg-danger shadow z-2">
+                    <p class="fs-5 badge bg-light text-wrap text-danger rounded-1 mt-3 mb-0 shadow z-1">${valor.tittle}</p>
+                    <p class="fs-6 fw-normal badge text-light text-wrap text-danger rounded-0 m-0 w-100 text-start">${valor.descripcion}</p>
+                </div>
+                <div class="d-flex align-items-end flex-column w-100 p-0 position-relative">
+                    <div class="container w-75 p-0 position-absolute ">
+                        <button class="btn btn-outline-danger w-100 px-0 me-2 rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${i}" aria-expanded="false" aria-controls="collapseExample${i}">
+                            Mas. . .
+                        </button>
+                        <div class="collapse text-light bg-danger p-0 " id="collapseExample${i}" data-bs-target="id">
+                            <div class="row card-body" id="id">
+                                <div class="col-6">
+                                    <ul class="list-group list-group-flush  bg-light text-danger">
+                                        <p class="my-0 mx-2">Actividades:</p>
+                                        <li class="list-group-item bg-danger text-light">${valor.act1}</li>
+                                        <li class="list-group-item bg-danger text-light">${valor.act2}</li>
+                                        <li class="list-group-item bg-danger text-light">${valor.act3}</li>
+                                        <li class="list-group-item bg-danger text-light">${valor.act4}</li>
+                                        <li class="list-group-item bg-danger text-light">${valor.act5}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 position-relative">
+                                    <ul class="list-group list-group-flush  bg-light text-danger">
+                                        <p class="my-0 mx-2">Titulo de navegador:</p>
+                                        <li class="list-group-item bg-danger text-light">${valor.navtittle}</li>
+                                    </ul>
+                                    <button type="button" class="btn btn-outline-light m-auto fw-medium position-absolute bottom-0 start-50 translate-middle w-75">Editar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        contenedor.appendChild(tarjetaDiv);
+    });
+}
 
 //Face para editar color
 bgColorInput.addEventListener('input', function () {
@@ -177,3 +256,4 @@ function reducirTono(colorHex, factor) {
 }
 //Face ejecutar funciones
 loginUser();
+loadData();
