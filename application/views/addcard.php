@@ -25,8 +25,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </ul>
         <ul class="nav justify-content-center position-relative bg-light">
             <a class="icon-link icon-link-hover link-underline link-underline-opacity-0 link-danger position-absolute top-50 start-0 translate-middle-y mx-2"
-                style="--bs-icon-link-transform: translate3d(-2.5px,0, 0);"
-                href="<?= base_url() ?>index.php/bienvenido/" onclick="cleanstorage();">
+                style="--bs-icon-link-transform: translate3d(-2.5px,0, 0);" href="<?= base_url() ?>index.php/Admin/"
+                onclick="cleanstorage();">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     class="bi bi-arrow-left" viewBox="0 0 14 14">
                     <path fill-rule="evenodd"
@@ -50,7 +50,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="row w-100 h-100 m-0">
             <div class="col-lg-6 col-sm-12 bg-danger h-100 shadow p-3 text-center rounded-1">
                 <p class="fs-3 badge bg-light text-wrap text-danger">Formulario para agregar tarjetas de personal</p>
-                <div class="row" id="formData">
+                <form class="row" id="formData">
                     <div class="col-md-6 col-sm-12 h-100">
                         <div class="mb-3">
                             <label for="formFile" class="form-label fw-medium">Imagen de personal:</label>
@@ -146,7 +146,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 onclick="saveData()">Guardar</button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
             <div class="col-lg-6 col-sm-12 h-100 py-5 py-lg-0 px-sm-5 px-lg-4 overflow-y-auto overflow-x-hidden">
                 <div class="row w-auto h-auto">

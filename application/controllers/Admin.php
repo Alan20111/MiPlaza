@@ -3,9 +3,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
+
     public function __construct()
     {
         parent::__construct();
+        $this->load->library('upload');
         $this->load->model('login');
         $this->load->helper('url');
     }
@@ -38,8 +40,6 @@ class Admin extends CI_Controller
     public function uploadData()
     {
         $Act1 = $this->input->post("formAct1");
-
-        $Act1 = $this->input->post("formAct1");
         $Act2 = $this->input->post("formAct2");
         $Act3 = $this->input->post("formAct3");
         $Act4 = $this->input->post("formAct4");
@@ -50,30 +50,51 @@ class Admin extends CI_Controller
 
         $Area = $this->input->post("formArea");
         $Color = $this->input->post("formColor");
+        $Shadow = $this->input->post("formShadow");
 
-        $this->upload->do_upload("img");
-        $rutaArchivo = "public/img/";
-        $nombreArchivo = $_FILES["img"]["name"];
-        $pathFile = $rutaArchivo . $nombreArchivo;
+        $base_url = base_url();
+        $rutaImagenes = 'public/img/'; // Asegúrate de que esta sea la ruta correcta en el sistema de archivos
 
-        move_uploaded_file($_FILES["img"]["tmp_name"], $pathFile);
+        $this->upload->do_upload("formFile");
+        $nombreArchivo = $_FILES["formFile"]["name"];
 
+        // Genera un nombre único para el archivo (puedes usar uniqid o cualquier otro método)
+        $nombreUnico = uniqid() . '_' . $nombreArchivo;
 
-        $fomrData = array(
-            'Act' => $Act,
-            'informacion' => $contenido,
-            'img_url' => $pathFile
-        );
+        // Combina la ruta de almacenamiento de imágenes con el nombre único para obtener la ruta completa del archivo
+        $pathFile = $rutaImagenes . $nombreUnico;
 
-        $idTarjeta = $this->guardar_mdl->crearTarjetas($datosTarjeta);
+        // Mueve el archivo cargado a la ubicación deseada en el sistema de archivos del servidor
+        if (move_uploaded_file($_FILES["formFile"]["tmp_name"], $pathFile)) {
+            $formData = array(
+                'act-1' => $Act1,
+                'act-2' => $Act2,
+                'act-3' => $Act3,
+                'act-4' => $Act4,
+                'act-5' => $Act5,
 
-        $datosEnviar = array();
+                'tittle' => $Tittle,
+                'nav-tittle' => $Tittle_nav,
 
-        $datosEnviar['mensaje'] = "registro con exito";
-        $datosEnviar['idUsuario'] = $idTarjeta;
+                'descripcion' => $Area,
+                'color' => $Color,
+                'sombra' => $Shadow,
 
-        echo json_encode($datosEnviar, JSON_NUMERIC_CHECK);
+                'img' => $pathFile // El pathFile ahora contiene la ruta completa con el nombre único
+            );
 
+            $idTarjeta = $this->login->getCards($formData);
+
+            $formData = array();
+
+            $formData['mensaje'] = "registro con éxito";
+            $formData['idUsuario'] = $idTarjeta;
+
+            echo json_encode($formData, JSON_NUMERIC_CHECK);
+        } else {
+            // Error al mover el archivo
+        }
 
     }
+
 }

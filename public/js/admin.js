@@ -1,4 +1,6 @@
 const base_url = "http://localhost/Miplaza/";
+var colorChange = false;
+var imgChange = false;
 //Face de verifiacion de datos en localStorage
 function loginUser() {
     var user = localStorage.getItem('user');
@@ -18,13 +20,11 @@ function checkLogin(jsonLogin) {
         data: jsonLogin,
         success: function (datos, estado, jhrx) {
             if (datos.Status == "False") {
-                window.location.href = base_url + "index.php/bienvenido/";
+                window.location.href = base_url + "index.php/Admin/";
             } else {
-                console.log(datos);
             }
         },
         error: function (jhrx, estado, errorA) {
-            console.log(errorA);
         }
     })
 }
@@ -34,7 +34,50 @@ function cleanstorage() {
 //Face de subida de datos del formulario
 function saveData() {
     var formDatajson = new FormData($("#formData")[0]);
+    formDatajson.append("formShadow", reducirTono(formDatajson.get("formColor"), 50));
 
+    if (!imgChange) {
+        alert("Debes seleccionar una imagen.");
+        return;
+    }
+    if (!formDatajson.get("formAct1")) {
+        alert("Debes completar el campo Act1.");
+        return;
+    }
+    if (!formDatajson.get("formAct2")) {
+        alert("Debes completar el campo Act2.");
+        return;
+    }
+    if (!formDatajson.get("formAct3")) {
+        alert("Debes completar el campo Act3.");
+        return;
+    }
+    if (!formDatajson.get("formAct4")) {
+        alert("Debes completar el campo Act4.");
+        return;
+    }
+    if (!formDatajson.get("formAct5")) {
+        alert("Debes completar el campo Act5.");
+        return;
+    }
+    if (!formDatajson.get("formTittle")) {
+        alert("Debes completar el campo Título principal.");
+        return;
+    }
+    if (!formDatajson.get("formTittle-nav")) {
+        alert("Debes completar el campo Título en navegador.");
+        return;
+    }
+    if (!formDatajson.get("formArea")) {
+        alert("Debes completar el campo Descripción del personal.");
+        return;
+    }
+    if (!colorChange) {
+        alert("Debes seleccionar un color de fondo.");
+        return;
+    }
+
+    // Si todo está bien, envía los datos al servidor.
     sendData(formDatajson);
 }
 
@@ -47,7 +90,6 @@ function sendData(jsonTarjeta) {
         contentType: false,
         processData: false,
         success: function (datos, estado, jhrx) {
-            console.log(datos);
         },
         error: function (jhrx, estado, error) { },
     });
@@ -55,12 +97,13 @@ function sendData(jsonTarjeta) {
 //Trabajar con imagenes
 const fileInput = document.getElementById('formFile');
 const imagePreview = document.getElementById('imagePreview');
-const bgColorInput = document.getElementById('bg-color');
+const bgColorInput = document.getElementById('formColor');
 const principalDiv = document.getElementById('principal-color');
 const secundarioDiv = document.getElementById('secundario-color');
 const formData = new FormData();
 
 fileInput.addEventListener('change', function () {
+    imgChange = true;
     if (fileInput.files.length > 0) {
         const file = fileInput.files[0];
 
@@ -79,6 +122,7 @@ fileInput.addEventListener('change', function () {
 
 //Face para editar color
 bgColorInput.addEventListener('input', function () {
+    colorChange = true;
     const selectedColor = bgColorInput.value;
     const colordegrade = (reducirTono(selectedColor, 50));
 
@@ -86,8 +130,6 @@ bgColorInput.addEventListener('input', function () {
     secundarioDiv.style.background = colordegrade;
 
     determinarColorTexto(selectedColor, colordegrade);
-
-    principalDiv.style.color = colorTexto;
 });
 function calcularLuminancia(color) {
     const r = parseInt(color.slice(1, 3), 16) / 255;
@@ -135,6 +177,3 @@ function reducirTono(colorHex, factor) {
 }
 //Face ejecutar funciones
 loginUser();
-
-function saveData() {
-}

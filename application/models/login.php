@@ -30,5 +30,10 @@ class login extends CI_Model
             return array();
         }
     }
+    public function getCards($datosTarjeta)
+    {
+        $this->db->insert("card-nosotros", $datosTarjeta);
+        return $this->db->insert_id();
+    }
 }
 ?>
