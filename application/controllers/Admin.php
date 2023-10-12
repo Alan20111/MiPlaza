@@ -53,7 +53,7 @@ class Admin extends CI_Controller
         $Shadow = $this->input->post("formShadow");
 
         $base_url = base_url();
-        $rutaImagenes = 'public/img/db'; // Asegúrate de que esta sea la ruta correcta en el sistema de archivos
+        $rutaImagenes = 'public/img/db/'; // Asegúrate de que esta sea la ruta correcta en el sistema de archivos
 
         $this->upload->do_upload("formFile");
         $nombreArchivo = $_FILES["formFile"]["name"];

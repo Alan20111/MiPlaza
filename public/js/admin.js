@@ -142,8 +142,10 @@ function loadData() {
         type: "post",
         data: {},
         success: function (datos, estado, jhrx) {
-            console.log(datos);
-            renderTarjetas(datos.tarjetas);
+            console.log(datos.status);
+            if (datos.status == 'success') {
+                renderTarjetas(datos.tarjetas);
+            }
         },
         error: function (jhrx, estado, error) { },
     });
@@ -157,15 +159,15 @@ function renderTarjetas(datosTarjetas) {
 
         tarjetaDiv.innerHTML = `
             <div class="row w-auto h-auto">
-                <div class="col-md-6 col-sm-12 p-0 z-2 img-list">
-                    <img src="${base_url + valor.img}" class="w-100 h-100 img-fluid object-fit-cover rounded-start-pill shadow" alt="">
+                <div class="col-md-6 col-sm-12 p-0 z-2 img-list shadow rounded m-auto rounded-start-pill">
+                    <img src="${base_url + valor.img}" class="w-100 h-100 img-fluid object-fit-cover rounded m-auto rounded-start-pill" alt="" style="max-height: 400px; min-height: 250px;">
                 </div>
                 <div class="col-md-6 col-sm-12 text-center bg-danger shadow z-2">
                     <p class="fs-5 badge bg-light text-wrap text-danger rounded-1 mt-3 mb-0 shadow z-1">${valor.tittle}</p>
-                    <p class="fs-6 fw-normal badge text-light text-wrap text-danger rounded-0 m-0 w-100 text-start">${valor.descripcion}</p>
+                    <p class="fs-6 fw-normal badge text-light  text-danger rounded-0 m-0 w-100 my-2">${valor.descripcion}</p>
                 </div>
-                <div class="d-flex align-items-end flex-column w-100 p-0 position-relative">
-                    <div class="container w-75 p-0 position-absolute ">
+                <div class=" d-flex flex-column col-12 p-0  ms-auto me-0 w-75">
+                    <div class="container w-100 p-0 nav-item m-0">
                         <button class="btn btn-outline-danger w-100 px-0 me-2 rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${i}" aria-expanded="false" aria-controls="collapseExample${i}">
                             Mas. . .
                         </button>

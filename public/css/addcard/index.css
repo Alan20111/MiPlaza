@@ -35,10 +35,10 @@ body::before {
 }
 
 @media (max-width:768px) {
-    .img-list img {
+    .rounded-start-pill img {
         border-radius: 0;
         border-top-right-radius: 0 !important;
-        border-top-left-radius: 100px !important;
+        border-top-left-radius: 80px !important;
         border-bottom-left-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
 
@@ -46,7 +46,7 @@ body::before {
 }
 
 @media (max-width:576px) {
-    .img-list img {
+    .rounded-start-pill img {
         border-radius: 0;
         border-top-right-radius: 0 !important;
         border-top-left-radius: 0 !important;
