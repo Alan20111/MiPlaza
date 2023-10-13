@@ -30,11 +30,20 @@ class login extends CI_Model
             return array();
         }
     }
-    public function getCards($datosTarjeta)
+    public function getCards($datosTarjeta, $idTarjeta = null)
     {
-        $this->db->insert("card-nosotros", $datosTarjeta);
-        return $this->db->insert_id();
+        if ($idTarjeta) {
+            // Si proporcionaste un ID específico, actualiza los datos en lugar de insertarlos
+            $this->db->where('id', $idTarjeta);
+            $this->db->update('card-nosotros', $datosTarjeta);
+            return $idTarjeta; // Devuelve el ID de la tarjeta actualizada
+        } else {
+            // Si no proporcionaste un ID, inserta una nueva tarjeta
+            $this->db->insert('card-nosotros', $datosTarjeta);
+            return $this->db->insert_id(); // Devuelve el ID de la nueva tarjeta insertada
+        }
     }
+
     function readCards()
     {
         $query = $this->db->get("card-nosotros");

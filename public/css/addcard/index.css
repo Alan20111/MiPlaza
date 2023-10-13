@@ -35,22 +35,22 @@ body::before {
 }
 
 @media (max-width:768px) {
-    .rounded-start-pill img {
+    .rounded-start-pill img ,.img-list {
         border-radius: 0;
         border-top-right-radius: 0 !important;
         border-top-left-radius: 80px !important;
-        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
 
     }
 }
 
 @media (max-width:576px) {
-    .rounded-start-pill img {
+    .rounded-start-pill img, .img-list  {
         border-radius: 0;
         border-top-right-radius: 0 !important;
         border-top-left-radius: 0 !important;
-        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
     }
 }

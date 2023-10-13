@@ -47,8 +47,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </ul>
     </header>
     <div class="conteiner m-md-4 p-md-4 m-sm-0 p-sm-4 w-auto h-auto bg-light bg-opacity-75 rounded shadow  text-light">
-        <div class="row w-100 h-100 m-0" id="contenedor">
-            <div class="col-lg-6 col-sm-12 bg-danger h-100 shadow p-3 text-center rounded-1">
+        <div class="row w-100 h-100 m-0">
+            <div class="col-lg-6 col-sm-12 bg-danger shadow p-3 text-center rounded-1" style="min-height:calc(100vh - 150px);">
                 <p class="fs-3 badge bg-light text-wrap text-danger">Formulario para agregar tarjetas de personal</p>
                 <form class="row" id="formData">
                     <div class="col-md-6 col-sm-12 h-100">
@@ -151,7 +151,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                 </form>
             </div>
-
+            <div class="col-lg-6 col-sm-12  overflow-y-auto  rounded-1" id="contenedor"
+                style="height:calc(100vh - 150px); box-shadow: inset 0px 15px 15px rgba(0, 0, 0, 0.2);"></div>
         </div>
     </div>
     </div>
