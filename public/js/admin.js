@@ -1,13 +1,14 @@
 const base_url = "http://localhost/Miplaza/";
 var colorChange = false;
 var imgChange = false;
-
+var renderTarjetasvar;
 const fileInput = document.getElementById('formFile');
 const bgColorInput = document.getElementById('formColor');
 const principalDiv = document.getElementById('principal-color');
 const secundarioDiv = document.getElementById('secundario-color');
 
-const formData = new FormData();
+
+var formDatajson = new FormData($("#formData")[0]);
 //Face de verifiacion de datos en localStorage
 function loginUser() {
     var user = localStorage.getItem('user');
@@ -40,7 +41,6 @@ function cleanstorage() {
 }
 //Face de subida de datos del formulario
 function saveData() {
-    var formDatajson = new FormData($("#formData")[0]);
     formDatajson.append("formShadow", reducirTono(formDatajson.get("formColor"), 50));
 
     if (!imgChange) {
@@ -144,6 +144,7 @@ function loadData() {
         success: function (datos, estado, jhrx) {
             console.log(datos.status);
             if (datos.status == 'success') {
+                renderTarjetasvar = datos.tarjetas;
                 renderTarjetas(datos.tarjetas);
             }
         },
@@ -152,7 +153,6 @@ function loadData() {
 }
 function renderTarjetas(datosTarjetas) {
     var contenedor = document.getElementById('contenedor');
-
     datosTarjetas.forEach(function (valor, i, array) {
         var tarjetaDiv = document.createElement('div');
         tarjetaDiv.className = 'py-5 py-lg-4 px-sm-5 px-lg-4';
@@ -161,7 +161,7 @@ function renderTarjetas(datosTarjetas) {
                 <div class="col-md-6 col-sm-12 p-0 z-2 img-list shadow rounded m-auto rounded-start-pill">
                     <img src="${base_url + valor.img}"img-list  class="w-100 h-100 img-fluid object-fit-cover rounded m-auto rounded-start-pill" alt="" style="max-height: 300px; min-height: 250px;">
                 </div>
-                <div class="col-md-6 col-sm-12 text-center shadow z-2" style="background: ${valor.color};">
+                <div class="col-md-6 col-sm-12 text-center shadow z-2 cardadd h-auto" style="background: ${valor.color};">
                     <p class="fs-5 badge text-wrap rounded-1 mt-3 mb-0 shadow z-1" style="color: ${valor.color}; background: ${determinarColor(valor.color)};">${valor.tittle}</p>
                     <p class="fs-6 fw-normal badge text-wrap  rounded-0 m-0 w-100 text-start" style="color:${determinarColor(valor.color)}">${valor.descripcion}</p>
                 </div>
@@ -187,7 +187,7 @@ function renderTarjetas(datosTarjetas) {
                                         <p class="my-0 mx-2">Titulo de navegador:</p>
                                         <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.navtittle}</li>
                                     </ul>
-                                    <button type="button" class="btn btn-outline-light m-auto fw-medium position-absolute bottom-0 start-50 translate-middle w-75" onclick="${sendEdit(datosTarjetas[i], valor.id)}">Editar</button>
+                                    <button type="button" class="btn btn-outline-light m-auto fw-medium position-absolute bottom-0 start-50 translate-middle w-75" onclick="sendEditCard(${valor.id - 1});">Editar</button>
 
                                 </div>
                             </div>
@@ -201,13 +201,18 @@ function renderTarjetas(datosTarjetas) {
         contenedor.appendChild(tarjetaDiv);
     });
 }
-function sendEdit(jsonTarjeta, id) {
-    console.log(jsonTarjeta + ". . ." + id)
-    var formDatajson = new FormData($("#formData")[0]);
-    formDatajson.set("formAct1", jsonTarjeta.act1);
-}
 
+function sendEditCard(id) {
+    var jsonTarjeta = renderTarjetasvar[id];
+    console.log(jsonTarjeta.act1);
+    $('#formAct1').val(jsonTarjeta.act1);
 
+};
+
+$(document).ready(function () {
+    $('#formAct1').val("jsonTarjeta.act1");
+
+});
 
 //Face para editar color
 bgColorInput.addEventListener('input', function () {
