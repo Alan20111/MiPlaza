@@ -2,13 +2,15 @@ const base_url = "http://localhost/Miplaza/";
 var colorChange = false;
 var imgChange = false;
 var renderTarjetasvar;
+var booleanEdit;
+
 const fileInput = document.getElementById('formFile');
 const bgColorInput = document.getElementById('formColor');
 const principalDiv = document.getElementById('principal-color');
 const secundarioDiv = document.getElementById('secundario-color');
+var fileIconSvg = document.getElementById('fileIconSvg');
+var svgIdtxt = document.getElementById('svgId');
 
-
-var formDatajson = new FormData($("#formData")[0]);
 //Face de verifiacion de datos en localStorage
 function loginUser() {
     var user = localStorage.getItem('user');
@@ -41,6 +43,8 @@ function cleanstorage() {
 }
 //Face de subida de datos del formulario
 function saveData() {
+
+    var formDatajson = new FormData($("#formData")[0]);
     formDatajson.append("formShadow", reducirTono(formDatajson.get("formColor"), 50));
 
     if (!imgChange) {
@@ -103,12 +107,19 @@ function sendData(jsonTarjeta) {
     });
 }
 function cleanInputs() {
-    var inputs = document.querySelectorAll('input');
-    var area = document.getElementById('formArea');
+    var inputs = document.querySelectorAll('input[type="text"]');
+    var color = document.querySelector('input[type="color"]');
+    var area = document.querySelector('#formArea');
+    color.value = "#dc3545";
     area.value = '';
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].value = '';
     }
+    statusSvg("inactive");
+    
+    principalDiv.style.backgroundColor = '#ffffff';
+    secundarioDiv.style.background = '#ffffff';
+    determinarColorTexto('#ffffff','#ffffff');
     clearFileInput();
 }
 function clearFileInput() {
@@ -124,14 +135,53 @@ function previewImage(input) {
     var file = input.files[0];
     var reader = new FileReader();
 
-    reader.onload = function (e) {
-        image.src = e.target.result;
-    };
-
     if (file) {
-        reader.readAsDataURL(file);
+        // Verificar que el archivo sea de tipo JPG
+        if (file.type === "image/jpeg") {
+            statusSvg("active",file.name);
+            reader.onload = function (e) {
+                image.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        } else {
+            // Mostrar mensaje de error si el archivo no es JPG
+            statusSvg("invalid");
+            alert("Por favor, selecciona un archivo en formato JPG.");
+        }
+    } else {
+        // Mostrar mensaje de error si no se selecciona un archivo
+        statusSvg("invalid");
+        alert("Por favor, selecciona un archivo válido.");
     }
 }
+
+
+function statusSvg(status,nameimg) {
+    switch (status) {
+        case "active":
+            fileIconSvg.querySelector('.active').classList.remove('d-none');
+            fileIconSvg.querySelector('.inactive').classList.add('d-none');
+            fileIconSvg.querySelector('.invalid').classList.add('d-none');
+            svgIdtxt.textContent = 'Archivo '+nameimg+' cargado correctamente';
+            break;
+        case "inactive":
+            fileIconSvg.querySelector('.active').classList.add('d-none');
+            fileIconSvg.querySelector('.inactive').classList.remove('d-none');
+            fileIconSvg.querySelector('.invalid').classList.add('d-none');
+            svgIdtxt.textContent = 'Selecciona un archivo';
+            break;
+        case "invalid":
+            fileIconSvg.querySelector('.active').classList.add('d-none');
+            fileIconSvg.querySelector('.inactive').classList.add('d-none');
+            fileIconSvg.querySelector('.invalid').classList.remove('d-none');
+            svgIdtxt.textContent = 'Archivo inválido, selecciona un formato válido';
+            break;
+        default:
+            console.log("default de statusSvg");
+            break;
+    }
+}
+
 
 //Insertar tarjetas
 
@@ -203,17 +253,33 @@ function renderTarjetas(datosTarjetas) {
 }
 
 function sendEditCard(id) {
+    booleanEdit="true";
     var jsonTarjeta = renderTarjetasvar[id];
-    console.log(jsonTarjeta.act1);
-    $('#formAct1').val(jsonTarjeta.act1);
+    document.querySelector('#formAct1').value = jsonTarjeta.act1;
+    document.querySelector('#formAct2').value = jsonTarjeta.act2;
+    document.querySelector('#formAct3').value = jsonTarjeta.act3;
+    document.querySelector('#formAct4').value = jsonTarjeta.act4;
+    document.querySelector('#formAct5').value = jsonTarjeta.act5;
 
+    document.querySelector('#formTittle').value = jsonTarjeta.tittle;
+    document.querySelector('#formTittle-nav').value = jsonTarjeta.navtittle;
+    document.querySelector('#formArea').value = jsonTarjeta.descripcion;
+    bgColorInput.value = jsonTarjeta.color;
+
+    determinarColorTexto(jsonTarjeta.color, jsonTarjeta.sombra);
+
+    principalDiv.style.backgroundColor = jsonTarjeta.color;
+    secundarioDiv.style.background = jsonTarjeta.sombra;
+
+    var imagePreview = document.getElementById('imagePreview');
+    imagePreview.src = base_url + jsonTarjeta.img;
+
+    statusSvg("active",jsonTarjeta.imgName);
 };
 
-$(document).ready(function () {
-    $('#formAct1').val("jsonTarjeta.act1");
-
-});
-
+function modEdit(status) {
+    
+}
 //Face para editar color
 bgColorInput.addEventListener('input', function () {
     colorChange = true;
@@ -280,3 +346,4 @@ function reducirTono(colorHex, factor) {
 //Face ejecutar funciones
 loginUser();
 loadData();
+statusSvg("inactive");

@@ -59,8 +59,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     src="<?= base_url() ?>public/img/imagenDefault.jpg" alt=""
                                     id="imagePreview"></label>
 
-                            <input class="form-control focus-ring focus-ring-light rounded-0 rounded-bottom border"
-                                type="file" id="formFile" name="formFile" onchange="previewImage(this)">
+                            <input class="d-none form-control focus-ring focus-ring-light " type="file" id="formFile"
+                                name="formFile" onchange="previewImage(this)">
+                            <label
+                                class="w-100 icon-link icon-link-hover input-group-text rounded-0 rounded-bottom border"
+                                for="formFile" style="--bs-icon-link-transform: translate3d(0, -2.5px, 0);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-upload mx-2" viewBox="0 0 16 16" id="fileIconSvg">
+                                    <path class="inactive d-block"
+                                        d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                                    <path class="active d-none"
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                    <path class="invalid d-none"
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                </svg>
+                                <p id="svgId" class="m-0"></p>
+                            </label>
                         </div>
                         <div class="mb-3 text-dark">
                             <label for="" class="form-label text-light fw-medium">Actividades del puesto de
@@ -68,35 +82,35 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <!-- Campos de actividades laborales -->
                             <!-- Act1 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text" id="formAct1">Act1:</span>
+                                <span class="input-group-text" id="formAct1l">Act1:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
                                     id="formAct1" name="formAct1" placeholder="">
                             </div>
                             <!-- Act2 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text" id="formAct2">Act2:</span>
+                                <span class="input-group-text" id="formAct2l">Act2:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
                                     id="formAct2" name="formAct2" placeholder="">
                             </div>
                             <!-- Act3 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text" id="formAct3">Act3:</span>
+                                <span class="input-group-text" id="formAct3l">Act3:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
                                     id="formAct3" name="formAct3" placeholder="">
                             </div>
                             <!-- Act4 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text" id="formAct4">Act4:</span>
+                                <span class="input-group-text" id="formAct4l">Act4:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
                                     id="formAct4" name="formAct4" placeholder="">
                             </div>
                             <!-- Act5 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text" id="formAct5">Act5:</span>
+                                <span class="input-group-text" id="formAct5l">Act5:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
                                     id="formAct5" name="formAct5" placeholder="">
@@ -132,7 +146,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 class="form-control form-control-color col-5 border border-0 rounded-0 rounded-start w-25 focus-ring focus-ring-light"
                                 id="formColor" name="formColor" value="#dc3545" title="Choose your color">
                             <div class="bg-light col-6 w-75 rounded-end">
-                                <div class="row h-100">
+                                <div class="row h-100 d-block">
                                     <!-- Principal Color -->
                                     <div class="col-6 text-dark p-1 fw-medium" id="principal-color">Título</div>
                                     <!-- Secundario Color -->
@@ -141,13 +155,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                         </div>
                         <!-- Botones -->
-                        <div class="row text-center">
-                            <!-- Botón Borrar -->
-                            <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
-                                onclick="cleanInputs()">Borrar</button>
-                            <!-- Botón Guardar -->
-                            <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
-                                onclick="saveData()">Guardar</button>
+                        <div class="row text-center " id="switchBtn">
+                            <div class="normal">
+                                <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
+                                    onclick="cleanInputs()">Borrar</button>
+                                <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
+                                    onclick="saveData()">Guardar</button>
+                            </div>
+
+                            <div class="edit">
+                                <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
+                                    onclick="">Borrar</button>
+                                <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
+                                    onclick="">Guardar</button>
+                                <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
+                                    onclick="">Borrar</button>
+                            </div>
+
                         </div>
                     </div>
                 </form>

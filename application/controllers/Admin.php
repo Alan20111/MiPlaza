@@ -79,6 +79,7 @@ class Admin extends CI_Controller
                 'color' => $Color,
                 'sombra' => $Shadow,
 
+                'imgName'=> $nombreArchivo,
                 'img' => $pathFile // El pathFile ahora contiene la ruta completa con el nombre único
             );
 
