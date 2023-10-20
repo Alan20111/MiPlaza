@@ -37,7 +37,7 @@ class Admin extends CI_Controller
         }
         echo json_encode($data, JSON_NUMERIC_CHECK);
     }
-    public function uploadData()
+    public function uploadData($idTarjeta = null)
     {
         $Act1 = $this->input->post("formAct1");
         $Act2 = $this->input->post("formAct2");
@@ -52,50 +52,108 @@ class Admin extends CI_Controller
         $Color = $this->input->post("formColor");
         $Shadow = $this->input->post("formShadow");
 
-        $rutaImagenes = 'public/img/db/'; // Asegúrate de que esta sea la ruta correcta en el sistema de archivos
+        $rutaImagenes = 'public/img/db/';
 
-        $this->upload->do_upload("formFile");
-        $nombreArchivo = $_FILES["formFile"]["name"];
+        // Obtener la información de la tarjeta existente
+        $tarjetaExistente = $this->login->getCardData($idTarjeta);
 
-        // Genera un nombre único para el archivo (puedes usar uniqid o cualquier otro método)
-        $nombreUnico = uniqid() . '_' . $nombreArchivo;
-
-        // Combina la ruta de almacenamiento de imágenes con el nombre único para obtener la ruta completa del archivo
-        $pathFile = $rutaImagenes . $nombreUnico;
-
-        // Mueve el archivo cargado a la ubicación deseada en el sistema de archivos del servidor
-        if (move_uploaded_file($_FILES["formFile"]["tmp_name"], $pathFile)) {
+        if ($idTarjeta) {
+            // Editar una tarjeta existente
             $formData = array(
                 'act1' => $Act1,
                 'act2' => $Act2,
                 'act3' => $Act3,
                 'act4' => $Act4,
                 'act5' => $Act5,
-
                 'tittle' => $Tittle,
                 'navtittle' => $Tittle_nav,
-
                 'descripcion' => $Area,
                 'color' => $Color,
-                'sombra' => $Shadow,
-
-                'imgName'=> $nombreArchivo,
-                'img' => $pathFile // El pathFile ahora contiene la ruta completa con el nombre único
+                'sombra' => $Shadow
             );
 
-            $idTarjeta = $this->login->getCards($formData);
+            // Verificar si se proporciona una nueva imagen
+            if (!empty($_FILES["formFile"]["name"])) {
+                $nombreArchivoAnterior = $tarjetaExistente['imgName'];
+                $rutaImagenAnterior = $tarjetaExistente['img'];
 
-            $formData = array();
+                if (!empty($nombreArchivoAnterior) && file_exists($rutaImagenAnterior)) {
+                    unlink($rutaImagenAnterior); // Eliminar la imagen anterior
+                }
 
-            $formData['mensaje'] = "registro con éxito";
-            $formData['idUsuario'] = $idTarjeta;
+                $this->upload->do_upload("formFile");
+                $nombreArchivo = $_FILES["formFile"]["name"];
+                $nombreUnico = uniqid() . '_' . $nombreArchivo;
+                $pathFile = $rutaImagenes . $nombreUnico;
 
-            echo json_encode($formData, JSON_NUMERIC_CHECK);
+                if (move_uploaded_file($_FILES["formFile"]["tmp_name"], $pathFile)) {
+                    $formData['imgName'] = $nombreArchivo;
+                    $formData['img'] = $pathFile;
+                }
+            }
+
+            $this->login->getCards($formData, $idTarjeta);
         } else {
-            // Error al mover el archivo
+            // Agregar una nueva tarjeta (mismo código que tenías para agregar)
+            $this->upload->do_upload("formFile");
+            $nombreArchivo = $_FILES["formFile"]["name"];
+            $nombreUnico = uniqid() . '_' . $nombreArchivo;
+            $pathFile = $rutaImagenes . $nombreUnico;
+            if (move_uploaded_file($_FILES["formFile"]["tmp_name"], $pathFile)) {
+                $formData = array(
+                    'act1' => $Act1,
+                    'act2' => $Act2,
+                    'act3' => $Act3,
+                    'act4' => $Act4,
+                    'act5' => $Act5,
+                    'tittle' => $Tittle,
+                    'navtittle' => $Tittle_nav,
+                    'descripcion' => $Area,
+                    'color' => $Color,
+                    'sombra' => $Shadow,
+                    'imgName' => $nombreArchivo,
+                    'img' => $pathFile
+                );
+
+                $idTarjeta = $this->login->getCards($formData);
+            } else {
+                // Error al mover el archivo
+            }
         }
 
+        $formData = array();
+        $formData['mensaje'] = "Registro con éxito";
+        $formData['idUsuario'] = $idTarjeta;
+        echo json_encode($formData, JSON_NUMERIC_CHECK);
     }
+    public function deleteCard($idTarjeta)
+    {
+        // Consulta la tarjeta para obtener la ruta de la imagen
+        $tarjeta = $this->login->getCardData($idTarjeta);
+
+        // Verifica si se encontró la tarjeta
+        if ($tarjeta) {
+            // Obtiene la ruta de la imagen
+            $rutaImagen = $tarjeta['img'];
+
+            // Elimina la tarjeta de la base de datos
+            $this->login->deleteCard($idTarjeta);
+
+            unlink($rutaImagen);
+
+            $formData = array();
+            $formData['mensaje'] = "Eliminación exitosa";
+            echo json_encode($formData, JSON_NUMERIC_CHECK);
+        } else {
+            // La tarjeta no se encontró, maneja el error
+            $formData = array();
+            $formData['mensaje'] = "Error: Tarjeta no encontrada";
+            echo json_encode($formData, JSON_NUMERIC_CHECK);
+        }
+    }
+
+
+
     public function readData()
     {
         $tarjetas = $this->login->readCards();

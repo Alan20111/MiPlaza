@@ -43,6 +43,25 @@ class login extends CI_Model
             return $this->db->insert_id(); // Devuelve el ID de la nueva tarjeta insertada
         }
     }
+    public function getCardData($idTarjeta)
+    {
+        $this->db->where('id', $idTarjeta);
+        $query = $this->db->get('card-nosotros');
+
+        // Verificar si se encontró una tarjeta con el ID dado
+        if ($query->num_rows() > 0) {
+            return $query->row_array();
+        }
+
+        return null; // Devuelve null si no se encontró ninguna tarjeta con el ID dado
+    }
+    public function deleteCard($idTarjeta)
+    {
+        $this->db->where('id', $idTarjeta);
+        $this->db->delete('card-nosotros');
+
+        return $this->db->affected_rows() > 0; // Devuelve true si se eliminó una fila (éxito), de lo contrario, devuelve false.
+    }
 
     function readCards()
     {

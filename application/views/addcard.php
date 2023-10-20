@@ -39,7 +39,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </a>
 
             <li class="nav-item">
-                <a href="" class="nav-link py-2 text-danger">Targetas</a>
+                <a href="" class="nav-link py-2 text-danger">Tarjetas</a>
             </li>
             <li class="nav-item">
                 <a href="" class="nav-link py-2 text-danger">Organigrama</a>
@@ -73,7 +73,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <path class="invalid d-none"
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
-                                <p id="svgId" class="m-0"></p>
+                                <p id="svgId" class="m-0 d-inline-block text-truncate " style="max-width: 100%;"></p>
                             </label>
                         </div>
                         <div class="mb-3 text-dark">
@@ -85,35 +85,35 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <span class="input-group-text" id="formAct1l">Act1:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
-                                    id="formAct1" name="formAct1" placeholder="">
+                                    id="formAct1" name="formAct1" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act2 -->
                             <div class="input-group mb-2">
                                 <span class="input-group-text" id="formAct2l">Act2:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
-                                    id="formAct2" name="formAct2" placeholder="">
+                                    id="formAct2" name="formAct2" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act3 -->
                             <div class="input-group mb-2">
                                 <span class="input-group-text" id="formAct3l">Act3:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
-                                    id="formAct3" name="formAct3" placeholder="">
+                                    id="formAct3" name="formAct3" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act4 -->
                             <div class="input-group mb-2">
                                 <span class="input-group-text" id="formAct4l">Act4:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
-                                    id="formAct4" name="formAct4" placeholder="">
+                                    id="formAct4" name="formAct4" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act5 -->
                             <div class="input-group mb-2">
                                 <span class="input-group-text" id="formAct5l">Act5:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
-                                    id="formAct5" name="formAct5" placeholder="">
+                                    id="formAct5" name="formAct5" placeholder="Última actividad del personal">
                             </div>
                         </div>
                     </div>
@@ -123,21 +123,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <label for="formTittle" class="form-label fw-medium">Título principal:</label>
                             <input type="text"
                                 class="form-control focus-ring focus-ring-light border border-0 rounded-1"
-                                id="formTittle" name="formTittle" placeholder="">
+                                id="formTittle" name="formTittle" placeholder="Nombre del puesto">
                         </div>
                         <!-- Título en navegador -->
                         <div class="mb-4">
                             <label for="formTittle-nav" class="form-label fw-medium">Título en navegador:</label>
                             <input type="text"
                                 class="form-control focus-ring focus-ring-light border border-0 rounded-1"
-                                id="formTittle-nav" name="formTittle-nav" placeholder="">
+                                id="formTittle-nav" name="formTittle-nav" placeholder="Un nombre de puesto mas corto">
                         </div>
                         <!-- Descripción del personal -->
                         <div class="mb-4">
                             <label for="formArea" class="form-label fw-medium">Descripción del personal:</label>
                             <textarea
                                 class="form-control rounded-1 focus-ring focus-ring-light border border-0 rounded-1"
-                                id="formArea" name="formArea" rows="10"></textarea>
+                                id="formArea" name="formArea" rows="10"  placeholder="Una breve descripción del puesto. . ."></textarea>
                         </div>
                         <!-- Color de fondo -->
                         <div class="mb-4 row px-3">
@@ -146,7 +146,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 class="form-control form-control-color col-5 border border-0 rounded-0 rounded-start w-25 focus-ring focus-ring-light"
                                 id="formColor" name="formColor" value="#dc3545" title="Choose your color">
                             <div class="bg-light col-6 w-75 rounded-end">
-                                <div class="row h-100 d-block">
+                                <div class="row h-100">
                                     <!-- Principal Color -->
                                     <div class="col-6 text-dark p-1 fw-medium" id="principal-color">Título</div>
                                     <!-- Secundario Color -->
@@ -155,21 +155,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             </div>
                         </div>
                         <!-- Botones -->
-                        <div class="row text-center " id="switchBtn">
-                            <div class="normal">
-                                <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
+                        <div class="row text-center px-5" id="switchBtn">
+                            <div class="d-block p-0 w-100 inactive">
+                                <button type="button" class="btn btn-outline-light col-5 m-1 fw-medium"
                                     onclick="cleanInputs()">Borrar</button>
-                                <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
+                                <button type="button" class="btn btn-outline-light col-5 m-1 fw-medium"
                                     onclick="saveData()">Guardar</button>
                             </div>
 
-                            <div class="edit">
-                                <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
-                                    onclick="">Borrar</button>
-                                <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
-                                    onclick="">Guardar</button>
-                                <button type="button" class="btn btn-outline-light col-5 m-auto fw-medium"
-                                    onclick="">Borrar</button>
+                            <div class="d-none active">
+                                <button type="button" class="btn btn-outline-light col-5 m-1 fw-medium"
+                                    onclick="deleteCards()">Eliminar</button>
+                                <button type="button" class="btn btn-outline-light col-5 m-1 fw-medium"
+                                    onclick="upload()">Actualizar</button>
+                                <button type="button" class="btn btn-outline-light col-12 m-1 fw-medium"
+                                    onclick="newJob()">Nuevo puesto</button>
                             </div>
 
                         </div>

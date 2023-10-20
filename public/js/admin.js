@@ -1,15 +1,21 @@
 const base_url = "http://localhost/Miplaza/";
 var colorChange = false;
 var imgChange = false;
+var imgValid = 'true';
 var renderTarjetasvar;
 var booleanEdit;
+var idTarjetaFocus;
 
 const fileInput = document.getElementById('formFile');
 const bgColorInput = document.getElementById('formColor');
+
 const principalDiv = document.getElementById('principal-color');
 const secundarioDiv = document.getElementById('secundario-color');
+
 var fileIconSvg = document.getElementById('fileIconSvg');
 var svgIdtxt = document.getElementById('svgId');
+
+var switchBtn = document.getElementById('switchBtn');
 
 //Face de verifiacion de datos en localStorage
 function loginUser() {
@@ -37,6 +43,10 @@ function checkLogin(jsonLogin) {
         error: function (jhrx, estado, errorA) {
         }
     })
+}
+function newJob() {
+    statusEdit("inactive");
+    cleanInputs();
 }
 function cleanstorage() {
     localStorage.clear();
@@ -92,6 +102,16 @@ function saveData() {
     cleanInputs();
     location.reload();
 }
+function upload() {
+    var formDatajson = new FormData($("#formData")[0]);
+    formDatajson.append("formShadow", reducirTono(formDatajson.get("formColor"), 50));
+
+    if (imgValid == "true") {
+        uploadCards(formDatajson);
+    } else {
+        alert("Debes seleccionar una imagen.");
+    }
+}
 
 function sendData(jsonTarjeta) {
     $.ajax({
@@ -106,6 +126,35 @@ function sendData(jsonTarjeta) {
         error: function (jhrx, estado, error) { },
     });
 }
+function uploadCards(jsonTarjeta) {
+    $.ajax({
+        url: base_url + "index.php/Admin/uploadData/" + idTarjetaFocus,
+        dataType: "json",
+        type: "post",
+        data: jsonTarjeta,
+        contentType: false,
+        processData: false,
+        success: function (datos, estado, jhrx) {
+        },
+        error: function (jhrx, estado, error) {
+        }
+    });
+}
+function deleteCards() {
+    if (confirm("¿Estás seguro de que deseas eliminar esta tarjeta?")) {
+        $.ajax({
+            url: base_url + "index.php/Admin/deleteCard/" + idTarjetaFocus,
+            dataType: "json",
+            type: "DELETE",
+            success: function (datos, estado, jhrx) {    
+                location.reload();
+            },
+            error: function (jhrx, estado, error) {
+            }
+        });
+    }
+}
+
 function cleanInputs() {
     var inputs = document.querySelectorAll('input[type="text"]');
     var color = document.querySelector('input[type="color"]');
@@ -116,10 +165,10 @@ function cleanInputs() {
         inputs[i].value = '';
     }
     statusSvg("inactive");
-    
+
     principalDiv.style.backgroundColor = '#ffffff';
     secundarioDiv.style.background = '#ffffff';
-    determinarColorTexto('#ffffff','#ffffff');
+    determinarColorTexto('#ffffff', '#ffffff');
     clearFileInput();
 }
 function clearFileInput() {
@@ -138,31 +187,35 @@ function previewImage(input) {
     if (file) {
         // Verificar que el archivo sea de tipo JPG
         if (file.type === "image/jpeg") {
-            statusSvg("active",file.name);
+            statusSvg("active", file.name);
             reader.onload = function (e) {
                 image.src = e.target.result;
             };
             reader.readAsDataURL(file);
         } else {
             // Mostrar mensaje de error si el archivo no es JPG
+            image.src = base_url + "public/img/imagenDefault.jpg";
+            imgValid = "false";
             statusSvg("invalid");
             alert("Por favor, selecciona un archivo en formato JPG.");
         }
     } else {
         // Mostrar mensaje de error si no se selecciona un archivo
+        imgValid = "false";
+        image.src = base_url + "public/img/imagenDefault.jpg";
         statusSvg("invalid");
         alert("Por favor, selecciona un archivo válido.");
     }
 }
 
 
-function statusSvg(status,nameimg) {
+function statusSvg(status, nameimg) {
     switch (status) {
         case "active":
             fileIconSvg.querySelector('.active').classList.remove('d-none');
             fileIconSvg.querySelector('.inactive').classList.add('d-none');
             fileIconSvg.querySelector('.invalid').classList.add('d-none');
-            svgIdtxt.textContent = 'Archivo '+nameimg+' cargado correctamente';
+            svgIdtxt.textContent = 'Archivo ' + nameimg + ' cargado correctamente';
             break;
         case "inactive":
             fileIconSvg.querySelector('.active').classList.add('d-none');
@@ -181,6 +234,21 @@ function statusSvg(status,nameimg) {
             break;
     }
 }
+function statusEdit(status) {
+    switch (status) {
+        case "active":
+            switchBtn.querySelector('.inactive').classList.add('d-none');
+            switchBtn.querySelector('.active').classList.remove('d-none');
+            break;
+        case "inactive":
+            switchBtn.querySelector('.active').classList.add('d-none');
+            switchBtn.querySelector('.inactive').classList.remove('d-none');
+            break;
+        default:
+            console.log("default de statusSvg");
+            break;
+    }
+}
 
 
 //Insertar tarjetas
@@ -192,7 +260,6 @@ function loadData() {
         type: "post",
         data: {},
         success: function (datos, estado, jhrx) {
-            console.log(datos.status);
             if (datos.status == 'success') {
                 renderTarjetasvar = datos.tarjetas;
                 renderTarjetas(datos.tarjetas);
@@ -204,6 +271,7 @@ function loadData() {
 function renderTarjetas(datosTarjetas) {
     var contenedor = document.getElementById('contenedor');
     datosTarjetas.forEach(function (valor, i, array) {
+        console.log(valor.id);
         var tarjetaDiv = document.createElement('div');
         tarjetaDiv.className = 'py-5 py-lg-4 px-sm-5 px-lg-4';
         var tarjetaContenido = `
@@ -213,7 +281,7 @@ function renderTarjetas(datosTarjetas) {
                 </div>
                 <div class="col-md-6 col-sm-12 text-center shadow z-2 cardadd h-auto" style="background: ${valor.color};">
                     <p class="fs-5 badge text-wrap rounded-1 mt-3 mb-0 shadow z-1" style="color: ${valor.color}; background: ${determinarColor(valor.color)};">${valor.tittle}</p>
-                    <p class="fs-6 fw-normal badge text-wrap  rounded-0 m-0 w-100 text-start" style="color:${determinarColor(valor.color)}">${valor.descripcion}</p>
+                    <p class="fs-6 fw-normal badge text-wrap  rounded-0 m-0 w-100 text-start d-inline-block text-truncate" style="color:${determinarColor(valor.color)}">${valor.descripcion}</p>
                 </div>
                 <div class="d-flex flex-column col-12 p-0 ms-auto me-0 w-75">
                     <div class="container w-100 p-0 nav-item m-0">
@@ -237,7 +305,7 @@ function renderTarjetas(datosTarjetas) {
                                         <p class="my-0 mx-2">Titulo de navegador:</p>
                                         <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.navtittle}</li>
                                     </ul>
-                                    <button type="button" class="btn btn-outline-light m-auto fw-medium position-absolute bottom-0 start-50 translate-middle w-75" onclick="sendEditCard(${valor.id - 1});">Editar</button>
+                                    <button type="button" class="btn btn-outline-light m-auto fw-medium position-absolute bottom-0 start-50 translate-middle w-75" onclick="sendEditCard(${valor.id});">Editar</button>
 
                                 </div>
                             </div>
@@ -253,8 +321,11 @@ function renderTarjetas(datosTarjetas) {
 }
 
 function sendEditCard(id) {
-    booleanEdit="true";
-    var jsonTarjeta = renderTarjetasvar[id];
+    booleanEdit = "true";
+    console.log(renderTarjetasvar);
+    var jsonTarjeta = renderTarjetasvar.find(function (element) {
+        return element.id === id;
+    });
     document.querySelector('#formAct1').value = jsonTarjeta.act1;
     document.querySelector('#formAct2').value = jsonTarjeta.act2;
     document.querySelector('#formAct3').value = jsonTarjeta.act3;
@@ -274,17 +345,15 @@ function sendEditCard(id) {
     var imagePreview = document.getElementById('imagePreview');
     imagePreview.src = base_url + jsonTarjeta.img;
 
-    statusSvg("active",jsonTarjeta.imgName);
+    statusSvg("active", jsonTarjeta.imgName);
+    statusEdit("active");
+    idTarjetaFocus = jsonTarjeta.id;
 };
-
-function modEdit(status) {
-    
-}
 //Face para editar color
 bgColorInput.addEventListener('input', function () {
     colorChange = true;
     const selectedColor = bgColorInput.value;
-    const colordegrade = (reducirTono(selectedColor, 50));
+    const colordegrade = (reducirTono(selectedColor, 20));
 
     principalDiv.style.backgroundColor = selectedColor;
     secundarioDiv.style.background = colordegrade;
@@ -324,7 +393,7 @@ function determinarColorTexto(colorFondo, colorDegrade) {
 }
 function determinarColor(colorFondo) {
     const luminancia = calcularLuminancia(colorFondo);
-    if (luminancia > 0.7) {
+    if (luminancia > 0.8) {
         return "#000000cb";
     } else {
         return "white";
@@ -347,3 +416,4 @@ function reducirTono(colorHex, factor) {
 loginUser();
 loadData();
 statusSvg("inactive");
+statusEdit("inactive");
