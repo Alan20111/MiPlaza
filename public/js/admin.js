@@ -111,6 +111,7 @@ function upload() {
     } else {
         alert("Debes seleccionar una imagen.");
     }
+    location.reload();
 }
 
 function sendData(jsonTarjeta) {

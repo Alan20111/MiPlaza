@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Bienvenido extends CI_Controller {
+class Bienvenido extends CI_Controller
+{
 	public function __construct()
 	{
 		parent::__construct();
@@ -11,10 +12,12 @@ class Bienvenido extends CI_Controller {
 	{
 		$this->load->view('inicio');
 	}
-	function Ubicacion(){
+	function Ubicacion()
+	{
 		$this->load->view('ubicacion');
 	}
-	function Nosotros(){
+	function Nosotros()
+	{
 		$this->load->view('nosotros');
 	}
 }

@@ -1,4 +1,5 @@
-const base_url = "http://localhost/Miplaza";
+const base_url = "http://localhost/Miplaza/";
+var tarjetastotal;
 function loadData() {
     $.ajax({
         url: base_url + "index.php/Admin/readData",
@@ -7,61 +8,75 @@ function loadData() {
         data: {},
         success: function (datos, estado, jhrx) {
             if (datos.status == 'success') {
-                renderTarjetasvar = datos.tarjetas;
+                tarjetastotal = datos.Tarjetas;
                 renderTarjetas(datos.tarjetas);
             }
         },
-        error: function (jhrx, estado, error) { },
     });
 }
+
 function renderTarjetas(datosTarjetas) {
-    var contenedor = document.getElementById('contenedor');
+    var contenedor = document.getElementById('list-example');
+datosTarjetas.forEach(function (valor, i, array) {
+    console.log(valor);
+    var enlace = document.createElement('a');
+    enlace.className = "list-group-item list-group-item-action w-100 h-100 d-xl-block d-inline-flex border border-0 rounder rounder-0 shadow";
+    enlace.href = "#list-item-" + valor.id;
+    enlace.innerHTML = "<p>" + valor.navtittle + "</p>";
+    contenedor.appendChild(enlace);
+});
+
+    var contenedor = document.getElementById('list');
     datosTarjetas.forEach(function (valor, i, array) {
-        console.log(valor.id);
         var tarjetaDiv = document.createElement('div');
-        tarjetaDiv.className = 'py-5 py-lg-4 px-sm-5 px-lg-4';
+        tarjetaDiv.className = '';
         var tarjetaContenido = `
-            <div class="row w-auto h-auto">
-                <div class="col-md-6 col-sm-12 p-0 z-2 img-list shadow rounded m-auto rounded-start-pill">
-                    <img src="${base_url + valor.img}"img-list  class="w-100 h-100 img-fluid object-fit-cover rounded m-auto rounded-start-pill" alt="" style="max-height: 300px; min-height: 250px;">
-                </div>
-                <div class="col-md-6 col-sm-12 text-center shadow z-2 cardadd h-auto" style="background: ${valor.color};">
-                    <p class="fs-5 badge text-wrap rounded-1 mt-3 mb-0 shadow z-1" style="color: ${valor.color}; background: ${determinarColor(valor.color)};">${valor.tittle}</p>
-                    <p class="fs-6 fw-normal badge text-wrap  rounded-0 m-0 w-100 text-start d-inline-block text-truncate" style="color:${determinarColor(valor.color)}">${valor.descripcion}</p>
-                </div>
-                <div class="d-flex flex-column col-12 p-0 ms-auto me-0 w-75">
-                    <div class="container w-100 p-0 nav-item m-0">
-                        <button class="btn w-100 px-0 me-2 rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${i}" aria-expanded="false" aria-controls="collapseExample${i}" style="border: solid 1px ${valor.sombra};" onmouseover="this.style.backgroundColor = '${valor.sombra}';"onmouseout="this.style.backgroundColor = 'transparent';" >
-                            Mas. . .
-                        </button>
-                        <div class="collapse text-light p-0 " id="collapseExample${i}" data-bs-target="id" style="background: ${valor.sombra};">
-                            <div class="row card-body" id="id">
-                                <div class="col-6">
-                                    <ul class="list-group list-group-flush  bg-light" style="color:${reducirTono(valor.sombra, 100)};">
-                                        <p class="my-0 mx-2">Actividades:</p>
-                                        <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.act1}</li>
-                                        <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.act2}</li>
-                                        <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.act3}</li>
-                                        <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.act4}</li>
-                                        <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.act5}</li>
-                                    </ul>
-                                </div>
-                                <div class="col-6 position-relative">
-                                    <ul class="list-group list-group-flush  bg-light" style="color:${reducirTono(valor.sombra, 100)};">
-                                        <p class="my-0 mx-2">Titulo de navegador:</p>
-                                        <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.navtittle}</li>
-                                    </ul>
-                                    <button type="button" class="btn btn-outline-light m-auto fw-medium position-absolute bottom-0 start-50 translate-middle w-75" onclick="sendEditCard(${valor.id});">Editar</button>
-
-                                </div>
-                            </div>
-                        </div>
+                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                class="scrollspy-example" tabindex="0">
+                    <div class="conteiner" id="list-item-${valor.id}">
+                        ${alternarHtml(valor.id)}
                     </div>
-                </div>
-            </div>
-        `;
 
+
+                </div>
+        `;
         tarjetaDiv.innerHTML = tarjetaContenido;
         contenedor.appendChild(tarjetaDiv);
     });
 }
+
+var it=0;
+function alternarHtml(id) {
+    const aside1 = `<div class="aside1">
+    <div class="tittle position-relative">
+        <img src="" alt="" class="img-fluid">
+        <p class="h2 position-absolute top-100 start-100 translate-middle">Gerente General</p>
+    </div>
+    <div class="descripcion">
+        <p>Descripcion de actividades asdasaufbuvbruvbrhvsefijsafieabifwbeifbsweifbeiab</p>
+    </div>
+</div>`;
+    const aside2 = `<div class="aside2" id="card-container">
+    <div class="card-float" id="card-float">
+        <p class="h4">
+            Actividades
+        </p>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+        </ul>
+    </div>
+
+</div>`;
+    it++;
+    if (it == 1) {
+        return aside1 + aside2;
+    } else{
+        it = 0;
+        return aside2 + aside1;
+    }
+}
+loadData();
