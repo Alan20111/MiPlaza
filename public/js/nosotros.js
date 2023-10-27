@@ -8,7 +8,7 @@ function loadData() {
         data: {},
         success: function (datos, estado, jhrx) {
             if (datos.status == 'success') {
-                tarjetastotal = datos.Tarjetas;
+                tarjetastotal = datos;
                 renderTarjetas(datos.tarjetas);
             }
         },
@@ -18,6 +18,7 @@ function loadData() {
 function renderTarjetas(datosTarjetas) {
     var contenedor = document.getElementById('list-example');
     datosTarjetas.forEach(function (valor, i, array) {
+        console.log(tarjetastotal);
         var enlace = document.createElement('a');
         enlace.className = "list-group-item list-group-item-action w-100 h-100 border border-0 rounder rounder-0";
         enlace.href = "#list-item-" + valor.id;
@@ -28,48 +29,61 @@ function renderTarjetas(datosTarjetas) {
     var contenedor = document.getElementById('list');
     datosTarjetas.forEach(function (valor, i, array) {
         var tarjetaDiv = document.createElement('div');
-        tarjetaDiv.className = '';
+        tarjetaDiv.className = 'conteiner w-100 p-5';
+        tarjetaDiv.id = 'list-item-' + valor.id;
+        tarjetaDiv.style.background = valor.sombra;
         var tarjetaContenido = `
-                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
-                class="scrollspy-example" tabindex="0">
-                    <div class="conteiner w-100" id="list-item-${valor.id}">
-                        ${alternarHtml(valor.id,datosTarjetas.length)}
-                    </div>
-                </div>
+                        <div class="row">
+                            ${alternarHtml(datosTarjetas.length, i)}
+                        </div>
         `;
         tarjetaDiv.innerHTML = tarjetaContenido;
         contenedor.appendChild(tarjetaDiv);
+        
     });
 }
 
 var it = 0;
 var aco = 0;
-var stringFinal ="";
-function alternarHtml(id, length) {
-    const aside1 = `<div class="aside1">
-    <div class="tittle position-relative">
-        <img src="" alt="" class="img-fluid">
-        <p class="h2  position-absolute top-100 start-100 translate-middle">Gerente General</p>
-    </div>
-    <div class="descripcion">
-        <p>Descripcion de actividades asdasaufbuvbruvbrhvsefijsafieabifwbeifbsweifbeiab</p>
-    </div>
-</div>`;
-    const aside2 = `<div class="aside2" id="card-container">
-    <div class="card-float" id="card-float">
-        <p class="h4">
-            Actividades
-        </p>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item ">An item</li>
-            <li class="list-group-item ">A second item</li>
-            <li class="list-group-item ">A third item</li>
-            <li class="list-group-item ">A fourth item</li>
-            <li class="list-group-item ">And a fifth one</li>
-        </ul>
-    </div>
+function alternarHtml(length, i) {
+    console.log(it);
+    var stringFinal = "";
+    var atributo;
+    if (it == 0) {
+        atributo = "position-absolute top-100 start-100 translate-middle";
 
-</div>`;
+    } else {
+        atributo = "position-absolute top-100 start-0 translate-middle";
+    }
+    const aside1 = `
+    <div class="aside1 col-lg-6 col-md-12">
+            <div class="tittle  position-relative h-50">
+                <img src="`+ base_url + tarjetastotal.tarjetas[i].img + `" alt="" class="img-fluid object-fit-cover rounded rounded w-100 h-100" style="width:100px; ">
+                <p class="fs-3 badge text-wrap rounder-1 px-2 `+ atributo + ` text-`+determinarColor(tarjetastotal.tarjetas[i].color)+`" style="background: ` + tarjetastotal.tarjetas[i].color + `;">
+                    `+ tarjetastotal.tarjetas[i].tittle + `
+                </p>
+            </div>
+            <div class="descripcion h-auto mt-4">
+                <p class="text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`">`+ tarjetastotal.tarjetas[i].descripcion + `</p>
+            </div>
+    </div>
+    `;
+    const aside2 = `
+    <div class="aside2 col-lg-6 col-md-12" id="card-container">
+        <div class="card-float" id="card-float">
+            <p class="h4 z-3 text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`">
+                Actividades
+            </p>
+            <ul class="z-0 list-group list-group-flush rounded rounded mx-lg-5" style="box-shadow: 0px 0px 100px ` + reducirTono(tarjetastotal.tarjetas[i].color,50) + `;">
+                <li class="list-group-item rounded-top border-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+` text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">`+ tarjetastotal.tarjetas[i].act1 + `</li>
+                <li class="list-group-item border-top-1 border-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+` text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">`+ tarjetastotal.tarjetas[i].act2 + `</li>
+                <li class="list-group-item border-top-1 border-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+` text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">`+ tarjetastotal.tarjetas[i].act3 + `</li>
+                <li class="list-group-item border-top-1 border-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+` text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">`+ tarjetastotal.tarjetas[i].act4 + `</li>
+                <li class="list-group-item border-top-1 rounded-bottom  border-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+` text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">`+ tarjetastotal.tarjetas[i].act5 + `</li>
+            </ul>
+        </div>
+
+    </div>`;
     const footer = `<footer class="position-relative">
 <ul class="nav justify-content-center">
     <li class="nav-item">
@@ -104,14 +118,43 @@ function alternarHtml(id, length) {
     if (aco == length) {
         stringFinal = footer;
     }
-    console.log(aco,length);
     it++;
     if (it == 1) {
         stringFinal = aside1 + aside2 + stringFinal;
+        console.log("caso 1 " + i);
     } else {
         it = 0;
         stringFinal = aside2 + aside1 + stringFinal;
+        console.log("caso 1 " + i);
     }
-    return stringFinal
+    return stringFinal;
+}
+
+function reducirTono(colorHex, factor) {
+    const r = parseInt(colorHex.slice(1, 3), 16);
+    const g = parseInt(colorHex.slice(3, 5), 16);
+    const b = parseInt(colorHex.slice(5, 7), 16);
+
+    const nuevoR = Math.max(0, r - factor);
+    const nuevoG = Math.max(0, g - factor);
+    const nuevoB = Math.max(0, b - factor);
+
+    const nuevoColorHex = `#${nuevoR.toString(16).padStart(2, '0')}${nuevoG.toString(16).padStart(2, '0')}${nuevoB.toString(16).padStart(2, '0')}`;
+    return nuevoColorHex;
+}
+function calcularLuminancia(color) {
+    const r = parseInt(color.slice(1, 3), 16) / 255;
+    const g = parseInt(color.slice(3, 5), 16) / 255;
+    const b = parseInt(color.slice(5, 7), 16) / 255;
+
+    return 0.299 * r + 0.587 * g + 0.114 * b;
+}
+function determinarColor(colorFondo) {
+    const luminancia = calcularLuminancia(colorFondo);
+    if (luminancia > 0.65) {
+        return "black";
+    } else {
+        return "white";
+    }
 }
 loadData();

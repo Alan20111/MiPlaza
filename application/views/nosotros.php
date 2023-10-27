@@ -55,12 +55,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <div class="col-xl-2 col-lg-12 list-jods p-0">
                 <div id="list-example" class="list-group shadow"></div>
             </div>
-            <div class="col-xl-10 col-lg-12 p-0" >
-                <div class="overflow-y-auto" id="list"></div>
+            <div class="col-xl-10 col-lg-12 p-0">
+                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                    class="scrollspy-example overflow-y-auto" tabindex="0" id="list">
+                </div>
             </div>
         </div>
     </main>
-    
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

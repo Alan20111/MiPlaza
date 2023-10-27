@@ -2,6 +2,8 @@ const base_url = "http://localhost/Miplaza/";
 var colorChange = false;
 var imgChange = false;
 var imgValid = 'true';
+var tonoSat = false;
+var factorColor = 50;
 var renderTarjetasvar;
 var booleanEdit;
 var idTarjetaFocus;
@@ -55,7 +57,7 @@ function cleanstorage() {
 function saveData() {
 
     var formDatajson = new FormData($("#formData")[0]);
-    formDatajson.append("formShadow", reducirTono(formDatajson.get("formColor"), 50));
+    formDatajson.append("formShadow", reducirTono(formDatajson.get("formColor"), factorColor));
 
     if (!imgChange) {
         alert("Debes seleccionar una imagen.");
@@ -95,6 +97,9 @@ function saveData() {
     }
     if (!colorChange) {
         alert("Debes seleccionar un color de fondo.");
+        if (tonoSat) {
+            alert("Elije un tono mas bajo en el recuadro de color.")
+        }
         return;
     }
 
@@ -104,14 +109,21 @@ function saveData() {
 }
 function upload() {
     var formDatajson = new FormData($("#formData")[0]);
-    formDatajson.append("formShadow", reducirTono(formDatajson.get("formColor"), 50));
+    formDatajson.append("formShadow", reducirTono(formDatajson.get("formColor"), factorColor));
 
-    if (imgValid == "true") {
-        uploadCards(formDatajson);
+    if (!imgValid == "true" /* || tonoSat*/) {
+        if (!imgValid == "true") {
+            alert("Debes seleccionar una imagen.");
+        }
+        /*
+        if (tonoSat) {
+            alert("Elije un tono mas bajo en el recuadro de color.")
+        }
+        */
     } else {
-        alert("Debes seleccionar una imagen.");
+        uploadCards(formDatajson);
+        location.reload();
     }
-    location.reload();
 }
 
 function sendData(jsonTarjeta) {
@@ -147,7 +159,7 @@ function deleteCards() {
             url: base_url + "index.php/Admin/deleteCard/" + idTarjetaFocus,
             dataType: "json",
             type: "DELETE",
-            success: function (datos, estado, jhrx) {    
+            success: function (datos, estado, jhrx) {
                 location.reload();
             },
             error: function (jhrx, estado, error) {
@@ -292,7 +304,7 @@ function renderTarjetas(datosTarjetas) {
                         <div class="collapse text-light p-0 " id="collapseExample${i}" data-bs-target="id" style="background: ${valor.sombra};">
                             <div class="row card-body" id="id">
                                 <div class="col-6">
-                                    <ul class="list-group list-group-flush  bg-light" style="color:${reducirTono(valor.sombra, 100)};">
+                                    <ul class="list-group list-group-flush  bg-light" style="color:${reducirTono(valor.sombra, -100)};">
                                         <p class="my-0 mx-2">Actividades:</p>
                                         <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.act1}</li>
                                         <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.act2}</li>
@@ -302,7 +314,7 @@ function renderTarjetas(datosTarjetas) {
                                     </ul>
                                 </div>
                                 <div class="col-6 position-relative">
-                                    <ul class="list-group list-group-flush  bg-light" style="color:${reducirTono(valor.sombra, 100)};">
+                                    <ul class="list-group list-group-flush  bg-light" style="color:${reducirTono(valor.sombra, -100)};">
                                         <p class="my-0 mx-2">Titulo de navegador:</p>
                                         <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.navtittle}</li>
                                     </ul>
@@ -354,7 +366,7 @@ function sendEditCard(id) {
 bgColorInput.addEventListener('input', function () {
     colorChange = true;
     const selectedColor = bgColorInput.value;
-    const colordegrade = (reducirTono(selectedColor, 20));
+    const colordegrade = (reducirTono(selectedColor, factorColor));
 
     principalDiv.style.backgroundColor = selectedColor;
     secundarioDiv.style.background = colordegrade;
@@ -373,18 +385,14 @@ function determinarColorTexto(colorFondo, colorDegrade) {
     const luminancia = calcularLuminancia(colorFondo);
     const oscurancia = calcularLuminancia(colorDegrade);
 
-    if (luminancia > 0.7) {
+    if (luminancia > 0.6) {
         principalDiv.classList.remove("text-light");
         principalDiv.classList.add("text-dark");
-        secundarioDiv.classList.remove("text-light");
-        secundarioDiv.classList.add("text-dark");
     } else {
         principalDiv.classList.remove("text-dark");
         principalDiv.classList.add("text-light");
-        secundarioDiv.classList.remove("text-dark");
-        secundarioDiv.classList.add("text-light");
     }
-    if (oscurancia > 0.7) {
+    if (oscurancia > 0.6) {
         secundarioDiv.classList.remove("text-light");
         secundarioDiv.classList.add("text-dark");
     } else {
@@ -400,19 +408,7 @@ function determinarColor(colorFondo) {
         return "white";
     }
 }
-function reducirTono(colorHex, factor) {
-    const r = parseInt(colorHex.slice(1, 3), 16);
-    const g = parseInt(colorHex.slice(3, 5), 16);
-    const b = parseInt(colorHex.slice(5, 7), 16);
 
-    const nuevoR = Math.max(0, r - factor);
-    const nuevoG = Math.max(0, g - factor);
-    const nuevoB = Math.max(0, b - factor);
-
-    const nuevoColorHex = `#${nuevoR.toString(16).padStart(2, '0')}${nuevoG.toString(16).padStart(2, '0')}${nuevoB.toString(16).padStart(2, '0')}`;
-
-    return nuevoColorHex;
-}
 //Face ejecutar funciones
 loginUser();
 loadData();

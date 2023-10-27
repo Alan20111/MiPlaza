@@ -5,7 +5,9 @@
 #list-example .active {
     background: #74b050 !important;
 }
-
+#list-example .active:focus {
+    background: #74b050 !important;
+}
 #list-example {
     width: 70px !important;
     height: 100% !important;
@@ -31,6 +33,7 @@
 @media (max-width: 1200px) {
     #list {
         width: 100% !important;
+        height: calc(100vh - 98px - 50px) !important;
     }
 
     #list-example .list-group-item p {
