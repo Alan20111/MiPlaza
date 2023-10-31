@@ -373,6 +373,18 @@ bgColorInput.addEventListener('input', function () {
 
     determinarColorTexto(selectedColor, colordegrade);
 });
+function reducirTono(colorHex, factor) {
+    const r = parseInt(colorHex.slice(1, 3), 16);
+    const g = parseInt(colorHex.slice(3, 5), 16);
+    const b = parseInt(colorHex.slice(5, 7), 16);
+
+    const nuevoR = Math.max(0, r - factor);
+    const nuevoG = Math.max(0, g - factor);
+    const nuevoB = Math.max(0, b - factor);
+
+    const nuevoColorHex = `#${nuevoR.toString(16).padStart(2, '0')}${nuevoG.toString(16).padStart(2, '0')}${nuevoB.toString(16).padStart(2, '0')}`;
+    return nuevoColorHex;
+}
 function calcularLuminancia(color) {
     const r = parseInt(color.slice(1, 3), 16) / 255;
     const g = parseInt(color.slice(3, 5), 16) / 255;
