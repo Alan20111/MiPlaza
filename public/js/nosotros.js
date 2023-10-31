@@ -22,18 +22,18 @@ function renderTarjetas(datosTarjetas) {
         var enlace = document.createElement('a');
         enlace.className = "list-group-item list-group-item-action w-100 h-100 border border-0 rounder rounder-0";
         enlace.href = "#list-item-" + valor.id;
-        enlace.innerHTML = "<p>" + valor.navtittle + "</p>";
+        enlace.innerHTML = "<p class='m-0'>" + valor.navtittle + "</p>";
         contenedor.appendChild(enlace);
     });
 
     var contenedor = document.getElementById('list');
     datosTarjetas.forEach(function (valor, i, array) {
         var tarjetaDiv = document.createElement('div');
-        tarjetaDiv.className = 'conteiner w-100 p-5';
+        tarjetaDiv.className = 'conteiner w-100';
         tarjetaDiv.id = 'list-item-' + valor.id;
         tarjetaDiv.style.background = valor.sombra;
         var tarjetaContenido = `
-                        <div class="row">
+                        <div class="row h-100">
                             ${alternarHtml(datosTarjetas.length, i)}
                         </div>
         `;
@@ -56,21 +56,23 @@ function alternarHtml(length, i) {
         atributo = "position-absolute top-100 start-0 translate-middle";
     }
     const aside1 = `
-    <div class="aside1 col-lg-6 col-md-12">
-            <div class="tittle  position-relative h-50">
-                <img src="`+ base_url + tarjetastotal.tarjetas[i].img + `" alt="" class="img-fluid object-fit-cover rounded rounded w-100 h-100" style="width:100px; ">
+    <div class="aside1 col-lg-6 col-md-12 position-relative h-100">
+        <div class="position-absolute top-50 start-50 translate-middle w-100 h-100">
+            <div class="tittle position-relative h-75 ">
+                <img src="`+ base_url + tarjetastotal.tarjetas[i].img + `" alt="" class="object-fit-cover rounded rounded w-100 h-100 position-absolute  start-50 translate-middle-x">
                 <p class="fs-3 badge text-wrap rounder-1 px-2 `+ atributo + ` text-`+determinarColor(tarjetastotal.tarjetas[i].color)+`" style="background: ` + tarjetastotal.tarjetas[i].color + `;">
                     `+ tarjetastotal.tarjetas[i].tittle + `
                 </p>
             </div>
-            <div class="descripcion h-auto mt-4">
+            <div class="descripcion h-25 mt-4">
                 <p class="text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`">`+ tarjetastotal.tarjetas[i].descripcion + `</p>
             </div>
+        </div>
     </div>
     `;
     const aside2 = `
-    <div class="aside2 col-lg-6 col-md-12" id="card-container">
-        <div class="card-float" id="card-float">
+    <div class="aside2 col-lg-6 col-md-12 card-container" id="card-container-`+tarjetastotal.tarjetas[i].id+`">
+        <div class="card-float sticky-top m-5 pt-5">
             <p class="h4 z-3 text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`">
                 Actividades
             </p>
@@ -82,7 +84,6 @@ function alternarHtml(length, i) {
                 <li class="list-group-item border-top-1 rounded-bottom  border-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+` text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">`+ tarjetastotal.tarjetas[i].act5 + `</li>
             </ul>
         </div>
-
     </div>`;
     const footer = `<footer class="position-relative">
 <ul class="nav justify-content-center">
@@ -113,7 +114,7 @@ function alternarHtml(length, i) {
             <path fill-rule="evenodd"
                 d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z" />
         </svg></a></div>
-</footer>`
+</footer>`;
     aco++;
     if (aco == length) {
         stringFinal = footer;

@@ -4,10 +4,14 @@
 
 #list-example .active {
     background: #74b050 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
 }
+
 #list-example .active:focus {
     background: #74b050 !important;
 }
+
 #list-example {
     width: 70px !important;
     height: 100% !important;
@@ -30,7 +34,12 @@
     overflow-x: hidden !important;
 }
 
-@media (max-width: 1200px) {
+.aside1,
+.aside2 {
+    height: 100% !important;
+}
+
+@media (max-width: 1200px) {/*BreakPoint lg*/
     #list {
         width: 100% !important;
         height: calc(100vh - 98px - 50px) !important;
@@ -45,13 +54,26 @@
         width: 100% !important;
         flex-direction: row !important;
     }
-    .list-group-item{
+
+    .list-group-item {
         height: 50px !important;
     }
 
     .list-jods {
-        overflow-x: auto;
-        overflow-y: hidden;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
         height: 50px !important;
+    }
+    .aside1,
+    .aside2 {
+        height: 50% !important;
+    }
+    .tittle{
+        width: 75% !important;
+    }
+}
+@media (max-width: 768px) {/*BreakPoint md*/
+    .imglist{
+        width: 75% !important;
     }
 }

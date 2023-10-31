@@ -48,9 +48,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </header>
     <div class="conteiner m-md-4 p-md-4 m-sm-0 p-sm-4 w-auto h-auto bg-light bg-opacity-75 rounded shadow  text-light">
         <div class="row w-100 h-100 m-0">
-            <div class="col-lg-6 col-sm-12 bg-danger shadow p-3 text-center rounded-1"
+        <p class="fs-3 badge bg-danger text-wrap text-light m-0 rounded rounded-0">Formulario para agregar tarjetas de personal</p>
+            <div class="col-lg-6 col-sm-12 bg-light shadow p-3 text-center rounded-1"
                 style="min-height:calc(100vh - 150px);">
-                <p class="fs-3 badge bg-light text-wrap text-danger">Formulario para agregar tarjetas de personal</p>
                 <form class="row" id="formData">
                     <div class="col-md-6 col-sm-12 h-100">
                         <div class="mb-3">

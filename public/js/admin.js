@@ -304,7 +304,7 @@ function renderTarjetas(datosTarjetas) {
                         <div class="collapse text-light p-0 " id="collapseExample${i}" data-bs-target="id" style="background: ${valor.sombra};">
                             <div class="row card-body" id="id">
                                 <div class="col-6">
-                                    <ul class="list-group list-group-flush  bg-light" style="color:${reducirTono(valor.sombra, -100)};">
+                                    <ul class="list-group list-group-flush  bg-light" style="color:${reducirTono(valor.sombra, -70)};">
                                         <p class="my-0 mx-2">Actividades:</p>
                                         <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.act1}</li>
                                         <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.act2}</li>
@@ -314,7 +314,7 @@ function renderTarjetas(datosTarjetas) {
                                     </ul>
                                 </div>
                                 <div class="col-6 position-relative">
-                                    <ul class="list-group list-group-flush  bg-light" style="color:${reducirTono(valor.sombra, -100)};">
+                                    <ul class="list-group list-group-flush  bg-light" style="color:${reducirTono(valor.sombra, -70)};">
                                         <p class="my-0 mx-2">Titulo de navegador:</p>
                                         <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.navtittle}</li>
                                     </ul>
@@ -378,13 +378,17 @@ function reducirTono(colorHex, factor) {
     const g = parseInt(colorHex.slice(3, 5), 16);
     const b = parseInt(colorHex.slice(5, 7), 16);
 
-    const nuevoR = Math.max(0, r - factor);
-    const nuevoG = Math.max(0, g - factor);
-    const nuevoB = Math.max(0, b - factor);
+    // Calcular el nuevo valor para R, G y B restando el factor
+    const nuevoR = Math.min(255, r + factor);
+    const nuevoG = Math.min(255, g + factor);
+    const nuevoB = Math.min(255, b + factor);
 
+    // Convertir los nuevos valores a formato hexadecimal
     const nuevoColorHex = `#${nuevoR.toString(16).padStart(2, '0')}${nuevoG.toString(16).padStart(2, '0')}${nuevoB.toString(16).padStart(2, '0')}`;
+
     return nuevoColorHex;
 }
+
 function calcularLuminancia(color) {
     const r = parseInt(color.slice(1, 3), 16) / 255;
     const g = parseInt(color.slice(3, 5), 16) / 255;
