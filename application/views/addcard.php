@@ -46,16 +46,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </li>
         </ul>
     </header>
-    <div class="conteiner m-md-4 p-md-4 m-sm-0 p-sm-4 w-auto h-auto bg-light bg-opacity-75 rounded shadow  text-light">
+    <div class="conteiner m-md-4 p-md-4 m-sm-0 p-sm-4 w-auto h-auto bg-light bg-opacity-75 rounded shadow  text-danger">
         <div class="row w-100 h-100 m-0">
-        <p class="fs-3 badge bg-danger text-wrap text-light m-0 rounded rounded-0">Formulario para agregar tarjetas de personal</p>
-            <div class="col-lg-6 col-sm-12 bg-light shadow p-3 text-center rounded-1"
+            <div class="col-lg-6 col-sm-12 bg-light shadow p-0 text-center rounded-bottom"
                 style="min-height:calc(100vh - 150px);">
+                
+        <p class="fs-3 badge bg-danger text-wrap text-light m-0 rounded rounded-0 w-100 mb-4">Formulario para agregar tarjetas de personal</p>
                 <form class="row" id="formData">
                     <div class="col-md-6 col-sm-12 h-100">
-                        <div class="mb-3">
+                        <div class="mb-3  px-3">
                             <label for="formFile" class="form-label fw-medium mb-0">Imagen de personal:<img
-                                    class="img-fluid w-100 h-100 rounded-top" for="formFile"
+                                    class="img-fluid w-100 h-100 rounded-top border border-1" for="formFile"
                                     src="<?= base_url() ?>public/img/imagenDefault.jpg" alt=""
                                     id="imagePreview"></label>
 
@@ -76,8 +77,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <p id="svgId" class="m-0 d-inline-block text-truncate " style="max-width: 100%;"></p>
                             </label>
                         </div>
-                        <div class="mb-3 text-dark">
-                            <label for="" class="form-label text-light fw-medium">Actividades del puesto de
+                        <div class="mb-3  px-3">
+                            <label for="" class="form-label fw-medium">Actividades del puesto de
                                 trabajo:</label>
                             <!-- Campos de actividades laborales -->
                             <!-- Act1 -->
@@ -119,33 +120,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                     <div class="col-md-6 col-sm-12 h-100">
                         <!-- Título principal -->
-                        <div class="mb-3">
+                        <div class="mb-4 mx-3">
                             <label for="formTittle" class="form-label fw-medium">Título principal:</label>
                             <input type="text"
-                                class="form-control focus-ring focus-ring-light border border-0 rounded-1"
+                                class="form-control focus-ring focus-ring-light  rounded-1"
                                 id="formTittle" name="formTittle" placeholder="Nombre del puesto">
                         </div>
                         <!-- Título en navegador -->
-                        <div class="mb-4">
+                        <div class="mb-4 mx-3">
                             <label for="formTittle-nav" class="form-label fw-medium">Título en navegador:</label>
                             <input type="text"
-                                class="form-control focus-ring focus-ring-light border border-0 rounded-1"
+                                class="form-control focus-ring focus-ring-light  rounded-1"
                                 id="formTittle-nav" name="formTittle-nav" placeholder="Un nombre de puesto mas corto">
                         </div>
                         <!-- Descripción del personal -->
-                        <div class="mb-4">
+                        <div class="mb-4 mx-3">
                             <label for="formArea" class="form-label fw-medium">Descripción del personal:</label>
                             <textarea
-                                class="form-control rounded-1 focus-ring focus-ring-light border border-0 rounded-1"
+                                class="form-control rounded-1 focus-ring focus-ring-light  rounded-1"
                                 id="formArea" name="formArea" rows="10"  placeholder="Una breve descripción del puesto. . ."></textarea>
                         </div>
                         <!-- Color de fondo -->
-                        <div class="mb-4 row px-3">
+                        <div class="mb-4 row mx-3">
                             <label for="formColor" class="form-label fw-medium">Color de fondo:</label>
                             <input type="color"
-                                class="form-control form-control-color col-5 border border-0 rounded-0 rounded-start w-25 focus-ring focus-ring-light"
+                                class="form-control form-control-color col-5  rounded-0 rounded-start w-25 focus-ring focus-ring-light"
                                 id="formColor" name="formColor" value="#dc3545" title="Choose your color">
-                            <div class="bg-light col-6 w-75 rounded-end">
+                            <div class="bg-light col-6 w-75 rounded-end border border-1">
                                 <div class="row h-100">
                                     <!-- Principal Color -->
                                     <div class="col-6 text-dark p-1 fw-medium" id="principal-color">Título</div>
