@@ -50,31 +50,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div class="row w-100 h-100 m-0">
             <div class="col-lg-6 col-sm-12 bg-light shadow p-0 text-center rounded-bottom"
                 style="min-height:calc(100vh - 150px);">
-                
-        <p class="fs-3 badge bg-danger text-wrap text-light m-0 rounded rounded-0 w-100 mb-4">Formulario para agregar tarjetas de personal</p>
+
+                <p class="fs-3 badge bg-danger text-wrap text-light m-0 rounded rounded-0 w-100 mb-4">Formulario para
+                    agregar tarjetas de personal</p>
                 <form class="row" id="formData">
                     <div class="col-md-6 col-sm-12 h-100">
                         <div class="mb-3  px-3">
                             <label for="formFile" class="form-label fw-medium mb-0">Imagen de personal:<img
-                                    class="img-fluid w-100 h-100 rounded-top border border-1" for="formFile"
-                                    src="<?= base_url() ?>public/img/imagenDefault.jpg" alt=""
+                                    class="img-fluid w-100 h-100 rounded-top border border-1 border-danger"
+                                    for="formFile" src="<?= base_url() ?>public/img/imagenDefault.jpg" alt=""
                                     id="imagePreview"></label>
 
                             <input class="d-none form-control focus-ring focus-ring-light " type="file" id="formFile"
                                 name="formFile" onchange="previewImage(this)">
                             <label
-                                class="w-100 icon-link icon-link-hover input-group-text rounded-0 rounded-bottom border"
+                                class="border-danger w-100 icon-link icon-link-hover input-group-text rounded-0 rounded-bottom border"
                                 for="formFile" style="--bs-icon-link-transform: translate3d(0, -2.5px, 0);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#dc3545"
                                     class="bi bi-upload mx-2" viewBox="0 0 16 16" id="fileIconSvg">
-                                    <path class="inactive d-block"
+
+                                    <path class="inactive d-block " fill="#dc3545"
                                         d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
-                                    <path class="active d-none"
+                                    <path class="active d-none" fill="#dc3545"
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                                    <path class="invalid d-none"
+                                    <path class="invalid d-none" fill="#dc3545"
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
-                                <p id="svgId" class="m-0 d-inline-block text-truncate " style="max-width: 100%;"></p>
+                                <p id="svgId" class="m-0 d-inline-block text-truncate text-danger" style="max-width: 100%;"></p>
                             </label>
                         </div>
                         <div class="mb-3  px-3">
@@ -83,37 +85,37 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <!-- Campos de actividades laborales -->
                             <!-- Act1 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text" id="formAct1l">Act1:</span>
+                                <span class="input-group-text border-danger" id="formAct1l">Act1:</span>
                                 <input type="text"
-                                    class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
+                                    class="form-control focus-ring focus-ring-light rounded-0 border border-1 border-danger rounded-end"
                                     id="formAct1" name="formAct1" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act2 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text" id="formAct2l">Act2:</span>
+                                <span class="input-group-text border-danger" id="formAct2l">Act2:</span>
                                 <input type="text"
-                                    class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
+                                    class="form-control focus-ring focus-ring-light rounded-0 border border-1 border-danger rounded-end"
                                     id="formAct2" name="formAct2" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act3 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text" id="formAct3l">Act3:</span>
+                                <span class="input-group-text  border-danger" id="formAct3l">Act3:</span>
                                 <input type="text"
-                                    class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
+                                    class="form-control focus-ring focus-ring-light rounded-0 border border-1 border-danger rounded-end"
                                     id="formAct3" name="formAct3" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act4 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text" id="formAct4l">Act4:</span>
+                                <span class="input-group-text border-danger" id="formAct4l">Act4:</span>
                                 <input type="text"
-                                    class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
+                                    class="form-control focus-ring focus-ring-light rounded-0 border border-1 border-danger rounded-end"
                                     id="formAct4" name="formAct4" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act5 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text" id="formAct5l">Act5:</span>
+                                <span class="input-group-text border-danger" id="formAct5l">Act5:</span>
                                 <input type="text"
-                                    class="form-control focus-ring focus-ring-light rounded-0 border border-1 rounded-end"
+                                    class="form-control focus-ring focus-ring-light rounded-0 border border-1 border-danger rounded-end"
                                     id="formAct5" name="formAct5" placeholder="Última actividad del personal">
                             </div>
                         </div>
@@ -122,31 +124,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <!-- Título principal -->
                         <div class="mb-4 mx-3">
                             <label for="formTittle" class="form-label fw-medium">Título principal:</label>
-                            <input type="text"
-                                class="form-control focus-ring focus-ring-light  rounded-1"
+                            <input type="text" class="form-control focus-ring focus-ring-light  rounded-1 border-danger"
                                 id="formTittle" name="formTittle" placeholder="Nombre del puesto">
                         </div>
                         <!-- Título en navegador -->
                         <div class="mb-4 mx-3">
                             <label for="formTittle-nav" class="form-label fw-medium">Título en navegador:</label>
-                            <input type="text"
-                                class="form-control focus-ring focus-ring-light  rounded-1"
+                            <input type="text" class="form-control focus-ring focus-ring-light  rounded-1 border-danger"
                                 id="formTittle-nav" name="formTittle-nav" placeholder="Un nombre de puesto mas corto">
                         </div>
                         <!-- Descripción del personal -->
                         <div class="mb-4 mx-3">
                             <label for="formArea" class="form-label fw-medium">Descripción del personal:</label>
                             <textarea
-                                class="form-control rounded-1 focus-ring focus-ring-light  rounded-1"
-                                id="formArea" name="formArea" rows="10"  placeholder="Una breve descripción del puesto. . ."></textarea>
+                                class="form-control rounded-1 focus-ring focus-ring-light  rounded-1 border-danger"
+                                id="formArea" name="formArea" rows="10"
+                                placeholder="Una breve descripción del puesto. . ."></textarea>
                         </div>
                         <!-- Color de fondo -->
                         <div class="mb-4 row mx-3">
                             <label for="formColor" class="form-label fw-medium">Color de fondo:</label>
                             <input type="color"
-                                class="form-control form-control-color col-5  rounded-0 rounded-start w-25 focus-ring focus-ring-light"
+                                class="form-control form-control-color col-5 border-danger rounded-0 rounded-start w-25 focus-ring focus-ring-light"
                                 id="formColor" name="formColor" value="#dc3545" title="Choose your color">
-                            <div class="bg-light col-6 w-75 rounded-end border border-1">
+                            <div class="bg-light col-6 w-75 rounded-end border border-1 border-danger">
                                 <div class="row h-100">
                                     <!-- Principal Color -->
                                     <div class="col-6 text-dark p-1 fw-medium" id="principal-color">Título</div>
@@ -158,18 +159,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <!-- Botones -->
                         <div class="row text-center px-5" id="switchBtn">
                             <div class="d-block p-0 w-100 inactive">
-                                <button type="button" class="btn btn-outline-light col-5 m-1 fw-medium"
+                                <button type="button" class="btn btn-outline-danger col-5 m-1 fw-medium"
                                     onclick="cleanInputs()">Borrar</button>
-                                <button type="button" class="btn btn-outline-light col-5 m-1 fw-medium"
+                                <button type="button" class="btn btn-outline-danger col-5 m-1 fw-medium"
                                     onclick="saveData()">Guardar</button>
                             </div>
 
                             <div class="d-none active">
-                                <button type="button" class="btn btn-outline-light col-5 m-1 fw-medium"
+                                <button type="button" class="btn btn-outline-danger col-5 m-1 fw-medium"
                                     onclick="deleteCards()">Eliminar</button>
-                                <button type="button" class="btn btn-outline-light col-5 m-1 fw-medium"
+                                <button type="button" class="btn btn-outline-danger col-5 m-1 fw-medium"
                                     onclick="upload()">Actualizar</button>
-                                <button type="button" class="btn btn-outline-light col-12 m-1 fw-medium"
+                                <button type="button" class="btn btn-outline-danger col-12 m-1 fw-medium"
                                     onclick="newJob()">Nuevo puesto</button>
                             </div>
 

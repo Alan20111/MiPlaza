@@ -38,11 +38,14 @@
 .aside2 {
     height: 100% !important;
 }
+.tittle, .card-float{
+    margin: 0 auto !important;
+}
 
 @media (max-width: 1200px) {/*BreakPoint lg*/
     #list {
         width: 100% !important;
-        height: calc(100vh - 98px - 50px) !important;
+        height: fit-content !important;
     }
 
     #list-example .list-group-item p {
@@ -68,12 +71,17 @@
     .aside2 {
         height: 50% !important;
     }
-    .tittle{
+    .tittle, .card-float{
         width: 75% !important;
     }
 }
 @media (max-width: 768px) {/*BreakPoint md*/
-    .imglist{
+    .tittle, .card-float{
         width: 75% !important;
+    }
+}
+@media (max-width: 576px) {/*BreakPoint md*/
+    .tittle, .card-float{
+        width: 100% !important;
     }
 }

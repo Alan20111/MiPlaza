@@ -1,5 +1,7 @@
 const base_url = "http://localhost/Miplaza/";
 var tarjetastotal;
+var widthscreen;
+var anchoPantalla = window.innerWidth;
 function loadData() {
     $.ajax({
         url: base_url + "index.php/Admin/readData",
@@ -14,11 +16,39 @@ function loadData() {
         },
     });
 }
-
+widther();
+function widther() {
+    anchoPantalla = window.innerWidth;
+    if (anchoPantalla >= 1200) {
+        widthscreen = "xl";
+    } else if (anchoPantalla >= 992) {
+        widthscreen = "lg";
+    } else if (anchoPantalla >= 768) {
+        widthscreen = "md";
+    } else {
+        widthscreen = "sm";
+    }
+}
+function width() {
+    anchoPantalla = window.innerWidth;
+    if (anchoPantalla >= 1200) {
+        widthscreen = "xl";
+    } else if (anchoPantalla >= 992) {
+        widthscreen = "lg";
+    } else if (anchoPantalla >= 768) {
+        widthscreen = "md";
+    } else {
+        widthscreen = "sm";
+    }
+    console.log(widthscreen)
+    renderTarjetas(tarjetastotal.tarjetas);
+}
+window.addEventListener("resize", width);
 function renderTarjetas(datosTarjetas) {
     var contenedor = document.getElementById('list-example');
+
+    contenedor.innerHTML = '';
     datosTarjetas.forEach(function (valor, i, array) {
-        console.log(tarjetastotal);
         var enlace = document.createElement('a');
         enlace.className = "list-group-item list-group-item-action w-100 h-100 border border-0 rounder rounder-0";
         enlace.href = "#list-item-" + valor.id;
@@ -26,62 +56,72 @@ function renderTarjetas(datosTarjetas) {
         contenedor.appendChild(enlace);
     });
 
-    var contenedor = document.getElementById('list');
+    var contenedorr = document.getElementById('list');
+
+    // Borrar el contenido existente del contenedor
+    contenedorr.innerHTML = '';
+
     datosTarjetas.forEach(function (valor, i, array) {
         var tarjetaDiv = document.createElement('div');
         tarjetaDiv.className = 'conteiner w-100';
         tarjetaDiv.id = 'list-item-' + valor.id;
-        tarjetaDiv.style.background = valor.sombra;
+        tarjetaDiv.style.background = "white";
+        tarjetaDiv.style.margin = '0 0 100px 0';
+
         var tarjetaContenido = `
-                        <div class="row h-100">
-                            ${alternarHtml(datosTarjetas.length, i)}
-                        </div>
+            <div class="row h-100">
+                ${alternarHtml(datosTarjetas.length, i)}
+            </div>
         `;
         tarjetaDiv.innerHTML = tarjetaContenido;
-        contenedor.appendChild(tarjetaDiv);
-        
+        contenedorr.appendChild(tarjetaDiv);
     });
 }
+
 
 var it = 0;
 var aco = 0;
 function alternarHtml(length, i) {
-    console.log(it);
     var stringFinal = "";
     var atributo;
-    if (it == 0) {
-        atributo = "position-absolute top-100 start-100 translate-middle";
+    if (widthscreen == "xl" || widthscreen == "lg") {
+        if (it == 0) {
+            atributo = "position-absolute top-100 start-100 translate-middle";
 
+        } else {
+            atributo = "position-absolute top-100 start-0 translate-middle";
+        }
     } else {
-        atributo = "position-absolute top-100 start-0 translate-middle";
+        atributo = "position-absolute top-100 start-50 translate-middle";
     }
+
     const aside1 = `
     <div class="aside1 col-lg-6 col-md-12 position-relative h-100">
         <div class="position-absolute top-50 start-50 translate-middle w-100 h-100">
             <div class="tittle position-relative h-75 ">
                 <img src="`+ base_url + tarjetastotal.tarjetas[i].img + `" alt="" class="object-fit-cover rounded rounded w-100 h-100 position-absolute  start-50 translate-middle-x">
-                <p class="fs-3 badge text-wrap rounder-1 px-2 `+ atributo + ` text-`+determinarColor(tarjetastotal.tarjetas[i].color)+`" style="background: ` + tarjetastotal.tarjetas[i].color + `;">
+                <p class="fs-3 badge text-wrap rounder-1 px-2 `+ atributo + ` text-` + determinarColor(tarjetastotal.tarjetas[i].color) + `" style="background: ` + tarjetastotal.tarjetas[i].color + `;">
                     `+ tarjetastotal.tarjetas[i].tittle + `
                 </p>
             </div>
             <div class="descripcion h-25 mt-4">
-                <p class="text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`">`+ tarjetastotal.tarjetas[i].descripcion + `</p>
+                <p class="text-dark">`+ tarjetastotal.tarjetas[i].descripcion + `</p>
             </div>
         </div>
     </div>
     `;
     const aside2 = `
-    <div class="aside2 col-lg-6 col-md-12 card-container" id="card-container-`+tarjetastotal.tarjetas[i].id+`">
-        <div class="card-float sticky-top m-5 pt-5">
-            <p class="h4 z-3 text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`">
+    <div class="aside2 col-lg-6 col-md-12 card-container" id="card-container-`+ tarjetastotal.tarjetas[i].id + `">
+        <div class="card-float sticky-top w-75">
+            <p class="h4 h-25 text-dark">
                 Actividades
             </p>
-            <ul class="z-0 list-group list-group-flush rounded rounded mx-lg-5" style="box-shadow: 0px 0px 100px ` + reducirTono(tarjetastotal.tarjetas[i].color,50) + `;">
-                <li class="list-group-item rounded-top border-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+` text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">`+ tarjetastotal.tarjetas[i].act1 + `</li>
-                <li class="list-group-item border-top-1 border-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+` text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">`+ tarjetastotal.tarjetas[i].act2 + `</li>
-                <li class="list-group-item border-top-1 border-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+` text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">`+ tarjetastotal.tarjetas[i].act3 + `</li>
-                <li class="list-group-item border-top-1 border-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+` text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">`+ tarjetastotal.tarjetas[i].act4 + `</li>
-                <li class="list-group-item border-top-1 rounded-bottom  border-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+` text-`+determinarColor(tarjetastotal.tarjetas[i].sombra)+`" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">`+ tarjetastotal.tarjetas[i].act5 + `</li>
+            <ul class="h-75 list-group list-group-flush rounded rounded mx-lg-5" style="box-shadow: 0px 0px 100px #0000003e;">
+                <li class="list-group-item rounded-top border-light text-`+ determinarColor(tarjetastotal.tarjetas[i].sombra) + `" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">` + tarjetastotal.tarjetas[i].act1 + `</li>
+                <li class="list-group-item border-top-1 border-light text-`+ determinarColor(tarjetastotal.tarjetas[i].sombra) + `" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">` + tarjetastotal.tarjetas[i].act2 + `</li>
+                <li class="list-group-item border-top-1 border-light text-`+ determinarColor(tarjetastotal.tarjetas[i].sombra) + `" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">` + tarjetastotal.tarjetas[i].act3 + `</li>
+                <li class="list-group-item border-top-1 border-light text-`+ determinarColor(tarjetastotal.tarjetas[i].sombra) + `" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">` + tarjetastotal.tarjetas[i].act4 + `</li>
+                <li class="list-group-item border-top-1 rounded-bottom  border-`+ determinarColor(tarjetastotal.tarjetas[i].sombra) + ` text-` + determinarColor(tarjetastotal.tarjetas[i].sombra) + `" style="background: ` + tarjetastotal.tarjetas[i].sombra + `;">` + tarjetastotal.tarjetas[i].act5 + `</li>
             </ul>
         </div>
     </div>`;
@@ -119,15 +159,18 @@ function alternarHtml(length, i) {
     if (aco == length) {
         stringFinal = footer;
     }
-    it++;
-    if (it == 1) {
+    if (widthscreen == "md" || widthscreen == "sm") {
         stringFinal = aside1 + aside2 + stringFinal;
-        console.log("caso 1 " + i);
     } else {
-        it = 0;
-        stringFinal = aside2 + aside1 + stringFinal;
-        console.log("caso 1 " + i);
+        it++;
+        if (it == 1) {
+            stringFinal = aside1 + aside2 + stringFinal;
+        } else {
+            it = 0;
+            stringFinal = aside2 + aside1 + stringFinal;
+        }
     }
+
     return stringFinal;
 }
 
@@ -152,7 +195,7 @@ function calcularLuminancia(color) {
 }
 function determinarColor(colorFondo) {
     const luminancia = calcularLuminancia(colorFondo);
-    if (luminancia > 0.65) {
+    if (luminancia > 0.8) {
         return "black";
     } else {
         return "white";

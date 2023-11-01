@@ -298,7 +298,7 @@ function renderTarjetas(datosTarjetas) {
                 </div>
                 <div class="d-flex flex-column col-12 p-0 ms-auto me-0 w-75">
                     <div class="container w-100 p-0 nav-item m-0">
-                        <button class="btn w-100 px-0 me-2 rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${i}" aria-expanded="false" aria-controls="collapseExample${i}" style="border: solid 1px ${valor.sombra};" onmouseover="this.style.backgroundColor = '${valor.sombra}';"onmouseout="this.style.backgroundColor = 'transparent';" >
+                        <button class="btn w-100 px-0 me-2 rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${i}" aria-expanded="false" aria-controls="collapseExample${i}" style="border: solid 1px ${valor.sombra};" onmouseover="this.style.backgroundColor = '${valor.sombra}'; this.style.color = 'black';" onmouseout="this.style.backgroundColor = 'transparent';" >
                             Mas. . .
                         </button>
                         <div class="collapse text-light p-0 " id="collapseExample${i}" data-bs-target="id" style="background: ${valor.sombra};">
@@ -318,7 +318,7 @@ function renderTarjetas(datosTarjetas) {
                                         <p class="my-0 mx-2">Titulo de navegador:</p>
                                         <li class="list-group-item " style="background: ${valor.sombra}; color:${determinarColor(valor.sombra)};">${valor.navtittle}</li>
                                     </ul>
-                                    <button type="button" class="btn btn-outline-light m-auto fw-medium position-absolute bottom-0 start-50 translate-middle w-75" onclick="sendEditCard(${valor.id});">Editar</button>
+                                    <button type="button" class="btn btn-outline-${determinarColorbtn(valor.sombra)} m-auto fw-medium position-absolute bottom-0 start-50 translate-middle w-75" onclick="sendEditCard(${valor.id});">Editar</button>
 
                                 </div>
                             </div>
@@ -422,6 +422,14 @@ function determinarColor(colorFondo) {
         return "#000000cb";
     } else {
         return "white";
+    }
+}
+function determinarColorbtn(colorFondo) {
+    const luminancia = calcularLuminancia(colorFondo);
+    if (luminancia > 0.8) {
+        return "dark";
+    } else {
+        return "light";
     }
 }
 
