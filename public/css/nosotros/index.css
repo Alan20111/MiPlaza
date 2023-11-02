@@ -6,7 +6,7 @@
     border-radius: 0 !important;
     width: 70px !important;
     height: 100% !important;
-    min-height: 1000px !important;
+    min-height: 175px !important;
 }
 
 #list-example .active {
@@ -39,7 +39,7 @@
 
 .list-jods, #list-example  {
     overflow-y: auto !important;
-    overflow-x: auto !important;
+    overflow-x: hidden !important;
 }
 
 .aside1,
@@ -61,18 +61,20 @@
     }
 
     #list-example {
-        min-width: 700px !important;
+        min-width: 1000px !important;
         width: 100% !important;
         flex-direction: row !important;
     }
-
-    .list-group-item {
+    #list-example .list-group-item{
+        border-radius: 0 !important;
+        width: 100% !important;
         height: 50px !important;
+        min-width: 125px !important;
     }
 
     .list-jods{
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
         height: 50px !important;
     }
     .aside1,

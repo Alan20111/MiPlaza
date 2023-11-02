@@ -50,7 +50,7 @@ function renderTarjetas(datosTarjetas) {
     contenedor.innerHTML = '';
     datosTarjetas.forEach(function (valor, i, array) {
         var enlace = document.createElement('a');
-        enlace.className = "list-group-item list-group-item-action w-100 h-100 border border-0 rounder-0";
+        enlace.className = "list-group-item list-group-item-action w-100 h-100 border border-0 rounder-0 shadow";
         enlace.href = "#list-item-" + valor.id;
         enlace.innerHTML = "<p class='m-0'>" + valor.navtittle + "</p>";
         contenedor.appendChild(enlace);
@@ -63,7 +63,7 @@ function renderTarjetas(datosTarjetas) {
 
     datosTarjetas.forEach(function (valor, i, array) {
         var tarjetaDiv = document.createElement('div');
-        tarjetaDiv.className = 'conteiner w-100';
+        tarjetaDiv.className = 'conteiner w-100 shadow';
         tarjetaDiv.id = 'list-item-' + valor.id;
         tarjetaDiv.style.background = "white";
         tarjetaDiv.style.margin = '0 0 100px 0';
@@ -112,7 +112,7 @@ function alternarHtml(length, i) {
     `;
     const aside2 = `
     <div class="aside2 col-lg-6 col-sm-12 card-container" id="card-container-`+ tarjetastotal.tarjetas[i].id + `">
-        <div class="card-float sticky-top w-75 z-2 pt-5">
+        <div class="card-float sticky-top w-75 z-2 py-5">
             <p class="h4 h-25 text-dark">
                 Actividades
             </p>
