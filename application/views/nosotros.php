@@ -57,7 +57,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             </div>
             <div class="col-xl-10 col-lg-12 p-0">
                 <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
-                    class="scrollspy-example overflow-y-auto" tabindex="0" id="list">
+                    class="scrollspy-example overflow-y-auto"  id="list">
                 </div>
             </div>
         </div>

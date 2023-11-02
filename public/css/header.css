@@ -9,7 +9,7 @@ header {
     width: 100%;
     background: white;
     box-shadow: #36363691 0px 0px 5px;
-    z-index: 3;
+    z-index: 999 !important;
 }
 body{
     background: #00000009;

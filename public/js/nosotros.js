@@ -50,7 +50,7 @@ function renderTarjetas(datosTarjetas) {
     contenedor.innerHTML = '';
     datosTarjetas.forEach(function (valor, i, array) {
         var enlace = document.createElement('a');
-        enlace.className = "list-group-item list-group-item-action w-100 h-100 border border-0 rounder rounder-0";
+        enlace.className = "list-group-item list-group-item-action w-100 h-100 border border-0 rounder-0";
         enlace.href = "#list-item-" + valor.id;
         enlace.innerHTML = "<p class='m-0'>" + valor.navtittle + "</p>";
         contenedor.appendChild(enlace);
@@ -96,9 +96,9 @@ function alternarHtml(length, i) {
     }
 
     const aside1 = `
-    <div class="aside1 col-lg-6 col-md-12 position-relative h-100">
-        <div class="position-absolute top-50 start-50 translate-middle w-100 h-100">
-            <div class="tittle position-relative h-75 ">
+    <div class="aside1 col-lg-6 col-sm-12 position-relative h-100">
+        <div class="position-absolute top-50 start-50 translate-middle w-100 h-100 p-5">
+            <div class="tittle position-relative h-75">
                 <img src="`+ base_url + tarjetastotal.tarjetas[i].img + `" alt="" class="object-fit-cover rounded rounded w-100 h-100 position-absolute  start-50 translate-middle-x">
                 <p class="fs-3 badge text-wrap rounder-1 px-2 `+ atributo + ` text-` + determinarColor(tarjetastotal.tarjetas[i].color) + `" style="background: ` + tarjetastotal.tarjetas[i].color + `;">
                     `+ tarjetastotal.tarjetas[i].tittle + `
@@ -111,8 +111,8 @@ function alternarHtml(length, i) {
     </div>
     `;
     const aside2 = `
-    <div class="aside2 col-lg-6 col-md-12 card-container" id="card-container-`+ tarjetastotal.tarjetas[i].id + `">
-        <div class="card-float sticky-top w-75">
+    <div class="aside2 col-lg-6 col-sm-12 card-container" id="card-container-`+ tarjetastotal.tarjetas[i].id + `">
+        <div class="card-float sticky-top w-75 z-2 pt-5">
             <p class="h4 h-25 text-dark">
                 Actividades
             </p>

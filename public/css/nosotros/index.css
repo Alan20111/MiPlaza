@@ -2,6 +2,13 @@
     transform: rotate(-90deg) !important;
 }
 
+#list-example .list-group-item{
+    border-radius: 0 !important;
+    width: 70px !important;
+    height: 100% !important;
+    min-height: 1000px !important;
+}
+
 #list-example .active {
     background: #74b050 !important;
     margin: 0 !important;
@@ -16,6 +23,7 @@
     width: 70px !important;
     height: 100% !important;
     min-height: 700px !important;
+    z-index: 9 !important;
 }
 
 .list-jods,
@@ -29,9 +37,9 @@
     display: none !important;
 }
 
-.list-jods {
+.list-jods, #list-example  {
     overflow-y: auto !important;
-    overflow-x: hidden !important;
+    overflow-x: auto !important;
 }
 
 .aside1,
@@ -62,9 +70,9 @@
         height: 50px !important;
     }
 
-    .list-jods {
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
+    .list-jods{
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
         height: 50px !important;
     }
     .aside1,
