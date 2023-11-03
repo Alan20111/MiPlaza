@@ -1,18 +1,19 @@
 #list-example .list-group-item p {
     transform: rotate(-90deg) !important;
+    width: 100% !important;
+    height: auto !important;
 }
 
-#list-example .list-group-item{
+#list-example .list-group-item {
     border-radius: 0 !important;
     width: 70px !important;
     height: 100% !important;
-    min-height: 175px !important;
+    min-height: 200px !important;
+    padding-right: 10px;
 }
 
 #list-example .active {
     background: #74b050 !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
 }
 
 #list-example .active:focus {
@@ -26,6 +27,11 @@
     z-index: 9 !important;
 }
 
+.descripcion {
+    text-align: left !important;
+    width: 100% !important;
+}
+
 .list-jods,
 #list,
 .conteiner {
@@ -37,7 +43,8 @@
     display: none !important;
 }
 
-.list-jods, #list-example  {
+.list-jods,
+#list-example {
     overflow-y: auto !important;
     overflow-x: hidden !important;
 }
@@ -46,52 +53,120 @@
 .aside2 {
     height: 100% !important;
 }
-.tittle, .card-float{
+
+.tittle,
+.card-float {
     margin: 0 auto !important;
 }
 
-@media (max-width: 1200px) {/*BreakPoint lg*/
-    #list {
-        width: 100% !important;
-        height: fit-content !important;
-    }
+.card-float {
+    position: sticky !important;
+    top: 20px !important;
+}
 
+@media (max-width: 1199.9px) {
+
+    /*BreakPoint xl*/
     #list-example .list-group-item p {
         transform: rotate(0) !important;
+        padding-left: 5%;
     }
 
     #list-example {
-        min-width: 1000px !important;
+        min-width: 100% !important;
         width: 100% !important;
         flex-direction: row !important;
     }
-    #list-example .list-group-item{
+
+    #list-example .list-group-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
         border-radius: 0 !important;
         width: 100% !important;
         height: 50px !important;
         min-width: 125px !important;
     }
 
-    .list-jods{
+    .descripcion {
+        text-align: center !important;
+        width: 75% !important;
+        height: fit-content !important;
+    }
+
+    .list-jods {
         overflow-x: auto !important;
         overflow-y: hidden !important;
         height: 50px !important;
     }
-    .aside1,
-    .aside2 {
+
+    .aside1 {
         height: 50% !important;
     }
-    .tittle, .card-float{
-        width: 75% !important;
+
+    .aside2 {
+        height: fit-content;
+    }
+
+    .card-float {
+        position: sticky !important;
+        top: 20px !important;
     }
 }
-@media (max-width: 768px) {/*BreakPoint md*/
-    .tittle, .card-float{
-        width: 75% !important;
+
+@media (max-width: 991.9px) {
+    .card-float {
+        position: static !important;
+    }
+    .aside2{
+        height: fit-content !important;
+    }
+    .tittle{
+        width: 50%;
     }
 }
-@media (max-width: 576px) {/*BreakPoint md*/
-    .tittle, .card-float{
+@media (max-width: 767.9px) {
+
+    /*BreakPoint md*/
+    .tittle,
+    .card-float {
+        width: 75% !important;
+    }
+
+    .aside1,
+    .aside2 {
+        min-height: 50vh !important;
+    }
+
+    .card-float {
+        position: static !important;
+        top: 20px !important;
+    }
+}
+
+@media (max-width: 575.9px) {
+
+    /*BreakPoint md*/
+    .tittle,
+    .card-float {
         width: 100% !important;
     }
+
+    .descripcion {
+        width: 100% !important;
+    }
+    .conteiner{
+        height: 110vh !important;
+    }
+}
+@media (max-height: 690px) {
+    .conteiner{
+        height: 160vh !important;
+    }
+}
+
+@media (max-height: 610px) {
+    .aside2,.tittle img{
+        display: none !important;
+    }
+    
 }

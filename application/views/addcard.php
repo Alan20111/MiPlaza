@@ -41,9 +41,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <li class="nav-item">
                 <a href="" class="nav-link py-2 text-danger">Tarjetas</a>
             </li>
-            <li class="nav-item">
-                <a href="" class="nav-link py-2 text-danger">Organigrama</a>
-            </li>
         </ul>
     </header>
     <div class="conteiner m-md-4 p-md-4 m-sm-0 p-sm-4 w-auto h-auto bg-light bg-opacity-75 rounded shadow  text-danger">
@@ -79,41 +76,41 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <p id="svgId" class="m-0 d-inline-block text-truncate text-danger" style="max-width: 100%;"></p>
                             </label>
                         </div>
-                        <div class="mb-3  px-3">
+                        <div class="mb-3  px-3 ">
                             <label for="" class="form-label fw-medium">Actividades del puesto de
                                 trabajo:</label>
                             <!-- Campos de actividades laborales -->
                             <!-- Act1 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text border-danger" id="formAct1l">Act1:</span>
+                                <span class="input-group-text border-danger text-danger" id="formAct1l">Act1:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 border-danger rounded-end"
                                     id="formAct1" name="formAct1" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act2 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text border-danger" id="formAct2l">Act2:</span>
+                                <span class="input-group-text border-danger text-danger" id="formAct2l">Act2:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 border-danger rounded-end"
                                     id="formAct2" name="formAct2" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act3 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text  border-danger" id="formAct3l">Act3:</span>
+                                <span class="input-group-text  border-danger text-danger" id="formAct3l">Act3:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 border-danger rounded-end"
                                     id="formAct3" name="formAct3" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act4 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text border-danger" id="formAct4l">Act4:</span>
+                                <span class="input-group-text border-danger text-danger" id="formAct4l">Act4:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 border-danger rounded-end"
                                     id="formAct4" name="formAct4" placeholder="Alguna actividad del personal">
                             </div>
                             <!-- Act5 -->
                             <div class="input-group mb-2">
-                                <span class="input-group-text border-danger" id="formAct5l">Act5:</span>
+                                <span class="input-group-text border-danger text-danger" id="formAct5l">Act5:</span>
                                 <input type="text"
                                     class="form-control focus-ring focus-ring-light rounded-0 border border-1 border-danger rounded-end"
                                     id="formAct5" name="formAct5" placeholder="Última actividad del personal">

@@ -38,6 +38,7 @@ function checkLogin(jsonLogin) {
         data: jsonLogin,
         success: function (datos, estado, jhrx) {
             if (datos.Status == "False") {
+                localStorage.clear();
                 window.location.href = base_url + "index.php/Admin/";
             } else {
             }
@@ -284,7 +285,6 @@ function loadData() {
 function renderTarjetas(datosTarjetas) {
     var contenedor = document.getElementById('contenedor');
     datosTarjetas.forEach(function (valor, i, array) {
-        console.log(valor.id);
         var tarjetaDiv = document.createElement('div');
         tarjetaDiv.className = 'py-5 py-lg-4 px-sm-5 px-lg-4';
         var tarjetaContenido = `
