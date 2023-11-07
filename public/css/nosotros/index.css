@@ -93,7 +93,7 @@
         height: fit-content !important;
     }
 
-    .list-jods {
+    .list-jods,#list-example {
         overflow-x: auto !important;
         overflow-y: hidden !important;
         height: 50px !important;
@@ -158,7 +158,7 @@
         height: 110vh !important;
     }
 }
-@media (max-height: 690px) {
+@media (max-height: 800px) {
     .conteiner{
         height: 160vh !important;
     }
