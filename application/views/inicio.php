@@ -234,19 +234,27 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 						</div>
 					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+					<button class="carousel-control-prev d-flex align-items-start px-5" type="button" data-bs-target="#carouselExampleAutoplaying" style="top:25px;"
 						data-bs-slide="prev">
 						<div class="bg-btn position-relative">
-							<span class="carousel-control-prev-icon position-absolute top-50 start-50 translate-middle"
-								aria-hidden="true"></span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
+								class="bi bi-chevron-bar-right carousel-control-prev-icon position-absolute top-50 start-50 translate-middle"
+								viewBox="0 0 16 16" aria-hidden="true">
+								<path fill-rule="evenodd"
+									d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+							</svg>
 							<span class="visually-hidden">Previous</span>
 						</div>
 					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+					<button class="carousel-control-next d-flex align-items-start px-5" type="button" data-bs-target="#carouselExampleAutoplaying" style="top:25px;"
 						data-bs-slide="next">
 						<div class="bg-btn position-relative">
-							<span class="carousel-control-next-icon position-absolute top-50 start-50 translate-middle"
-								aria-hidden="true"></span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
+								class="bi bi-chevron-bar-right carousel-control-next-icon position-absolute top-50 start-50 translate-middle"
+								viewBox="0 0 16 16" aria-hidden="true">
+								<path fill-rule="evenodd"
+									d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+							</svg>
 							<span class="visually-hidden">Next</span>
 						</div>
 					</button>

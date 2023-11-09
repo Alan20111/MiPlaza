@@ -1,187 +1,62 @@
-#list-example .list-group-item p {
-    transform: rotate(-90deg) !important;
-    width: 100% !important;
-    height: auto !important;
-}
-
-#list-example .list-group-item {
-    border-radius: 0 !important;
-    width: 70px !important;
-    height: 100% !important;
-    min-height: 200px !important;
-    padding-right: 10px;
-}
-
-#list-example .active {
-    background: #74b050 !important;
-}
-
-#list-example .active:focus {
-    background: #74b050 !important;
-}
-
-#list-example {
-    width: 70px !important;
-    height: 100% !important;
-    min-height: 700px !important;
-    z-index: 9 !important;
-}
-#list{
-    animation: aparecer 500ms forwards;
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    background-image: url('../../img/miplaza-logo-bn.png');
+    background-repeat: repeat;
+    background-size: 200px;
+    background-position: center;
+    animation: aparecer 1.5s ease forwards, cambioDePosicion 30s linear infinite;
 }
 
 @keyframes aparecer {
-    0%{
-        top: -30px;
+    from {
         opacity: 0;
     }
-    100%{
-        top: 0;
+
+    to {
         opacity: 1;
     }
 }
-.descripcion {
-    text-align: left !important;
-    width: 100% !important;
-}
 
-.list-jods,
-#list,
-.conteiner {
-    height: calc(100vh - 98px) !important;
-}
-
-.list-jods::-webkit-scrollbar,
-#list::-webkit-scrollbar,#list-example::-webkit-scrollbar {
-    display: none !important;
-}
-
-.list-jods,
-#list-example {
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-}
-
-.aside1,
-.aside2 {
-    height: 100% !important;
-}
-
-.tittle,
-.card-float {
-    margin: 0 auto !important;
-}
-
-.card-float {
-    position: sticky !important;
-    top: 20px !important;
-}
-@media (max-width: 1199.9px) {
-
-    /*BreakPoint xl*/
-    #list-example .list-group-item p {
-        transform: rotate(0) !important;
-        padding-left: 5%;
+@keyframes cambioDePosicion {
+    0% {
+        transform: translate(0, 0);
     }
 
-    #list-example {
-        min-width: 100% !important;
-        width: 100% !important;
-        flex-direction: row !important;
+    50% {
+        transform: translate(-100px, -100px);
     }
 
-    #list-example .list-group-item {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        border-radius: 0 !important;
-        width: 100% !important;
-        height: 50px !important;
-        min-width: 125px !important;
-        background: #87cc60;
-        color: rgb(255, 255, 255);
-        z-index: 99 !important;
-    }
-
-    .descripcion {
-        text-align: center !important;
-        width: 75% !important;
-        height: fit-content !important;
-    }
-
-    .list-jods,#list-example {
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-        height: 50px !important;
-    }
-
-    .aside1 {
-        height: 50% !important;
-    }
-
-    .aside2 {
-        height: fit-content;
-    }
-
-    .card-float {
-        position: sticky !important;
-        top: 20px !important;
+    100% {
+        transform: translate(0, 0);
     }
 }
 
-@media (max-width: 991.9px) {
-    .card-float {
-        position: static !important;
-    }
-    .aside2{
-        height: fit-content !important;
-    }
-    .tittle{
-        width: 50%;
-    }
+.active {
+    background: #70B34D !important;
+    animation: cuadrado 500ms;
+    color: white !important;
 }
-@media (max-width: 767.9px) {
 
-    /*BreakPoint md*/
-    .tittle,
-    .card-float {
-        width: 75% !important;
+.active p {
+    color: white !important;
+}
+
+@keyframes cuadrado {
+    0% {
+        opacity: 0;
     }
 
-    .aside1,
-    .aside2 {
-        min-height: 50vh !important;
-    }
-
-    .card-float {
-        position: static !important;
-        top: 20px !important;
+    100% {
+        opacity: 1;
     }
 }
 
-@media (max-width: 575.9px) {
-
-    /*BreakPoint md*/
-    .tittle,
-    .card-float {
-        width: 100% !important;
-    }
-
-    .descripcion {
-        width: 100% !important;
-    }
-    .conteiner{
-        height: 110vh !important;
-    }
-}
-@media (max-height: 800px) {
-    .conteiner{
-        height: 160vh !important;
-    }
-}
-
-@media (max-height: 610px) {
-    .aside2,.tittle img{
-        display: none !important;
-    }
-    
+.list-nav:hover {
+    background: #ffffffc2 !important;
 }

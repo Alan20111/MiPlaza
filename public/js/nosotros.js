@@ -29,12 +29,24 @@ function renderTarjetas(datosTarjetas) {
     contenedor.innerHTML = '';
 
     datosTarjetas.forEach(function (valor, i, array) {
+        // Crear el elemento li
+        var listItem = document.createElement('li');
+        listItem.className = "nav-item p-0 rounded-5 list-nav m-1 w-100";
+    
+        // Crear el elemento a
         var enlace = document.createElement('a');
-        enlace.className = "list-group-item list-group-item-action w-100 h-100 border border-0 rounder-0  px-0 align-middle";
+        enlace.className = "nav-link list-group-item list-group-item-action px-0  align-middle"
         enlace.href = "#list-item-" + valor.id;
-        enlace.innerHTML = "<p class='m-0 me-3'>" + valor.navtittle + "</p";
-        contenedor.appendChild(enlace);
+        enlace.innerHTML = "<p class='m-0 px-2 py-1' style='color: #70B34D; min-width:150px;'>" + valor.navtittle + "</p>";
+    
+        // Agregar el elemento a como hijo del elemento li
+        listItem.appendChild(enlace);
+    
+        // Agregar el elemento li al contenedor
+        contenedor.appendChild(listItem);
     });
+    ``
+    
 
     var contenedorr = document.getElementById('list');
     contenedorr.innerHTML = '';
@@ -159,3 +171,24 @@ function determinarColor(colorFondo) {
 }
 
 loadData();
+// Selecciona el enlace que tiene la clase 'nav-link'
+var enlace = document.querySelector('.nav-link');
+
+// Crea una instancia de MutationObserver con una función de devolución de llamada
+var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        // Verifica si la clase 'active' ha sido agregada al enlace
+        if (mutation.attributeName === 'class' && enlace.classList.contains('active')) {
+            // Ejecuta tu código aquí
+            console.log('La clase "active" ha sido agregada al enlace.');
+        }
+    });
+});
+
+// Configura el observer para observar cambios en atributos y clases
+observer.observe(enlace, { attributes: true });
+
+// Simulación de agregar la clase 'active' al enlace después de un tiempo (puedes omitir esto en tu código real)
+setTimeout(function() {
+    enlace.classList.add('active');
+}, 2000);
