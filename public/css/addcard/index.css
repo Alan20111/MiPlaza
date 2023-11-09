@@ -17,7 +17,16 @@ body::before {
     background-repeat: repeat;
     background-size: 200px;
     background-position: center;
-    animation: cambioDePosicion 30s linear infinite;
+    animation: aparecer 1.5s ease forwards, cambioDePosicion 30s linear infinite;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes cambioDePosicion {
@@ -75,4 +84,15 @@ body::before {
         border-bottom-right-radius: 0 !important;
         border-bottom-left-radius: 0 !important;
     }
+}
+
+.lista-elementos {
+    transform: translateY(-20px);
+    transition: transform 0.5s ease;
+}
+
+.lista-elementos.mostrar {
+    /* Muestra la lista */
+    transform: translateY(0);
+    /* Restablece la posición original */
 }

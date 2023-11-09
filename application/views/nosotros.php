@@ -53,11 +53,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <main>
         <div class="row m-0">
             <div class="col-xl-2 col-lg-12 list-jods p-0">
-                <div id="list-example" class="list-group shadow"></div>
+                <div id="list-example" class="list-group shadow "></div>
             </div>
             <div class="col-xl-10 col-lg-12 p-0">
                 <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
-                    class="scrollspy-example overflow-y-auto"  id="list">
+                    class="scrollspy-example overflow-y-auto position-relative" id="list">
                 </div>
             </div>
         </div>
@@ -69,5 +69,4 @@ defined('BASEPATH') or exit('No direct script access allowed');
     crossorigin="anonymous"></script>
 <script src="<?= base_url(); ?>public/js/code.jquery.com_jquery-3.7.1.min.js"></script>
 <script src="<?= base_url(); ?>public/js/nosotros.js"></script>
-
 </html>

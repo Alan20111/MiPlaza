@@ -17,7 +17,16 @@ body::before {
     background-repeat: repeat;
     background-size: 200px;
     background-position: center;
-    animation: cambioDePosicion 30s linear infinite;
+    animation: aparecer 1.5s ease forwards, cambioDePosicion 30s linear infinite;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes cambioDePosicion {
@@ -33,7 +42,6 @@ body::before {
         transform: translate(0, 0);
     }
 }
-
 
 .menu  {
     width: 450px;

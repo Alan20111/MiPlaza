@@ -175,7 +175,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </div>
                 </form>
             </div>
-            <div class="col-lg-6 col-sm-12  overflow-y-auto  rounded-1" id="contenedor"
+            <div class="col-lg-6 col-sm-12  overflow-y-auto  rounded-1 lista-elementos" id="contenedor"
                 style="height:calc(100vh - 150px); ">
             </div>
         </div>
