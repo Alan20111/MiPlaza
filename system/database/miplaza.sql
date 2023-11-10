@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2023 a las 16:10:35
+-- Tiempo de generación: 10-11-2023 a las 20:58:44
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -33,7 +33,7 @@ CREATE TABLE `card-nosotros` (
   `imgName` varchar(50) NOT NULL,
   `navtittle` varchar(50) NOT NULL,
   `tittle` varchar(50) NOT NULL,
-  `descripcion` varchar(200) NOT NULL,
+  `descripcion` varchar(350) NOT NULL,
   `color` varchar(50) NOT NULL,
   `sombra` varchar(50) NOT NULL,
   `act1` varchar(50) NOT NULL,
@@ -54,8 +54,8 @@ INSERT INTO `card-nosotros` (`id`, `img`, `imgName`, `navtittle`, `tittle`, `des
 (5, 'public/img/db/65454500a20f2_tree (1).jpg', 'tree (1).jpg', 'Aux. Admin.', 'Auxiliar Administrativo', 'Estas actividades están diseñadas para mostrar nuestro compromiso con un excelente servicio al cliente y la protección de tus datos personales. Si tienes alguna pregunta o inquietud, nuestros auxiliar', '#a434ef', '#d666ff', 'Brindar un Servicio Cordial y Profesional', 'Garantizar una Experiencia de Atención al Cliente ', 'Manejar Información Confidencial de Manera Segura', 'Facilitar la Resolución de Problemas y Peticiones', 'Asegurar la Precisión y Cumplimiento de Documentac'),
 (6, 'public/img/db/6545471f545d2_miplazaAMP.jpg', 'miplazaAMP.jpg', 'Surtidor', 'Surtidor de Bodega', 'Nuestro surtidor se compromete a brindar una atención excepcional a nuestros clientes. Escucha activamente sus necesidades, busca soluciones rápidas y efectivas, y se asegura de que los clientes se si', '#e13344', '#ff6576', 'Eficiencia y Puntualidad en el Suministro', 'Asegurando la Seguridad de las Mercancías', 'Mantenimiento del Stock y Organización', 'Relación con Clientes y Proveedores', 'Solución de Problemas Ágil'),
 (7, 'public/img/db/65454956850d3_referencia.jpg', 'referencia.jpg', 'Cajero', 'Cajero', 'El puesto de cajero es un papel central en nuestra empresa, ya que implica una interacción directa con nuestros valiosos clientes en el punto de venta. Los cajeros desempeñan un papel crucial en brind', '#477ff0', '#79b1ff', 'Gestionan su de Asistencia y Puntualidad', 'Cumplir con el Uniforme e Identificación', 'Realizar Cortes Precisos y Dentro del Margen de To', 'Supervisar Estantes, Faltantes y Caducidades', 'Brindar un Servicio Cordial y Profesional'),
-(8, 'public/img/db/654549da85122_Imagen de WhatsApp 2023-10-25 a las 08.02.01_138e62e6.jpg', 'Imagen de WhatsApp 2023-10-25 a las 08.02.01_138e6', 'Cargador', 'Cargador', 'El cargador es un miembro fundamental de nuestro equipo, desempeñando un papel crucial en la logística y operaciones de nuestro almacén. Su principal responsabilidad es garantizar un flujo de trabajo ', '#df8f34', '#ffc166', 'Trasladar mercancía', 'Cumplir con el Uniforme e Identificación', 'Surtir de Manera Adecuada y Eficiente', 'Mantener Orden y Limpieza en el Almacén', 'Apoyar en las Actividades del Almacén'),
-(9, 'public/img/db/65454adc25c75_Imagen de WhatsApp 2023-10-25 a las 08.02.01_df62b154.jpg', 'Imagen de WhatsApp 2023-10-25 a las 08.02.01_df62b', 'Carnes F.', 'Carnes Frías', 'Carnes Frías requiere habilidades específicas en el manejo de alimentos, atención al cliente y responsabilidad en el manejo de productos frescos. Los empleados de Carnes Frías desempeñan un papel cruc', '#ea2e41', '#ff6073', 'Orden y Limpieza del Área de Carnes Frías', 'Mantener Productos en Stock', 'Mantener la Cámara en Orden', 'Atención al Cliente', 'Manejo de Productos Frescos');
+(8, 'public/img/db/654549da85122_Imagen de WhatsApp 2023-10-25 a las 08.02.01_138e62e6.jpg', 'Imagen de WhatsApp 2023-10-25 a las 08.02.01_138e6', 'Cargador', 'Cargador', 'El cargador es un miembro fundamental de nuestro equipo, desempeñando un papel crucial en la logística y operaciones de nuestro almacén. Su principal responsabilidad es garantizar un flujo de trabajo', '#df8f34', '#ffc166', 'Trasladar mercancía', 'Cumplir con el Uniforme e Identificación', 'Surtir de Manera Adecuada y Eficiente', 'Mantener Orden y Limpieza en el Almacén', 'Apoyar en las Actividades del Almacén'),
+(9, 'public/img/db/65454adc25c75_Imagen de WhatsApp 2023-10-25 a las 08.02.01_df62b154.jpg', 'Imagen de WhatsApp 2023-10-25 a las 08.02.01_df62b', 'Carnes F.', 'Carnes Frías', 'Carnes Frías requiere habilidades específicas en el manejo de alimentos, atención al cliente y responsabilidad en el manejo de productos frescos.', '#ea2e41', '#ff6073', 'Orden y Limpieza del Área de Carnes Frías', 'Mantener Productos en Stock', 'Mantener la Cámara en Orden', 'Atención al Cliente', 'Manejo de Productos Frescos');
 
 -- --------------------------------------------------------
 
@@ -100,7 +100,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `card-nosotros`
 --
 ALTER TABLE `card-nosotros`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
