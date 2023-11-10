@@ -1,12 +1,43 @@
 const base_url = "http://localhost/Miplaza/";
 var tarjetastotal;
 var aco = 0;
+var render = false;
 var anchoPantalla = window.innerWidth;
 window.addEventListener("resize", function () {
     anchoPantalla = window.innerWidth;
     renderTarjetas(tarjetastotal.tarjetas);
 });
+function rendertrue() {
+    if(render){
+        return "opacity-1";
+    }else{
+        return "opacity-0";
+    }
+}
 
+
+const cargarcard = (entradas, observador) => {
+    console.log(entradas);
+    entradas.forEach((entrada) => {
+        var id = entrada.target.id;
+        id = "list-nav-" + (id.charAt(id.length - 1));
+
+        // Verificar si el elemento existe
+        var miElemento = document.getElementById(id);
+
+        if (entrada.isIntersecting) {
+                miElemento.scrollIntoView({ behavior: 'auto', block: 'nearest' });
+                miElemento.classList.add("active");
+            // Agrega la clase para la transición de aparición y para hacer visible
+            entrada.target.classList.add('transition-appear', 'visible');
+        } else {miElemento.classList.remove("active");}
+    });
+};
+
+const posiotionnull = (entradas, controlador) => {
+    const elemento = document.getElementById('navheader');
+    elemento.classList.remove("sticky-top");
+};
 
 
 function loadData() {
@@ -19,6 +50,33 @@ function loadData() {
             if (datos.status == 'success') {
                 tarjetastotal = datos;
                 renderTarjetas(datos.tarjetas);
+
+                const observador = new IntersectionObserver(cargarcard, {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.6
+                });
+                const observadorhead = new IntersectionObserver(posiotionnull, {
+                    root: null,
+                    rootMargin: '-98px',
+                    threshold: 0
+                });
+                console.log(tarjetastotal.tarjetas);
+                tarjetastotal.tarjetas.forEach((tarjeta) => {
+                    console.log('list-item-' + tarjeta.id);
+                    const elemento = document.getElementById('list-item-' + tarjeta.id);
+                    if (elemento) {
+                        // Agrega la clase inicial si el elemento ya está en la pantalla al cargar la página
+                        if (elemento.getBoundingClientRect().top < window.innerHeight) {
+                            elemento.classList.add('visible');
+                        }
+
+                        // Observa el elemento
+                        observador.observe(elemento);
+                    }
+                });
+                const elementohead = document.getElementById('list-example');
+                observadorhead.observe(elementohead);
             }
         },
     });
@@ -29,35 +87,36 @@ function renderTarjetas(datosTarjetas) {
     contenedor.innerHTML = '';
 
     datosTarjetas.forEach(function (valor, i, array) {
+
         // Crear el elemento li
         var listItem = document.createElement('li');
-        listItem.className = "nav-item p-0 rounded-5 list-nav m-1 w-100";
-    
+        listItem.className = "nav-item list-group p-0 rounded-5 list-nav m-1 w-100";
+
         // Crear el elemento a
         var enlace = document.createElement('a');
-        enlace.className = "nav-link list-group-item list-group-item-action px-0  align-middle"
+        enlace.className = "nav-link list-nav  list-group-item list-group-item-action"
         enlace.href = "#list-item-" + valor.id;
-        enlace.innerHTML = "<p class='m-0 px-2 py-1' style='color: #70B34D; min-width:150px;'>" + valor.navtittle + "</p>";
-    
+        enlace.innerHTML = "<p class='m-0 px-1 py-0' style='color: #70B34D; min-width:150px;'>" + valor.navtittle + "</p>";
+        enlace.id="list-nav-"+valor.id;
         // Agregar el elemento a como hijo del elemento li
         listItem.appendChild(enlace);
-    
+
         // Agregar el elemento li al contenedor
         contenedor.appendChild(listItem);
     });
     ``
-    
+
 
     var contenedorr = document.getElementById('list');
     contenedorr.innerHTML = '';
 
     datosTarjetas.forEach(function (valor, i, array) {
         var tarjetaDiv = document.createElement('div');
-        tarjetaDiv.className = 'conteiner w-100 shadow';
+        tarjetaDiv.className = 'conteiner w-100 shadow'+rendertrue();
         tarjetaDiv.id = 'list-item-' + valor.id;
         tarjetaDiv.style.background = "white";
         tarjetaDiv.style.margin = '0 0 100px 0';
-
+        tarjetaDiv.style.height="100vh";
         var tarjetaContenido = `
             <div class="row h-100">
                 ${alternarHtml(datosTarjetas.length, i)}
@@ -169,26 +228,6 @@ function determinarColor(colorFondo) {
         return "light";
     }
 }
-
-loadData();
-// Selecciona el enlace que tiene la clase 'nav-link'
-var enlace = document.querySelector('.nav-link');
-
-// Crea una instancia de MutationObserver con una función de devolución de llamada
-var observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-        // Verifica si la clase 'active' ha sido agregada al enlace
-        if (mutation.attributeName === 'class' && enlace.classList.contains('active')) {
-            // Ejecuta tu código aquí
-            console.log('La clase "active" ha sido agregada al enlace.');
-        }
-    });
+window.addEventListener('load', function () {
+    loadData(); // Llama a loadData después de que la página se haya cargado completamente
 });
-
-// Configura el observer para observar cambios en atributos y clases
-observer.observe(enlace, { attributes: true });
-
-// Simulación de agregar la clase 'active' al enlace después de un tiempo (puedes omitir esto en tu código real)
-setTimeout(function() {
-    enlace.classList.add('active');
-}, 2000);

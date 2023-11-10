@@ -17,7 +17,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 
 <body>
-    <header class="p-0">
+    <header class="p-0 sticky-top" id="navheader">
         <nav class="top">
             <ul class="nav justify-content-center">
                 <li class="nav-item">
@@ -31,18 +31,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </li>
             </ul>
         </nav>
-        <nav>
-            <ul class="nav nav-underline">
+        <nav >
+            <ul class="nav nav-underline h-100">
                 <img src="<?= base_url() ?>public/img/miplaza-logo.png" alt="" class="img-fluid" id="icon-nav">
                 <ul class="navbar nav justify-content-center">
                     <li class="nav-item">
-                        <a class="fs-5 link-underline link-underline-opacity-0" href="<?= base_url(); ?>index.php/bienvenido/nosotros">Nosotros</a>
+                        <a class="fs-5 nav-link" href="<?= base_url(); ?>index.php/bienvenido/nosotros">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="fs-5 link-underline link-underline-opacity-0 " href="<?= base_url(); ?>index.php/bienvenido">Inicio</a>
+                        <a class="fs-5 nav-link" href="<?= base_url(); ?>index.php/bienvenido">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="fs-5 link-underline link-underline-opacity-0" href="<?= base_url() ?>index.php/bienvenido/ubicacion">Ubicación</a>
+                        <a class="fs-5 nav-link" href="<?= base_url() ?>index.php/bienvenido/ubicacion">Ubicación</a>
                     </li>
                 </ul>
 
@@ -63,8 +63,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
             </svg>
         </a>
-        <nav class="navbar sticky-top overflow-x-auto shadow p-0" style="height:98px; background: white;">
-            <ul class="nav flex-row flex-nowrap  justify-content-center px-4" id="list-example" style="height:98px;">
+        <nav class="navbar sticky-top overflow-x-auto overflow-y-hidden shadow p-0" style="height:98px; background: white;">
+            <ul class="navbar flex-row flex-nowrap w-auto justify-content-center px-4" id="list-example" style="height:98px;">
             </ul>
         </nav>
         <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-root-margin="0px 0px -40%"

@@ -5,7 +5,6 @@
 }
 header {
     top: 0;
-    position: fixed;
     width: 100%;
     background: white;
     box-shadow: #36363691 0px 0px 5px;
@@ -14,10 +13,6 @@ header {
 body{
     background: #00000009;
 }
-main {
-    margin-top: 98px;
-}
-
 li {
     padding: 0 5%;
 }

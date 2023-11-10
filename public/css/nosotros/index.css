@@ -37,13 +37,14 @@ body::before {
     }
 }
 
-.active {
+#list-example .active {
     background: #70B34D !important;
     animation: cuadrado 500ms;
     color: white !important;
+    border: none !important;
 }
 
-.active p {
+#list-example .active p {
     color: white !important;
 }
 
@@ -59,4 +60,12 @@ body::before {
 
 .list-nav:hover {
     background: #ffffffc2 !important;
+}
+.visible {
+    opacity: 1 !important;
+    transition: opacity 0.3s ease-in-out !important;
+}
+
+.transition-appear {
+    transform: translateY(0) !important;
 }
