@@ -1,23 +1,8 @@
 const base_url = "http://localhost/Miplaza/";
 var tarjetastotal;
 var aco = 0;
-var render = false;
-var anchoPantalla = window.innerWidth;
-window.addEventListener("resize", function () {
-    anchoPantalla = window.innerWidth;
-    renderTarjetas(tarjetastotal.tarjetas);
-});
-function rendertrue() {
-    if(render){
-        return "opacity-1";
-    }else{
-        return "opacity-0";
-    }
-}
-
 
 const cargarcard = (entradas, observador) => {
-    console.log(entradas);
     entradas.forEach((entrada) => {
         var id = entrada.target.id;
         id = "list-nav-" + (id.charAt(id.length - 1));
@@ -26,20 +11,17 @@ const cargarcard = (entradas, observador) => {
         var miElemento = document.getElementById(id);
 
         if (entrada.isIntersecting) {
-                miElemento.scrollIntoView({ behavior: 'auto', block: 'nearest' });
-                miElemento.classList.add("active");
+            miElemento.scrollIntoView({ behavior: 'auto', block: 'nearest' });
+
+            miElemento.classList.add("active");
             // Agrega la clase para la transición de aparición y para hacer visible
-            entrada.target.classList.add('transition-appear', 'visible');
-        } else {miElemento.classList.remove("active");}
+            entrada.target.classList.add('visible');
+            entrada.target.classList.remove('opacity-0');
+        } else {
+            miElemento.classList.remove("active");
+        }
     });
 };
-
-const posiotionnull = (entradas, controlador) => {
-    const elemento = document.getElementById('navheader');
-    elemento.classList.remove("sticky-top");
-};
-
-
 function loadData() {
     $.ajax({
         url: base_url + "index.php/Admin/readData",
@@ -56,27 +38,19 @@ function loadData() {
                     rootMargin: '0px',
                     threshold: 0.6
                 });
-                const observadorhead = new IntersectionObserver(posiotionnull, {
-                    root: null,
-                    rootMargin: '-98px',
-                    threshold: 0
-                });
-                console.log(tarjetastotal.tarjetas);
                 tarjetastotal.tarjetas.forEach((tarjeta) => {
-                    console.log('list-item-' + tarjeta.id);
                     const elemento = document.getElementById('list-item-' + tarjeta.id);
                     if (elemento) {
                         // Agrega la clase inicial si el elemento ya está en la pantalla al cargar la página
                         if (elemento.getBoundingClientRect().top < window.innerHeight) {
                             elemento.classList.add('visible');
+                            elemento.classList.remove('opacity-0');
                         }
 
                         // Observa el elemento
                         observador.observe(elemento);
                     }
                 });
-                const elementohead = document.getElementById('list-example');
-                observadorhead.observe(elementohead);
             }
         },
     });
@@ -97,7 +71,7 @@ function renderTarjetas(datosTarjetas) {
         enlace.className = "nav-link list-nav  list-group-item list-group-item-action"
         enlace.href = "#list-item-" + valor.id;
         enlace.innerHTML = "<p class='m-0 px-1 py-0' style='color: #70B34D; min-width:150px;'>" + valor.navtittle + "</p>";
-        enlace.id="list-nav-"+valor.id;
+        enlace.id = "list-nav-" + valor.id;
         // Agregar el elemento a como hijo del elemento li
         listItem.appendChild(enlace);
 
@@ -112,13 +86,15 @@ function renderTarjetas(datosTarjetas) {
 
     datosTarjetas.forEach(function (valor, i, array) {
         var tarjetaDiv = document.createElement('div');
-        tarjetaDiv.className = 'conteiner w-100 shadow'+rendertrue();
+        tarjetaDiv.className = 'conteiner shadow opacity-0 rounded rounded-2';
         tarjetaDiv.id = 'list-item-' + valor.id;
         tarjetaDiv.style.background = "white";
-        tarjetaDiv.style.margin = '0 0 100px 0';
-        tarjetaDiv.style.height="100vh";
+        tarjetaDiv.style.margin = '0 0 10vh 0';
+        tarjetaDiv.style.minHeight = "100vh";
+        tarjetaDiv.style.height = "auto";
+        tarjetaDiv.style.maxWidth = "944px";
         var tarjetaContenido = `
-            <div class="row h-100">
+            <div class="row h-100 d-flex">
                 ${alternarHtml(datosTarjetas.length, i)}
             </div>
         `;
@@ -129,7 +105,7 @@ function renderTarjetas(datosTarjetas) {
 
         if (aco === datosTarjetas.length) {
             var footer = document.createElement('footer');
-            footer.className = 'position-relative pt-5';
+            footer.className = 'position-relative pt-5 rounded rounded-2';
             footer.innerHTML = `
             <ul class="nav justify-content-center">
         </ul>
@@ -143,16 +119,26 @@ function renderTarjetas(datosTarjetas) {
             </svg></a></div>
             `;
             contenedorr.appendChild(footer);
-
         }
     });
 }
 
 var it = 0;
 function alternarHtml(length, i) {
-    var stringFinal = "";
-    const aside1 = `
-        <div class="aside1 col-lg-6 col-sm-12 position-relative h-100 p-5" >
+    var atribute = "";
+    var atribute1 = "";
+    
+    it++;
+    if (it == 1) {
+        atribute = "asi1";
+        atribute1 = "asi2";
+    } else {
+        it = 0;
+        atribute = "asi2";
+        atribute1 = "asi1";
+    }
+    const asides = `
+        <div class="col-lg-6 col-sm-12 position-relative p-5 ${atribute}" >
             <div class="tittle position-relative h-75">
                 <img src="${base_url}${tarjetastotal.tarjetas[i].img}" alt="" class=" object-fit-cover rounded rounded w-100 h-100 position-absolute  start-50 translate-middle-x">
                 <p class=" fs-2 text-wrap text-center rounder rounder-1 px-2 display-6 position-absolute top-100 start-50 translate-middle text-${determinarColor(tarjetastotal.tarjetas[i].color)}" style="background: ${tarjetastotal.tarjetas[i].color};">
@@ -163,11 +149,8 @@ function alternarHtml(length, i) {
                 <p class="text-dark">${tarjetastotal.tarjetas[i].descripcion}</p>
             </div>
         </div >
-    `;
-
-    const aside2 = `
-        <div class="aside2 col-lg-6 col-sm-12 card-container" id="card-container-${tarjetastotal.tarjetas[i].id}" >
-            <div class="card-float w-75 py-5 px-5">
+        <div class="col-lg-6 col-sm-12 card-container ${atribute1} posiotion-relative" id="card-container-${tarjetastotal.tarjetas[i].id}" >
+            <div class="card-float py-5 px-5 sticky-element" style="top:98px"> 
                 <p class="h4 h-25 text-dark">
                     Actividades
                 </p>
@@ -181,22 +164,7 @@ function alternarHtml(length, i) {
             </div>
         </div >
     `;
-    it++;
-    if (anchoPantalla <= 992) {
-        stringFinal = aside1 + aside2 + stringFinal;
-    } else {
-        if (it == 1) {
-            stringFinal = aside1 + aside2 + stringFinal;
-            console.log("a")
-        } else {
-            it = 0;
-            stringFinal = aside2 + aside1 + stringFinal;
-            console.log("b")
-        }
-    }
-
-
-    return stringFinal;
+    return asides;
 }
 
 function reducirTono(colorHex, factor) {

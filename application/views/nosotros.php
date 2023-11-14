@@ -55,20 +55,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <img src="<?= base_url() ?>public/img/referencia.jpg" alt=""
                 class="img-fluid object-fit-cover  w-100 h-100">
         </div>
-        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#70B34D"
-                class="bi bi-chevron-double-up  position-absolute bottom-0 end-0 m-1" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />
-                <path fill-rule="evenodd"
-                    d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
-            </svg>
-        </a>
-        <nav class="navbar sticky-top overflow-x-auto overflow-y-hidden shadow p-0" style="height:98px; background: white;">
-            <ul class="navbar flex-row flex-nowrap w-auto justify-content-center px-4" id="list-example" style="height:98px;">
+        <nav class="navbar sticky-top overflow-x-auto overflow-y-hidden shadow p-0 justify-content-center" style="height:98px; background: white;" id="list-jods">
+            <ul class="navbar flex-row flex-nowrap w-100  px-5 mx-5" id="list-example" style="height:98px;">
             </ul>
         </nav>
         <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-root-margin="0px 0px -40%"
-            data-bs-smooth-scroll="true" class="scrollspy-example  p-3 rounded-2" tabindex="0" id="list"></div>
+            data-bs-smooth-scroll="true" class="scrollspy-example  p-3 d-flex flex-column align-items-center" tabindex="0" id="list"></div>
     </main>
 
 </body>

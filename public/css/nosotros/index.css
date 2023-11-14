@@ -15,11 +15,11 @@ body::before {
 
 @keyframes aparecer {
     from {
-        opacity: 0;
+        opacity: 0 !important;
     }
 
     to {
-        opacity: 1;
+        opacity: 1 !important;
     }
 }
 
@@ -39,7 +39,7 @@ body::before {
 
 #list-example .active {
     background: #70B34D !important;
-    animation: cuadrado 500ms;
+    animation: aparecer 500ms;
     color: white !important;
     border: none !important;
 }
@@ -48,24 +48,54 @@ body::before {
     color: white !important;
 }
 
-@keyframes cuadrado {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
 .list-nav:hover {
     background: #ffffffc2 !important;
 }
 .visible {
-    opacity: 1 !important;
-    transition: opacity 0.3s ease-in-out !important;
+    animation: card 500ms forwards !important;
 }
-
-.transition-appear {
-    transform: translateY(0) !important;
+.asi1{
+    order: 1;
+    height: 100vh;
+}
+.asi2{
+    order: 2;
+    height: 100vh;
+}
+.sticky-element {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 50px; /* Punto en el que se vuelve pegajoso */
+}
+@keyframes card {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@media ( max-width : 992.9px) {
+    .asi1{
+        order: 0;
+        height: 50vh;
+        margin-bottom: 50px;
+    }
+    .asi2{
+        order: 0;
+        height: 50vh;
+        margin-bottom: 50px;
+    }
+    .sticky-element {
+        position: -webkit-static; /* Safari */
+        position: static;
+    }
+    .card-float, .tittle{
+        margin: 0 auto;
+        width: 75%;
+    }
 }
