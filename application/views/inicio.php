@@ -18,40 +18,37 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 
 <body>
-<header class="p-0 position-fixed" >
-        <nav class="top">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a href="https://www.facebook.com/profile.php?id=100053143824005">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="white"
-                            class="bi bi-facebook" viewBox="0 0 16 16">
-                            <path
-                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <nav >
-            <ul class="nav nav-underline h-100">
-                <img src="<?= base_url() ?>public/img/miplaza-logo.png" alt="" class="img-fluid" id="icon-nav">
-                <ul class="navbar nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="fs-5 nav-link m-0" href="<?= base_url(); ?>index.php/bienvenido/nosotros">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="fs-5 nav-link m-0" href="<?= base_url(); ?>index.php/bienvenido">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="fs-5 nav-link m-0" href="<?= base_url() ?>index.php/bienvenido/ubicacion">Ubicación</a>
-                    </li>
-                </ul>
+	<header class="p-0 position-fixed">
+		<nav class="top">
+			<ul class="nav justify-content-center">
+				<li class="nav-item">
+					<a href="https://www.facebook.com/profile.php?id=100053143824005">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="white"
+							class="bi bi-facebook" viewBox="0 0 16 16">
+							<path
+								d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<nav>
+			<ul class="nav nav-underline h-100">
+				<img src="<?= base_url() ?>public/img/miplaza-logo.png" alt="" class="img-fluid" id="icon-nav">
+				<ul class="navbar nav justify-content-center">
+					<li class="nav-item m-0">
+						<a class="fs-5 nav-link m-0" href="<?= base_url(); ?>index.php/bienvenido/nosotros">Nosotros</a>
+					</li>
+					<li class="nav-item m-0">
+						<a class="fs-5 nav-link m-0" href="<?= base_url(); ?>index.php/bienvenido">Inicio</a>
+					</li>
+				</ul>
 
 
-            </ul>
-        </nav>
-    </header>
-	<main style="margin-top: 98px">
+			</ul>
+		</nav>
+	</header>
+	<main style="margin-top: 98px;">
 		<div class="encabezado">
 			<div id="carouselExampleSlidesOnly" class="carousel slide logo position-relative" data-bs-ride="carousel">
 				<div class="carousel-inner main">
@@ -88,12 +85,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 		</div>
 
-		<div class="carrusel">
+		<div class="carrusel text-center main-element ">
 			<h2>Declaración de Misión, Visión y Valores</h2>
 			<div class="linea-valores">
 			</div>
 			<div id="carouselExampleAutoplaying" class="carousel slide MVV-conteiner" data-bs-ride="carousel">
-				<div class="carousel-inner MVV-conteiner">
+				<div class="carousel-inner MVV-conteiner rounded-3">
 					<div class="carousel-item active">
 						<div class="card1">
 							<div class="rededor-nrj">
@@ -234,8 +231,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 						</div>
 					</div>
-					<button class="carousel-control-prev d-flex align-items-start px-5" type="button" data-bs-target="#carouselExampleAutoplaying" style="top:25px;"
-						data-bs-slide="prev">
+					<button class="carousel-control-prev d-flex align-items-start px-5" type="button"
+						data-bs-target="#carouselExampleAutoplaying" style="top:25px;" data-bs-slide="prev">
 						<div class="bg-btn position-relative">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
 								class="bi bi-chevron-bar-right carousel-control-prev-icon position-absolute top-50 start-50 translate-middle"
@@ -246,8 +243,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							<span class="visually-hidden">Previous</span>
 						</div>
 					</button>
-					<button class="carousel-control-next d-flex align-items-start px-5" type="button" data-bs-target="#carouselExampleAutoplaying" style="top:25px;"
-						data-bs-slide="next">
+					<button class="carousel-control-next d-flex align-items-start px-5" type="button"
+						data-bs-target="#carouselExampleAutoplaying" style="top:25px;" data-bs-slide="next">
 						<div class="bg-btn position-relative">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
 								class="bi bi-chevron-bar-right carousel-control-next-icon position-absolute top-50 start-50 translate-middle"
@@ -262,6 +259,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 
 			</div>
+		</div>
+		<div class="ubication my-5 text-center main-element" style="height: calc(80vh - 98px);">
+			<div class="ubication p-0 m-0 pt-2 rounded-top-3 shadow ubi" style="background:white; height:15%">
+				<h2>Ubicación</h2>
+				<div class="linea-valores my-0" style="background: #70b34d;"></div>
+				<p class="fs-6">Calle Bravo Num. 32 Tarimoro Guanajuato Mexico</p>
+				
+			</div>
+			<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935.5767338143348!2d-100.7554414303732!3d20.28755869882393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cc92a7f8e2a35%3A0xd13f587978adef70!2sC.%20Bravo%2032%2C%20Zona%20Centro%2C%2038700%20Tarimoro%2C%20Gto.!5e0!3m2!1ses!2smx!4v1695395055411!5m2!1ses!2smx"
+					width="100%" height="85%" style="border:0;" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade" class=" rounded-bottom-3"></iframe>
 		</div>
 	</main>
 

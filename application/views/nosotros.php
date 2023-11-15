@@ -31,18 +31,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </li>
             </ul>
         </nav>
-        <nav >
+        <nav>
             <ul class="nav nav-underline h-100">
                 <img src="<?= base_url() ?>public/img/miplaza-logo.png" alt="" class="img-fluid" id="icon-nav">
                 <ul class="navbar nav justify-content-center">
-                    <li class="nav-item">
+                    <li class="nav-item m-0">
                         <a class="fs-5 nav-link" href="<?= base_url(); ?>index.php/bienvenido/nosotros">Nosotros</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item m-0">
                         <a class="fs-5 nav-link" href="<?= base_url(); ?>index.php/bienvenido">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="fs-5 nav-link" href="<?= base_url() ?>index.php/bienvenido/ubicacion">Ubicación</a>
                     </li>
                 </ul>
 
@@ -51,16 +48,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </nav>
     </header>
     <main>
-        <div class="tittle" style="height:70vh; width: 100%;">
-            <img src="<?= base_url() ?>public/img/referencia.jpg" alt=""
-                class="img-fluid object-fit-cover  w-100 h-100">
+        <div class="tittle backtittle position-relative" style="height:70vh; width: 100%;">
+            <img src="<?= base_url() ?>public/img/nosotros.jpg" alt=""
+                class="img-fluid object-fit-cover  w-100 h-100 img-post">
+            <div class="text-center text-light position-absolute top-50 start-50 translate-middle">
+                <p class="display-1 fw-semibold mb-1">Nosotros
+                </p>
+                <div class="line bg-light w-100" style="height:3px;"></div>
+                <p class="lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae debitis optio eligendi distinctio voluptatum excepturi quis sapiente asperiores molestiae quasi deleniti est fuga perferendis, consequuntur esse mollitia. Perferendis, velit necessitatibus praesentium fuga sapiente odit consequuntur nobis quibusdam atque quae maxime expedita excepturi aut enim accusantium delectus, id, quia error repellat? Tempore doloribus voluptate dolor tempora earum sequi? Esse, necessitatibus nesciunt. Non, ipsum qui quam asperiores modi nemo autem saepe unde adipisci. Hic, eum commodi.</p>
+            </div>
         </div>
-        <nav class="navbar sticky-top overflow-x-auto overflow-y-hidden shadow p-0 justify-content-center" style="height:98px; background: white;" id="list-jods">
+        <nav class="navbar sticky-top overflow-x-auto overflow-y-hidden shadow p-0 justify-content-center"
+            style="height:98px; background: white;" id="list-jods">
             <ul class="navbar flex-row flex-nowrap w-100  px-5 mx-5" id="list-example" style="height:98px;">
             </ul>
         </nav>
+        <a href="#" class="sticky-top" style="top:40px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white"
+                class="bi bi-arrow-up m-2 p-1 rounded-circle" style="background: #70B34D;" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+            </svg>
+        </a>
+
         <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-root-margin="0px 0px -40%"
-            data-bs-smooth-scroll="true" class="scrollspy-example  p-3 d-flex flex-column align-items-center" tabindex="0" id="list"></div>
+            data-bs-smooth-scroll="true" class="scrollspy-example  p-3 d-flex flex-column align-items-center"
+            tabindex="0" id="list"></div>
     </main>
 
 </body>

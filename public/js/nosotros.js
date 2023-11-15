@@ -146,12 +146,12 @@ function alternarHtml(length, i) {
                 </p>
             </div>
             <div class="descripcion h-25 mt-5 mx-auto  text-wrap" style="max-length: 150%;">
-                <p class="text-dark">${tarjetastotal.tarjetas[i].descripcion}</p>
+                <p style="color:${tarjetastotal.tarjetas[i].color};">${tarjetastotal.tarjetas[i].descripcion}</p>
             </div>
         </div >
         <div class="col-lg-6 col-sm-12 card-container ${atribute1} posiotion-relative" id="card-container-${tarjetastotal.tarjetas[i].id}" >
             <div class="card-float py-5 px-5 sticky-element" style="top:98px"> 
-                <p class="h4 h-25 text-dark">
+                <p class="h4 h-25" style="color:${tarjetastotal.tarjetas[i].color};">
                     Actividades
                 </p>
                 <ul class="h-75 list-group list-group-flush rounded-3" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 40px 40px -7px;">
@@ -165,19 +165,6 @@ function alternarHtml(length, i) {
         </div >
     `;
     return asides;
-}
-
-function reducirTono(colorHex, factor) {
-    const r = parseInt(colorHex.slice(1, 3), 16);
-    const g = parseInt(colorHex.slice(3, 5), 16);
-    const b = parseInt(colorHex.slice(5, 7), 16);
-
-    const nuevoR = Math.max(0, r - factor);
-    const nuevoG = Math.max(0, g - factor);
-    const nuevoB = Math.max(0, b - factor);
-
-    const nuevoColorHex = `#${nuevoR.toString(16).padStart(2, '0')}${nuevoG.toString(16).padStart(2, '0')}${nuevoB.toString(16).padStart(2, '0')}`;
-    return nuevoColorHex;
 }
 
 function calcularLuminancia(color) {
@@ -196,6 +183,4 @@ function determinarColor(colorFondo) {
         return "light";
     }
 }
-window.addEventListener('load', function () {
-    loadData(); // Llama a loadData después de que la página se haya cargado completamente
-});
+    loadData();
