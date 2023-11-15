@@ -36,7 +36,7 @@ function loadData() {
                 const observador = new IntersectionObserver(cargarcard, {
                     root: null,
                     rootMargin: '0px',
-                    threshold: 0.6
+                    threshold: 0.45
                 });
                 tarjetastotal.tarjetas.forEach((tarjeta) => {
                     const elemento = document.getElementById('list-item-' + tarjeta.id);
@@ -89,7 +89,7 @@ function renderTarjetas(datosTarjetas) {
         tarjetaDiv.className = 'conteiner shadow opacity-0 rounded rounded-2';
         tarjetaDiv.id = 'list-item-' + valor.id;
         tarjetaDiv.style.background = "white";
-        tarjetaDiv.style.margin = '0 0 10vh 0';
+        tarjetaDiv.style.margin = '0 0 20vh 0';
         tarjetaDiv.style.minHeight = "100vh";
         tarjetaDiv.style.height = "auto";
         tarjetaDiv.style.maxWidth = "944px";
@@ -105,7 +105,7 @@ function renderTarjetas(datosTarjetas) {
 
         if (aco === datosTarjetas.length) {
             var footer = document.createElement('footer');
-            footer.className = 'position-relative pt-5 rounded rounded-2';
+            footer.className = 'position-relative pt-5 rounded rounded-2 shadow';
             footer.innerHTML = `
             <ul class="nav justify-content-center">
         </ul>
@@ -154,12 +154,12 @@ function alternarHtml(length, i) {
                 <p class="h4 h-25 text-dark">
                     Actividades
                 </p>
-                <ul class="h-75 list-group list-group-flush rounded rounded " style="box-shadow: 0px 0px 100px #0000003e;">
-                    <li class="list-group-item rounded-top border-${determinarColor(tarjetastotal.tarjetas[i].sombra)} text-${determinarColor(tarjetastotal.tarjetas[i].sombra)}" style="background: ${tarjetastotal.tarjetas[i].sombra};">${tarjetastotal.tarjetas[i].act1}</li>
-                    <li class="list-group-item border-top-1 border-${determinarColor(tarjetastotal.tarjetas[i].sombra)} text-${determinarColor(tarjetastotal.tarjetas[i].sombra)}" style="background: ${tarjetastotal.tarjetas[i].sombra};">${tarjetastotal.tarjetas[i].act2}</li>
-                    <li class="list-group-item border-top-1 border-${determinarColor(tarjetastotal.tarjetas[i].sombra)} text-${determinarColor(tarjetastotal.tarjetas[i].sombra)}" style="background: ${tarjetastotal.tarjetas[i].sombra};">${tarjetastotal.tarjetas[i].act3}</li>
-                    <li class="list-group-item border-top-1 border-${determinarColor(tarjetastotal.tarjetas[i].sombra)} text-${determinarColor(tarjetastotal.tarjetas[i].sombra)}" style="background: ${tarjetastotal.tarjetas[i].sombra};">${tarjetastotal.tarjetas[i].act4}</li>
-                    <li class="list-group-item border-top-1 rounded-bottom  border-${determinarColor(tarjetastotal.tarjetas[i].sombra)} text-${determinarColor(tarjetastotal.tarjetas[i].sombra)}" style="background: ${tarjetastotal.tarjetas[i].sombra};">${tarjetastotal.tarjetas[i].act5}</li>
+                <ul class="h-75 list-group list-group-flush rounded-3" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 40px 40px -7px;">
+                    <li class="list-group-item ;" style="border-bottom: solid 1px ${tarjetastotal.tarjetas[i].color}; color:${tarjetastotal.tarjetas[i].color}">${tarjetastotal.tarjetas[i].act1}</li>
+                    <li class="list-group-item ;" style="border-bottom: solid 1px ${tarjetastotal.tarjetas[i].color}; color:${tarjetastotal.tarjetas[i].color}">${tarjetastotal.tarjetas[i].act2}</li>
+                    <li class="list-group-item ;" style="border-bottom: solid 1px ${tarjetastotal.tarjetas[i].color}; color:${tarjetastotal.tarjetas[i].color}">${tarjetastotal.tarjetas[i].act3}</li>
+                    <li class="list-group-item ;" style="border-bottom: solid 1px ${tarjetastotal.tarjetas[i].color}; color:${tarjetastotal.tarjetas[i].color}">${tarjetastotal.tarjetas[i].act4}</li>
+                    <li class="list-group-item ;" style="color:${tarjetastotal.tarjetas[i].color}">${tarjetastotal.tarjetas[i].act5}</li>
                 </ul>
             </div>
         </div >
