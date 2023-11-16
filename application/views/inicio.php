@@ -84,7 +84,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</div>
 		</div>
-
 		<div class="carrusel text-center main-element ">
 			<h2>Declaración de Misión, Visión y Valores</h2>
 			<div class="linea-valores">
@@ -115,7 +114,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											</div>
 										</div>
 										<div class="parrafo" style="color: #9B0000;">Honestidad y Confianza
-											<div class="parrafo-sub">qwertyuiopasdfghjklñxcvbnazaxwsxcfrvtbyb7yn8nim9
+											<div class="parrafo-sub">
+												qwertyuiopasdfghjklñxcvbnazaxwsxcfrvtbyb7yn8nim9
 											</div>
 										</div>
 
@@ -134,8 +134,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</div>
 											</div>
 										</div>
-										<div class="parrafo" style="color: #9B7B00;">Respeto y Servicio al cliente<div
-												class="parrafo-sub">qwertyuiopasdfghjklñxcvbnazaxwsxcfrvtbyb7yn8nim9
+										<div class="parrafo" style="color: #9B7B00;">Respeto y Servicio al cliente
+											<div class="parrafo-sub">
+												qwertyuiopasdfghjklñxcvbnazaxwsxcfrvtbyb7yn8nim9
 											</div>
 										</div>
 									</div>
@@ -152,8 +153,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												</div>
 											</div>
 										</div>
-										<div class="parrafo" style="color: #123500;">Compromiso y Colaboratividad<div
-												class="parrafo-sub">qwertyuiopasdfghjklñxcvbnazaxwsxcfrvtbyb7yn8nim9
+										<div class="parrafo" style="color: #123500;">Compromiso y Colaboratividad
+											<div class="parrafo-sub">
+												qwertyuiopasdfghjklñxcvbnazaxwsxcfrvtbyb7yn8nim9
 											</div>
 										</div>
 									</div>
@@ -186,7 +188,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 											</div>
 										</div>
 										<div class="parrafo" style="color: #00519C;">Ser la mejor opcion de compra,
-											inversión y trabajo; logrando un desarrollo y crecimiento en cada unidad de
+											inversión y trabajo; logrando un desarrollo y crecimiento en cada unidad
+											de
 											negocio.
 										</div>
 
@@ -265,12 +268,51 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<h2>Ubicación</h2>
 				<div class="linea-valores my-0" style="background: #70b34d;"></div>
 				<p class="fs-6">Calle Bravo Num. 32 Tarimoro Guanajuato Mexico</p>
-				
+
 			</div>
 			<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935.5767338143348!2d-100.7554414303732!3d20.28755869882393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cc92a7f8e2a35%3A0xd13f587978adef70!2sC.%20Bravo%2032%2C%20Zona%20Centro%2C%2038700%20Tarimoro%2C%20Gto.!5e0!3m2!1ses!2smx!4v1695395055411!5m2!1ses!2smx"
-					width="100%" height="85%" style="border:0;" allowfullscreen="" loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade" class=" rounded-bottom-3"></iframe>
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935.5767338143348!2d-100.7554414303732!3d20.28755869882393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cc92a7f8e2a35%3A0xd13f587978adef70!2sC.%20Bravo%2032%2C%20Zona%20Centro%2C%2038700%20Tarimoro%2C%20Gto.!5e0!3m2!1ses!2smx!4v1695395055411!5m2!1ses!2smx"
+				width="100%" height="85%" style="border:0;" allowfullscreen="" loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade" class=" rounded-bottom-3"></iframe>
+		</div>
+		<div class="main-elements d-flex flex-column align-items-center">
+			<div class="declaracion m-5">
+				<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="max-width:768px">
+					<div class="carousel-inner w-100 rounded-3 bg-light p-5">
+						<div class="carousel-item active  text-center border rounded-3 p-4">
+							<div class="titulo-card h-25 my-3">
+								<p class="h2">Titulo</p>
+							</div>
+							<div class="cuerpo-card h-75 d-flex flex-column align-items-center my-5">
+								<div class="rounded-circle ratio ratio-1x1 position-relative shadow"
+									style="width: 220px; background-color: red;">
+									<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
+										style="width: 80%; height: 80%; background-color: white;">
+										<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
+											style="width: 95%; height: 95%; background-color: red;">
+										</div>
+									</div>
+								</div>
+								<p class="h2">Lorem ipsum dolor sit amet.</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut saepe at possimus voluptas eum aperiam rerum vero! Blanditiis dolore vitae temporibus libero eum architecto eos.</p>
+							</div>
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+						data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+						data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+			<div class="ubicacion">
+
+			</div>
 		</div>
 	</main>
 

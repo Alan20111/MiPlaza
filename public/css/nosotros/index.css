@@ -54,10 +54,18 @@ body::before {
     border: none !important;
 }
 
+#list-example .active:hover {
+    background: #70B34D !important;
+}
+
 #list-example .active p {
     color: white !important;
 }
 
+#list-example a:hover {
+    background: #71b34d13 !important;
+        border: 1px solid #70B34D;
+}
 .list-nav:hover {
     background: #ffffffc2 !important;
 }
@@ -82,6 +90,10 @@ body::before {
     position: sticky;
     top: 50px;
     /* Punto en el que se vuelve pegajoso */
+}
+
+.lorem {
+    text-decoration: underline;
 }
 
 @keyframes card {
@@ -126,7 +138,7 @@ body::before {
         padding-bottom: 0 !important;
     }
 
-    .lorem {
+    .lorem, .line{
         display: none;
     }
 }
