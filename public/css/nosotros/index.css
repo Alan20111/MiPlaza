@@ -1,4 +1,5 @@
 body::before {
+    filter: blur(5px) brightness(80%);
     content: "";
     position: fixed;
     top: 0;
@@ -138,8 +139,8 @@ body::before {
         padding-bottom: 0 !important;
     }
 
-    .lorem, .line{
-        display: none;
+    .lorem, .fondo{
+        display: none !important;
     }
 }
 

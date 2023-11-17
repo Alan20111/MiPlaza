@@ -48,23 +48,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </nav>
     </header>
     <main>
-        <div class="tittle backtittle position-relative" style="height:70vh; width: 100%;">
+        <div class="tittle backtittle position-relative text-light" style="height:70vh; width: 100%;">
             <img src="<?= base_url() ?>public/img/nosotros.jpg" alt=""
                 class="img-fluid object-fit-cover  w-100 h-100 img-post">
 
-            <div class="px-3 block-text shadow text-center text-light position-absolute top-50 start-50 translate-middle rounded-3"
-                style="background: rgba(255, 255, 255, 0.253)">
+            <div
+                class="px-3 block-text text-center  position-absolute top-50 start-50 translate-middle rounded-3">
                 <p class="display-1 fw-semibold mb-1">Nosotros
                 </p>
                 <div class="line w-75 bg-light" style="height:3px;"></div>
-                <p class="lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae debitis
+
+            </div>
+            <div class="fondo position-absolute bottom-0 start-50 translate-middle-x w-100 d-flex justify-content-center text-center p-3"
+                style="background: rgba(255, 255, 255, 0.253)">
+                <p class="lorem  m-0 w-50">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae
+                    debitis
                     optio eligendi distinctio voluptatum excepturi quis sapiente asperiores molestiae quasi deleniti est
                     fuga perferendis, consequuntur esse mollitia. Perferendis, velit necessitatibus praesentium fuga
                     sapiente odit consequuntur nobis quibusdam atque quae maxime expedita excepturi aut enim accusantium
                     delectus, id, quia error repellat? Tempore doloribus voluptate dolor tempora earum sequi? Esse,
                     necessitatibus nesciunt. Non, ipsum qui quam asperiores modi nemo autem saepe unde adipisci. Hic,
-                    eum commodi.</p>
+                    eum commodi.
+                </p>
             </div>
+
         </div>
         <nav class="navbar sticky-top overflow-x-auto overflow-y-hidden shadow p-0 justify-content-center"
             style="height:98px; background: white;" id="list-jods">

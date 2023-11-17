@@ -84,232 +84,162 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</div>
 		</div>
-		<div class="carrusel text-center main-element ">
-			<h2>Declaración de Misión, Visión y Valores</h2>
-			<div class="linea-valores">
-			</div>
-			<div id="carouselExampleAutoplaying" class="carousel slide MVV-conteiner" data-bs-ride="carousel">
-				<div class="carousel-inner MVV-conteiner rounded-3">
-					<div class="carousel-item active">
-						<div class="card1">
-							<div class="rededor-nrj">
-								<ul class="nav justify-content-center">
-									<li class="nav-item">
-										<div class="cabeza">Valores</div>
-									</li>
-								</ul>
-								<div class="tabla-MVV nav justify-content-center">
-									<div class="col-30 nav-item">
-										<div class="icono-MVV position-relative">
-											<div class="circulo1 position-absolute top-50 start-50 translate-middle"
-												style="background:#C73636;">
-												<div
-													class="circulo2 position-absolute top-50 start-50 translate-middle">
-													<div class="circulo3 position-relative top-50 start-50 translate-middle"
-														style="background:#ff4f4f;">
-														<img src="<?= base_url() ?>public/img/honesto_1.png" alt=""
-															class="position-absolute top-50 start-50 translate-middle">
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="parrafo" style="color: #9B0000;">Honestidad y Confianza
-											<div class="parrafo-sub">
-												qwertyuiopasdfghjklñxcvbnazaxwsxcfrvtbyb7yn8nim9
-											</div>
-										</div>
-
-									</div>
-									<div class="col-30 nav-item">
-										<div class="icono-MVV position-relative">
-											<div class="circulo1 position-absolute top-50 start-50 translate-middle"
-												style="background: #CEA509;">
-												<div
-													class="circulo2 position-absolute top-50 start-50 translate-middle">
-													<div class="circulo3 position-relative top-50 start-50 translate-middle"
-														style="background: #FDCB0A;">
-														<img src="<?= base_url() ?>public/img/respeto_1.png" alt=""
-															class="position-absolute top-50 start-50 translate-middle">
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="parrafo" style="color: #9B7B00;">Respeto y Servicio al cliente
-											<div class="parrafo-sub">
-												qwertyuiopasdfghjklñxcvbnazaxwsxcfrvtbyb7yn8nim9
+		<div class="main-elements d-flex flex-column align-items-center">
+			<div class="declaracion bg-light rounded-3 mx-sm-5 my-5">
+				<div class="">
+					<div id="carouselExampleAutoplaying" class="carousel slide  position-relative card-main"
+						data-bs-ride="carousel">
+						<div class="carousel-inner w-100  p-5 pb-3">
+							<div class=" carousel-item active  text-center border rounded-3 p-4">
+								<div class="titulo-card h-25">
+									<p class="display-4 fw-bolder m-0">Visión</p>
+								</div>
+								<div class="cuerpo-card h-75 d-flex flex-column align-items-center mb-3">
+									<div class="rounded-circle ratio ratio-1x1 position-relative shadow my-3"
+										style="width: 200px; background-color: #4FABFF;">
+										<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
+											style="width: 80%; height: 80%; background-color: white;">
+											<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
+												style="width: 95%; height: 95%; background-color: #4FABFF;">
+												<svg xmlns="http://www.w3.org/2000/svg" width="60%" height="60%"
+													fill="white"
+													class="bi bi-graph-up-arrow position-absolute top-50 start-50 translate-middle"
+													viewBox="0 0 16 16">
+													<path fill-rule="evenodd"
+														d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z" />
+												</svg>
 											</div>
 										</div>
 									</div>
-									<div class="col-30 nav-item">
-										<div class="icono-MVV position-relative">
-											<div class="circulo1 position-absolute top-50 start-50 translate-middle">
-												<div
-													class="circulo2 position-absolute top-50 start-50 translate-middle">
-													<div
-														class="circulo3 position-relative top-50 start-50 translate-middle">
-														<img src="<?= base_url() ?>public/img/unido_1.png" alt=""
-															style="margin:10px;">
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="parrafo" style="color: #123500;">Compromiso y Colaboratividad
-											<div class="parrafo-sub">
-												qwertyuiopasdfghjklñxcvbnazaxwsxcfrvtbyb7yn8nim9
-											</div>
-										</div>
-									</div>
+									<p class="h5" style="color:#00519C;">Ser la mejor opcion de compra, inversión y
+										trabajo;
+										logrando un desarrollo y crecimiento en cada unidad de negocio.
+									</p>
 								</div>
 							</div>
-
-						</div>
-					</div>
-					<div class="carousel-item">
-						<div class="card1">
-							<div class="rededor-nrj">
-								<ul class="nav justify-content-center">
-									<li class="nav-item">
-										<div class="cabeza">Visión</div>
-									</li>
-								</ul>
-								<div class="tabla-MVV nav justify-content-center">
-									<div class="col-30 nav-item" style="width: 80%;">
-										<div class="icono-MVV position-relative">
-											<div class="circulo1 position-absolute top-50 start-50 translate-middle"
-												style="background:#4FABFF;">
-												<div
-													class="circulo2 position-absolute top-50 start-50 translate-middle">
-													<div class="circulo3 position-relative top-50 start-50 translate-middle"
-														style="background:#4FABFF;">
-														<img src="<?= base_url() ?>public/img/vision_1.png" alt=""
-															class="position-absolute top-50 start-50 translate-middle">
-													</div>
-												</div>
+							<div class=" carousel-item text-center border rounded-3 p-4">
+								<div class="titulo-card h-25">
+									<p class="display-4 fw-bolder m-0">Misión</p>
+								</div>
+								<div class="cuerpo-card h-75 d-flex flex-column align-items-center mb-3">
+									<div class="rounded-circle ratio ratio-1x1 position-relative shadow my-3"
+										style="width: 200px; background-color: #f9906C;">
+										<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
+											style="width: 80%; height: 80%; background-color: white;">
+											<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
+												style="width: 95%; height: 95%; background-color: #f9906C;">
+												<svg xmlns="http://www.w3.org/2000/svg" width="60%" height="60%"
+													fill="white"
+													class="bi bi-pin-map-fill position-absolute top-50 start-50 translate-middle"
+													viewBox="0 0 16 16">
+													<path fill-rule="evenodd"
+														d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z" />
+													<path fill-rule="evenodd"
+														d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
+												</svg>
 											</div>
 										</div>
-										<div class="parrafo" style="color: #00519C;">Ser la mejor opcion de compra,
-											inversión y trabajo; logrando un desarrollo y crecimiento en cada unidad
-											de
-											negocio.
-										</div>
-
 									</div>
-
+									<p class="h5" style="color:#C86F50;">Ser la satisfaccion de nuestros clientes,
+										proveedores y empleados con honestidad, servicio y pasíon.
+									</p>
 								</div>
 							</div>
-
 						</div>
-					</div>
-					<div class="carousel-item">
-						<div class="card1">
-							<div class="rededor-nrj">
-								<ul class="nav justify-content-center">
-									<li class="nav-item">
-										<div class="cabeza">Misión</div>
-									</li>
-								</ul>
-								<div class="tabla-MVV nav justify-content-center">
-									<div class="col-30 nav-item" style="width: 80%;">
-										<div class="icono-MVV position-relative">
-											<div class="circulo1 position-absolute top-50 start-50 translate-middle"
-												style="background:#F9906C;">
-												<div
-													class="circulo2 position-absolute top-50 start-50 translate-middle">
-													<div class="circulo3 position-relative top-50 start-50 translate-middle"
-														style="background:#F9906C;">
-														<img src="<?= base_url() ?>public/img/mision_1.png" alt=""
-															class="position-absolute top-50 start-50 translate-middle">
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="parrafo" style="color: #C86F50;">Ser la satisfaccion de nuestros
-											clientes, proveedores y empleados con honestidad, servicio y pasíon.
-										</div>
-
-									</div>
-
-								</div>
-							</div>
-
-						</div>
-					</div>
-					<button class="carousel-control-prev d-flex align-items-start px-5" type="button"
-						data-bs-target="#carouselExampleAutoplaying" style="top:25px;" data-bs-slide="prev">
-						<div class="bg-btn position-relative">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
-								class="bi bi-chevron-bar-right carousel-control-prev-icon position-absolute top-50 start-50 translate-middle"
-								viewBox="0 0 16 16" aria-hidden="true">
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+							data-bs-slide="prev">
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="secondary"
+								class="bi bi-chevron-left position-absolute top-0 start-0 m-2 my-3" viewBox="0 0 16 16">
 								<path fill-rule="evenodd"
 									d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
 							</svg>
-							<span class="visually-hidden">Previous</span>
-						</div>
-					</button>
-					<button class="carousel-control-next d-flex align-items-start px-5" type="button"
-						data-bs-target="#carouselExampleAutoplaying" style="top:25px;" data-bs-slide="next">
-						<div class="bg-btn position-relative">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
-								class="bi bi-chevron-bar-right carousel-control-next-icon position-absolute top-50 start-50 translate-middle"
-								viewBox="0 0 16 16" aria-hidden="true">
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+							data-bs-slide="next">
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="secondary"
+								class="bi bi-chevron-right position-absolute top-0 end-0 m-2 my-3" viewBox="0 0 16 16">
 								<path fill-rule="evenodd"
 									d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
 							</svg>
-							<span class="visually-hidden">Next</span>
-						</div>
-					</button>
-
+						</button>
+					</div>
 				</div>
-
-			</div>
-		</div>
-		<div class="ubication my-5 text-center main-element" style="height: calc(80vh - 98px);">
-			<div class="ubication p-0 m-0 pt-2 rounded-top-3 shadow ubi" style="background:white; height:15%">
-				<h2>Ubicación</h2>
-				<div class="linea-valores my-0" style="background: #70b34d;"></div>
-				<p class="fs-6">Calle Bravo Num. 32 Tarimoro Guanajuato Mexico</p>
-
-			</div>
-			<iframe
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935.5767338143348!2d-100.7554414303732!3d20.28755869882393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cc92a7f8e2a35%3A0xd13f587978adef70!2sC.%20Bravo%2032%2C%20Zona%20Centro%2C%2038700%20Tarimoro%2C%20Gto.!5e0!3m2!1ses!2smx!4v1695395055411!5m2!1ses!2smx"
-				width="100%" height="85%" style="border:0;" allowfullscreen="" loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade" class=" rounded-bottom-3"></iframe>
-		</div>
-		<div class="main-elements d-flex flex-column align-items-center">
-			<div class="declaracion m-5">
-				<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" style="max-width:768px">
-					<div class="carousel-inner w-100 rounded-3 bg-light p-5">
-						<div class="carousel-item active  text-center border rounded-3 p-4">
-							<div class="titulo-card h-25 my-3">
-								<p class="h2">Titulo</p>
-							</div>
-							<div class="cuerpo-card h-75 d-flex flex-column align-items-center my-5">
-								<div class="rounded-circle ratio ratio-1x1 position-relative shadow"
-									style="width: 220px; background-color: red;">
+				<div class="d-flex justify-content-center">
+					<div class="row justify-content-center pb-5 px-md-0 px-5 card-main">
+						<div class="titulo-card text-center">
+							<p class="display-6 m-0 p-0">Valores</p>
+						</div>
+						<div class="carrusel-card col-md-3 text-center border rounded-3 p-4 mb-md-0 mb-5 me-md-5 me-0">
+							<div class="cuerpo-card h-75 d-flex flex-column align-items-center mb-3">
+								<div class="rounded-circle ratio ratio-1x1 position-relative shadow my-3 valores"
+									style=" background-color: #FF4949;">
 									<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
 										style="width: 80%; height: 80%; background-color: white;">
 										<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
-											style="width: 95%; height: 95%; background-color: red;">
+											style="width: 95%; height: 95%; background-color: #FF4949;">
+											<svg xmlns="http://www.w3.org/2000/svg" width="60%" height="60%"
+												fill="white"
+												class="bi bi-pin-map-fill position-absolute top-50 start-50 translate-middle"
+												viewBox="0 0 16 16">
+												<path
+													d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z" />
+											</svg>
 										</div>
 									</div>
 								</div>
-								<p class="h2">Lorem ipsum dolor sit amet.</p>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut saepe at possimus voluptas eum aperiam rerum vero! Blanditiis dolore vitae temporibus libero eum architecto eos.</p>
+								<p class="h5" style="color:#950000;">Honestidad y Confianza
+								</p>
+							</div>
+						</div>
+						<div class="carrusel-card col-md-3 text-center border rounded-3 p-4 mb-md-0 mb-5 ">
+							<div class="cuerpo-card h-75 d-flex flex-column align-items-center mb-3">
+								<div class="rounded-circle ratio ratio-1x1 position-relative shadow my-3 valores"
+									style="background-color: #FFCF14;">
+									<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
+										style="width: 80%; height: 80%; background-color: white;">
+										<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
+											style="width: 95%; height: 95%; background-color: #FFCF14;">
+											<svg xmlns="http://www.w3.org/2000/svg" width="60%" height="60%"
+												fill="white"
+												class="bi bi-pin-map-fill position-absolute top-50 start-50 translate-middle"
+												viewBox="0 0 16 16">
+												<path
+													d="M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4Zm13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276Z" />
+											</svg>
+										</div>
+									</div>
+								</div>
+								<p class="h5" style="color:#957700;">Respeto y Servicio
+								</p>
+							</div>
+						</div>
+						<div class="carrusel-card col-md-3 text-center border rounded-3 p-4 ms-md-5 ms-0">
+							<div class="cuerpo-card h-75 d-flex flex-column align-items-center mb-3">
+								<div class="rounded-circle ratio ratio-1x1 position-relative shadow my-3 valores"
+									style="background-color: #77B04A;">
+									<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
+										style="width: 80%; height: 80%; background-color: white;">
+										<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
+											style="width: 95%; height: 95%; background-color: #77B04A;">
+											<svg xmlns="http://www.w3.org/2000/svg" width="60%" height="60%"
+												fill="white"
+												class="bi bi-pin-map-fill position-absolute top-50 start-50 translate-middle"
+												viewBox="0 0 16 16">
+												<path fill-rule="evenodd"
+													d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5v-1zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1z" />
+											</svg>
+										</div>
+									</div>
+								</div>
+								<p class="h5" style="color: #47692c;">Compromiso y Colaboratividad
+								</p>
 							</div>
 						</div>
 					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-						data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-						data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					</button>
+
 				</div>
 			</div>
+
 			<div class="ubicacion">
 
 			</div>
