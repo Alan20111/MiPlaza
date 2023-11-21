@@ -12,7 +12,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?= base_url() ?>public/css/header.css">
 	<link rel="stylesheet" href="<?= base_url() ?>public/css/inicio/index.css">
-	<link rel="stylesheet" href="<?= base_url() ?>public/css/inicio/card1.css">
 	<link rel="icon" href="<?= base_url() ?>public/img/miplaza-logo.png" type="image/x-icon">
 
 </head>
@@ -49,54 +48,67 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</nav>
 	</header>
 	<main style="margin-top: 98px;">
-		<div class="encabezado">
-			<div id="carouselExampleSlidesOnly" class="carousel slide logo position-relative" data-bs-ride="carousel">
-				<div class="carousel-inner main">
-					<div class="carousel-item active">
-						<img src="<?= base_url() ?>public/img/referencia.jpg" class="d-block w-100" alt="...">
+		<div class="encabezado" style="height: calc(80vh - 98px);">
+			<div id="carouselExampleSlidesOnly" class="carousel slide logo position-relative w-100"
+				data-bs-ride="carousel" style="height: calc( 80vh - 196px);">
+				<div class="carousel-inner main w-100 h-100">
+					<div class="carousel-item h-100 w-100 active">
+						<img src="<?= base_url() ?>public/img/referencia.jpg"
+							class="d-block w-100 h-100 object-fit-cover" alt="...">
 					</div>
-					<div class="carousel-item">
-						<img src="<?= base_url() ?>public/img/referencia1.jpg" class="d-block w-100" alt="...">
+					<div class="carousel-item h-100 w-100">
+						<img src="<?= base_url() ?>public/img/referencia1.jpg"
+							class="d-block w-100 h-100 object-fit-cover" alt="...">
 
 					</div>
-					<div class="carousel-item">
-						<img src="<?= base_url() ?>public/img/referencia1.jpg" class="d-block w-100" alt="...">
+					<div class="carousel-item h-100 w-100">
+						<img src="<?= base_url() ?>public/img/referencia1.jpg"
+							class="d-block w-100 h-100 object-fit-cover" alt="...">
 
 					</div>
 				</div>
-				<img src="<?= base_url() ?>public/img/miplaza.png"
-					class="img-fluid position-absolute top-50 start-50 translate-middle" alt="" id="logo">
+				<img
+					class="img-fluid position-absolute top-50 start-50 translate-middle w-100 h-100 object-fit-contain border-0" alt="" id="logo">
 			</div>
-			<div class="descripcion text-center">
-				<p class="d-inline-flex gap-1">
-					<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-						aria-expanded="false" aria-controls="collapseExample">
-						Lo que nos representa
-					</button>
-				</p>
-				<div class="collapse" id="collapseExample">
-					<div class="card card-body">
-						Some placeholder content for the collapse component. This panel is hidden by default but
-						revealed when the user activates the relevant trigger.
+			<div class="descripcion text-center w-100 bg-light d-flex flex-column justify-content-center align-items-center"
+				style="height:98px">
+				<button class="btn rounded-pill h-50 w-50" type="button" data-bs-toggle="collapse"
+					data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+					Lo que nos representa
+				</button>
 
-
-					</div>
+			</div>
+			<div class="collapse px-5" id="collapseExample">
+				<div class="card card-body bg-light mx-auto border-0 rounded rounded-top-0 rounded-bottom-3 shadow p-4 pt-0"
+					style="color: #634d1d;">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat soluta iste voluptatum praesentium
+					laborum a iure reprehenderit illum sit eius eos dolorem dicta optio similique consectetur, obcaecati
+					ex ratione laudantium rerum esse neque unde aspernatur nam. Veritatis possimus, omnis, cumque quasi
+					totam excepturi optio numquam mollitia fugit consequuntur sit dicta? Hic tenetur, in assumenda error
+					totam ipsam, et id optio consequatur explicabo facilis similique necessitatibus doloremque ad dolore
+					laborum nemo quam mollitia tempore! Deserunt, error illo illum accusamus at cupiditate sit ratione
+					deleniti nostrum rerum quidem voluptatum blanditiis eaque hic ipsa maiores odit tenetur recusandae
+					veritatis quo ullam mollitia. Maxime.
 				</div>
 			</div>
 		</div>
-		<div class="main-elements d-flex flex-column align-items-center">
-			<div class="declaracion bg-light rounded-3 mx-sm-5 my-5">
+		<div class="main-elements d-flex flex-column align-items-center text-center  px-sm-5 pb-5">
+			<h1 class="DMVV d-flex flex-column align-items-center justify-content-center display-6 fw-bolder mx-4"
+				style="height: 15vh; margin-top: 2.5vh; margin-bottom: 2.5vh;">Declaracion Misión, Visión y Valores
+				<div class="line w-25 mt-4" style=" background-color: #ff8d1c; min-height:5px; text-wrap: pretty;"></div>
+			</h1>
+			<div class="bg-light rounded-3 opacity-0 mb-5" id="declaracion">
 				<div class="">
 					<div id="carouselExampleAutoplaying" class="carousel slide  position-relative card-main"
 						data-bs-ride="carousel">
 						<div class="carousel-inner w-100  p-5 pb-3">
 							<div class=" carousel-item active  text-center border rounded-3 p-4">
 								<div class="titulo-card h-25">
-									<p class="display-4 fw-bolder m-0">Visión</p>
+									<h1 class="display-6 fw-bolder m-0">Visión</h1>
 								</div>
 								<div class="cuerpo-card h-75 d-flex flex-column align-items-center mb-3">
-									<div class="rounded-circle ratio ratio-1x1 position-relative shadow my-3"
-										style="width: 200px; background-color: #4FABFF;">
+									<div class="VV rounded-circle ratio ratio-1x1 position-relative shadow my-3"
+										style="background-color: #4FABFF;">
 										<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
 											style="width: 80%; height: 80%; background-color: white;">
 											<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
@@ -119,11 +131,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 							<div class=" carousel-item text-center border rounded-3 p-4">
 								<div class="titulo-card h-25">
-									<p class="display-4 fw-bolder m-0">Misión</p>
+									<h1 class="display-6 fw-bolder m-0">Misión</h1>
 								</div>
 								<div class="cuerpo-card h-75 d-flex flex-column align-items-center mb-3">
-									<div class="rounded-circle ratio ratio-1x1 position-relative shadow my-3"
-										style="width: 200px; background-color: #f9906C;">
+									<div class="rounded-circle ratio ratio-1x1 position-relative shadow my-3 VV"
+										style="background-color: #f9906C;">
 										<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
 											style="width: 80%; height: 80%; background-color: white;">
 											<div class="rounded-circle position-absolute top-50 start-50 translate-middle shadow"
@@ -167,7 +179,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="d-flex justify-content-center">
 					<div class="row justify-content-center pb-5 px-md-0 px-5 card-main">
 						<div class="titulo-card text-center">
-							<p class="display-6 m-0 p-0">Valores</p>
+							<h1 class="display-6 m-0 p-0">Valores</h1>
 						</div>
 						<div class="carrusel-card col-md-3 text-center border rounded-3 p-4 mb-md-0 mb-5 me-md-5 me-0">
 							<div class="cuerpo-card h-75 d-flex flex-column align-items-center mb-3">
@@ -239,10 +251,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 				</div>
 			</div>
-
-			<div class="ubicacion">
-
+			<div class="w-100 ubicacion my-5 opacity-0" id="ubicacion">
+				<div class=" w-100 bg-light rounded-3" style="height:100vh">
+					<div class="w-100" style="height: 15%">
+						<h1 class="display-6 fw-bolder p-3 m-0">Ubicación
+							<div class="line w-25 mt-2"
+								style=" background-color: #0080ff; min-height:5px; text-wrap: pretty;"></div>
+							<p class="fs-6 fw-normal">C. Bravo 32, Zona Centro, 38700 Tarimoro, Gto.</p>
+						</h1>
+					</div>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d556.2967729511494!2d-100.7547100764793!3d20.287692794222625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cc92a7fb5a6d7%3A0xd853e0dbbfbe18da!2sC.%20Bravo%2032%2C%20Zona%20Centro%2C%2038700%20Tarimoro%2C%20Gto.!5e0!3m2!1ses!2smx!4v1700588230993!5m2!1ses!2smx"
+						width="100%" height="90%" style="border:0;" class=" rounded-bottom-3" allowfullscreen=""
+						loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
 			</div>
+
 		</div>
 	</main>
 

@@ -10,21 +10,13 @@
     }
 }
 
-.encabezado .w-100 {
-    width: 100%;
-    height: 60vh;
-    filter: brightness(50%) saturate(60%);
-}
-
 .carousel-item img {
-    object-fit: cover;
-    /* Esto ajustará la imagen sin distorsionarla */
-    max-height: 100%;
-    /* Limita la altura máxima para evitar que las imágenes se alarguen demasiado */
+    filter: brightness(50%) saturate(60%);
+    height: calc(88vh - 196px);
 }
 
 body::before {
-    filter: blur(5px) brightness(80%);
+    filter: blur(5px) brightness(90%);
     content: "";
     position: fixed;
     top: 0;
@@ -64,85 +56,107 @@ body::before {
 }
 
 #logo {
-    z-index: 2;
-    width: 50vh;
-}
-
-.descripcion {
-    padding: 20px 15%;
-    border-bottom: white solid 3px;
-    width: 100%;
+    z-index: 4;
+    background-image: url('../../img/miplaza.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 200px;
     height: 100px;
-    background: #70b34d;
-    border-bottom-right-radius: 0px !important;
-    border-bottom-left-radius: 0px !important;
-    margin-bottom: 9vh;
+    border: none !important;
 }
 
-.descripcion button {
-    background: white;
-    color: #70B34D;
-    font-weight: 500;
-    font-size: 22px;
-    border-radius: 3px;
-}
 
-.descripcion button:hover {
-    color: white;
-    background: #ffffff2f;
-    border: white solid 1px;
+.card-body {
+    z-index: 9 !important;
 }
-
-.descripcion button:active {
-    background: rgba(255, 255, 255, 0.082) !important;
-    border: white 1px solid !important;
-    color: white !important;
-}
-
-.descripcion p {
-    height: 80%;
-}
-
 
 .main-element {
     margin-right: 20%;
     margin-left: 20%
 }
 
-.card-main {
+.card-main,
+.card-body,
+.ubicacion {
     max-width: 768px !important;
 }
-.valores{
+
+.valores {
     width: 150px;
 }
-.carrusel-card{
-    transition: box-shadow 500ms,background 500ms;
+
+.VV {
+    width: 200px;
 }
-.carrusel-card:hover{
+
+.carrusel-card {
+    transition: box-shadow 500ms, background 500ms;
+}
+
+.carrusel-card:hover {
     background: #00000005;
     box-shadow: rgba(0, 0, 0, 0.363) 0px 10px 10px 0px;
-    transition: box-shadow 500ms,background 500ms;
+    transition: box-shadow 500ms, background 500ms;
 }
+
 .visible {
     animation: moverr 500ms forwards !important;
 }
-@media (max-width: 600px) {
-    .descripcion {
-        border-bottom-right-radius: 20px !important;
-        border-bottom-left-radius: 20px !important;
-    }
 
+.descripcion {
+    position: relative;
+    z-index: 10 !important;
+}
+
+.descripcion button {
+    background: #70B34D !important;
+    animation: aparecer 500ms;
+    color: white !important;
+    border: none !important;
+    font-weight: 500 !important;
+    font-size: 20px;
+    text-align: center;
+}
+
+.descripcion button:hover {
+    background: #71b34d13 !important;
+    color: #70B34D !important;
+    border: 1px solid #70B34D !important;
+}
+
+@media (max-width: 600px) {
     .main-element {
         margin-right: 0px;
         margin-left: 0px;
     }
 }
 
-@media (max-width: 768px) {
-    .card-main {
+@media (max-width: 767.9px) {
+
+    .card-main,
+    .ubicacion {
         width: 100%;
     }
-    .valores{
+
+    .valores,
+    .VV {
         width: 200px;
+    }
+}
+
+@media (max-width: 575.9px) {
+
+    .valores,
+    .VV {
+        width: 150px;
+    }
+
+    #collapseExample {
+        padding: 0 !important;
+    }
+
+    .descripcion button {
+        width: 75% !important;
     }
 }

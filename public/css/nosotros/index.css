@@ -161,3 +161,11 @@ body::before {
         height: 70vh;
     }
 }
+@media (max-height:500px) {
+    .row .tittle img,.card-float{
+        opacity: 0 !important;
+    }
+    .conteiner {
+        height: 30vh !important;
+    }
+}
