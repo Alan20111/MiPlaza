@@ -94,6 +94,7 @@ body::before {
 }
 
 .lorem {
+    text-wrap: pretty;
     text-decoration: underline;
 }
 
@@ -139,13 +140,20 @@ body::before {
         padding-bottom: 0 !important;
     }
 
-    .lorem, .fondo{
-        display: none !important;
+    .fondo{
+        height: 40% !important;
+    }
+    .lorem{
+        height: 40% !important;
+        width: 75% !important;
     }
 }
 
 @media (max-width:576.9px) {
 
+    .lorem, .fondo{
+        display: none !important;
+    }
     .card-float,
     .tittle,
     .descripcion {

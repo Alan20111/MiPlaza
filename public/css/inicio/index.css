@@ -57,12 +57,10 @@ body::before {
 
 #logo {
     z-index: 4;
-    background-image: url('../../img/miplaza.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    width: 200px;
-    height: 100px;
+    padding: 20px;
     border: none !important;
 }
 
@@ -115,7 +113,7 @@ body::before {
     color: white !important;
     border: none !important;
     font-weight: 500 !important;
-    font-size: 20px;
+    font-size: 20px !important;
     text-align: center;
 }
 
@@ -125,6 +123,22 @@ body::before {
     border: 1px solid #70B34D !important;
 }
 
+.bg-green button {
+    background: #71b34d13 !important;
+    color: #70B34D !important;
+    border: 1px solid #70B34D !important;
+    font-weight: 500 !important;
+}
+
+.bg-green button:hover {
+    background: #70B34D !important;
+    animation: aparecer 500ms;
+    color: white !important;
+    border: none !important;
+}
+.conteiner-card{
+    width: 200px !important;
+}
 @media (max-width: 600px) {
     .main-element {
         margin-right: 0px;

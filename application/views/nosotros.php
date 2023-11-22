@@ -54,7 +54,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
             <div
                 class="px-3 block-text text-center  position-absolute top-50 start-50 translate-middle rounded-3">
-                <p class="display-1 fw-semibold mb-1">Nosotros
+                <p class="display-1 mb-1">Nosotros
                 </p>
                 <div class="line w-75 bg-light" style="height:3px;"></div>
 

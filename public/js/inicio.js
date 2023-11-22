@@ -23,3 +23,20 @@ if (elemento1) {
     observador.observe(elemento1);
 }
 
+/*
+Alimentos y Bebidas:
+    Semillas y Cereales
+    Jugos y Leches
+    Carnes Frías
+    Pan
+Cuidado Personal y Belleza:
+    Belleza
+    Higiénicos
+    Desechables
+    Detergentes
+    Desinfectantes
+Artículos para el Hogar:
+    Básicos
+Productos para Bebés:
+    Bebé
+*/

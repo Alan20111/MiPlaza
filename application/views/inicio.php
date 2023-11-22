@@ -67,10 +67,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 					</div>
 				</div>
-				<img
-					class="img-fluid position-absolute top-50 start-50 translate-middle w-100 h-100 object-fit-contain border-0" alt="" id="logo">
+				<img src="<?= base_url() ?>public/img/miplaza.png"
+					class="img-fluid position-absolute top-50 start-50 translate-middle w-100 h-100 object-fit-contain border-0 p-5"
+					alt="" id="logo">
 			</div>
-			<div class="descripcion text-center w-100 bg-light d-flex flex-column justify-content-center align-items-center"
+			<div class="descripcion text-center w-100 bg-body d-flex flex-column justify-content-center align-items-center"
 				style="height:98px">
 				<button class="btn rounded-pill h-50 w-50" type="button" data-bs-toggle="collapse"
 					data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -78,8 +79,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</button>
 
 			</div>
-			<div class="collapse px-5" id="collapseExample">
-				<div class="card card-body bg-light mx-auto border-0 rounded rounded-top-0 rounded-bottom-3 shadow p-4 pt-0"
+			<div class="collapse" id="collapseExample">
+				<div class="card card-body bg-light mx-auto border-0 rounded rounded-top-0 rounded-bottom-3 shadow p-4 pt-0 bg-body"
 					style="color: #634d1d;">
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat soluta iste voluptatum praesentium
 					laborum a iure reprehenderit illum sit eius eos dolorem dicta optio similique consectetur, obcaecati
@@ -92,12 +93,59 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</div>
 		</div>
-		<div class="main-elements d-flex flex-column align-items-center text-center  px-sm-5 pb-5">
+		<div class="main-elements d-flex flex-column align-items-center text-center ">
+
+			<div class="bg-light w-100 shadow" style="min-height:85vh">
+				<h1 class="DMVV d-flex flex-column align-items-center justify-content-center display-6 fw-bolder mx-4"
+					style="height: 15vh; margin-top: 2.5vh; margin-bottom: 2.5vh;">Nuestro Catalago
+					<div class="line w-25 mt-4" style=" background-color: #ff8d1c; min-height:5px;">
+					</div>
+				</h1>
+				<div class="bg-body mx-4">
+					<div class="b-categorias d-flex justify-content-start flex-wrap-reverse" style="min-height:10%">
+						<div class="bg-green m-2">
+							<button class="btn h-100 fs-6 rounded-pill">Alimentos y Bebidas</button>
+						</div>
+						<div class="bg-green m-2">
+							<button class="btn h-100 fs-6 rounded-pill">Cuidado Personal y Belleza</button>
+						</div>
+						<div class="bg-green m-2">
+							<button class="btn h-100 fs-6 rounded-pill">Artículos para el Hogar</button>
+						</div>
+						<div class="bg-green m-2">
+							<button class="btn h-100 fs-6 rounded-pill">Productos para Bebés</button>
+						</div>
+
+					</div>
+					<div class="m-categorias w-100 d-flex flex-wrap" style="min-height:90%; height:800px">
+						<div class="conteiner-card h-25 bg-danger m-2" style="">
+
+						</div>
+						<div class="conteiner-card h-50 bg-danger m-2" style="">
+
+						</div>
+						<div class="conteiner-card h-25 bg-danger m-2" style="">
+
+						</div>
+						<div class="conteiner-card h-25 bg-danger m-2" style="">
+
+						</div>
+						<div class="conteiner-card h-50 bg-danger m-2" style="">
+
+						</div>
+						<div class="conteiner-card h-25 bg-danger m-2" style="">
+
+						</div>
+					</div>
+				</div>
+
+			</div>
 			<h1 class="DMVV d-flex flex-column align-items-center justify-content-center display-6 fw-bolder mx-4"
 				style="height: 15vh; margin-top: 2.5vh; margin-bottom: 2.5vh;">Declaracion Misión, Visión y Valores
-				<div class="line w-25 mt-4" style=" background-color: #ff8d1c; min-height:5px; text-wrap: pretty;"></div>
+				<div class="line w-25 mt-4" style=" background-color: #ff8d1c; min-height:5px; text-wrap: pretty;">
+				</div>
 			</h1>
-			<div class="bg-light rounded-3 opacity-0 mb-5" id="declaracion">
+			<div class="bg-light rounded-3 opacity-0 mb-5 shadow" id="declaracion">
 				<div class="">
 					<div id="carouselExampleAutoplaying" class="carousel slide  position-relative card-main"
 						data-bs-ride="carousel">
@@ -251,8 +299,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 				</div>
 			</div>
-			<div class="w-100 ubicacion my-5 opacity-0" id="ubicacion">
-				<div class=" w-100 bg-light rounded-3" style="height:100vh">
+			<div class="w-100 ubicacion my-5 opacity-0 shadow" id="ubicacion">
+				<div class=" w-100 bg-light rounded-3 shadow" style="height:100vh">
 					<div class="w-100" style="height: 15%">
 						<h1 class="display-6 fw-bolder p-3 m-0">Ubicación
 							<div class="line w-25 mt-2"
