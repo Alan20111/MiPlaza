@@ -101,7 +101,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					<div class="line w-25 mt-4" style=" background-color: #ff8d1c; min-height:5px;">
 					</div>
 				</h1>
-				<div class="bg-body mx-4">
+				<div class="bg-body m-5">
 					<div class="b-categorias d-flex justify-content-start flex-wrap-reverse" style="min-height:10%">
 						<div class="bg-green m-2">
 							<button class="btn h-100 fs-6 rounded-pill">Alimentos y Bebidas</button>
@@ -117,23 +117,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</div>
 
 					</div>
-					<div class="m-categorias w-100 d-flex flex-wrap" style="min-height:90%; height:800px">
-						<div class="conteiner-card h-25 bg-danger m-2" style="">
+					<div class="m-categorias w-100 px-5 py-3 pb-5" style="min-height:800px;">
+						<div class="conteiner-card  bg-danger " style="grid-row:1/3;">1
 
 						</div>
-						<div class="conteiner-card h-50 bg-danger m-2" style="">
+						<div class="conteiner-card  bg-danger " style="grid-row:1/2;">2
 
 						</div>
-						<div class="conteiner-card h-25 bg-danger m-2" style="">
+						<div class="conteiner-card  bg-danger " style="grid-row:1/3;">3
 
 						</div>
-						<div class="conteiner-card h-25 bg-danger m-2" style="">
+						<div class="conteiner-card  bg-primary " style="grid-row:2/3;">4
 
 						</div>
-						<div class="conteiner-card h-50 bg-danger m-2" style="">
+						<div class="conteiner-card  bg-danger " style="grid-row:2/3">5
 
 						</div>
-						<div class="conteiner-card h-25 bg-danger m-2" style="">
+						<div class="conteiner-card bg-danger " style="2/3">6
 
 						</div>
 					</div>

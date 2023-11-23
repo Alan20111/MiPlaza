@@ -136,9 +136,17 @@ body::before {
     color: white !important;
     border: none !important;
 }
-.conteiner-card{
-    width: 200px !important;
+
+.m-categorias {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
 }
+.conteiner-card{
+    border-radius: 20px;
+}
+
 @media (max-width: 600px) {
     .main-element {
         margin-right: 0px;
