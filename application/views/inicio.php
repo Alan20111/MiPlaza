@@ -93,50 +93,71 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</div>
 		</div>
-		<div class="main-elements d-flex flex-column align-items-center text-center ">
+		<div class="main-elements d-flex flex-column align-items-center justify-content-center text-center ">
 
-			<div class="bg-light w-100 shadow" style="min-height:85vh">
-				<h1 class="DMVV d-flex flex-column align-items-center justify-content-center display-6 fw-bolder mx-4"
-					style="height: 15vh; margin-top: 2.5vh; margin-bottom: 2.5vh;">Nuestro Catalago
-					<div class="line w-25 mt-4" style=" background-color: #ff8d1c; min-height:5px;">
+			<div class="bg-light w-100 shadow d-flex flex-column align-items-center justify-content-center"
+				style="min-height:85vh">
+				<div class="categorias bg-denger w-100">
+					<h1 class="DMVV d-flex flex-column align-items-center justify-content-center display-6 fw-bolder mx-4"
+						style="height: 15vh; margin-top: 2.5vh; margin-bottom: 2.5vh;">Nuestro Catalago
+						<div class="line w-25 mt-4" style=" background-color: #ff8d1c; min-height:5px;">
+						</div>
+					</h1>
+					<div class="bg-body d-flex flex-column mb-5  rounded-3 shadow-sm" style="max-width:900px">
+						<div class="b-categorias d-flex justify-content-start flex-wrap-reverse mx-3 mt-3"
+							style="min-height:10%;">
+							<div class="bg-green m-2">
+								<button class="btn h-100 fs-6 rounded-pill" id="card-grid-1">Alimentos</button>
+							</div>
+							<div class="bg-green m-2">
+								<button class="btn h-100 fs-6 rounded-pill" id="card-grid-2">Cuidado Personal</button>
+							</div>
+							<div class="bg-green m-2">
+								<button class="btn h-100 fs-6 rounded-pill" id="card-grid-3">Artículos del
+									Hogar</button>
+							</div>
+							<div class="bg-green m-2">
+								<button class="btn h-100 fs-6 rounded-pill" id="card-grid-4">Artículos de
+									Bebés</button>
+							</div>
+
+						</div>
+						<div class="m-categorias text-light card-animation justify-content-center h-auto px-5 py-3 pb-5 opacity-1"
+							id="card-animation" style="">
+							<div class="container-card  bg-light ratio2 h-100 position-relative container-card"
+								style="grid-row: span 2;"><img src="" alt="" id="img-grid-1"
+									class="w-100 h-100 object-fit-cover container-card ">
+								<p class="position-absolute top-50 start-50 translate-middle fs-5">Articulo</p>
+							</div>
+							<div class="container-card border shadow  bg-light ratio1 h-100 position-relative container-card"
+								style="grid-row: span 1; "><img src="" alt="" id="img-grid-2"
+									class="w-100 h-100 object-fit-cover container-card">
+								<p class="position-absolute top-50 start-50 translate-middle fs-5">Articulo</p>
+							</div>
+							<div class="container-card border shadow bg-light ratio2 h-100 position-relative container-card"
+								style="grid-row: span 2;"><img src="" alt="" id="img-grid-3"
+									class="w-100 h-100 object-fit-cover container-card">
+								<p class="position-absolute top-50 start-50 translate-middle fs-5">Articulo</p>
+							</div>
+							<div class="container-card border shadow bg-light ratio1 h-100 position-relative container-card"
+								style="grid-row: span 1;"><img src="" alt="" id="img-grid-4"
+									class="w-100 h-100 object-fit-cover container-card">
+								<p class="position-absolute top-50 start-50 translate-middle fs-5">Articulo</p>
+							</div>
+							<div class="container-card border shadow bg-light ratio1 h-100 position-relative container-card"
+								style="grid-row: span 1;"><img src="" alt="" id="img-grid-5"
+									class="w-100 h-100 object-fit-cover container-card">
+								<p class="position-absolute top-50 start-50 translate-middle fs-5">Articulo</p>
+							</div>
+							<div class="container-card border shadow bg-light ratio1 h-100 position-relative container-card"
+								style="grid-row: span 1;"><img src="" alt="" id="img-grid-6"
+									class="w-100 h-100 object-fit-cover container-card">
+								<p class="position-absolute top-50 start-50 translate-middle fs-5">Articulo</p>
+							</div>
+						</div>
 					</div>
-				</h1>
-				<div class="bg-body m-5">
-					<div class="b-categorias d-flex justify-content-start flex-wrap-reverse" style="min-height:10%">
-						<div class="bg-green m-2">
-							<button class="btn h-100 fs-6 rounded-pill">Alimentos y Bebidas</button>
-						</div>
-						<div class="bg-green m-2">
-							<button class="btn h-100 fs-6 rounded-pill">Cuidado Personal y Belleza</button>
-						</div>
-						<div class="bg-green m-2">
-							<button class="btn h-100 fs-6 rounded-pill">Artículos para el Hogar</button>
-						</div>
-						<div class="bg-green m-2">
-							<button class="btn h-100 fs-6 rounded-pill">Productos para Bebés</button>
-						</div>
 
-					</div>
-					<div class="m-categorias w-100 px-5 py-3 pb-5" style="min-height:800px;">
-						<div class="conteiner-card  bg-danger " style="grid-row:1/3;">1
 
-						</div>
-						<div class="conteiner-card  bg-danger " style="grid-row:1/2;">2
-
-						</div>
-						<div class="conteiner-card  bg-danger " style="grid-row:1/3;">3
-
-						</div>
-						<div class="conteiner-card  bg-primary " style="grid-row:2/3;">4
-
-						</div>
-						<div class="conteiner-card  bg-danger " style="grid-row:2/3">5
-
-						</div>
-						<div class="conteiner-card bg-danger " style="2/3">6
-
-						</div>
-					</div>
 				</div>
 
 			</div>
