@@ -87,7 +87,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         </a>
 
         <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-root-margin="0px 0px -40%"
-            data-bs-smooth-scroll="true" class="scrollspy-example  p-3 d-flex flex-column align-items-center"
+            data-bs-smooth-scroll="true" class="scrollspy-example  p-md-3 p-0 d-flex flex-column align-items-center"
             tabindex="0" id="list"></div>
     </main>
 

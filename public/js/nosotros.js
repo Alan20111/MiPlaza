@@ -150,7 +150,7 @@ function alternarHtml(length, i) {
             </div>
         </div >
         <div class="col-lg-6 col-sm-12 card-container ${atribute1} posiotion-relative" id="card-container-${tarjetastotal.tarjetas[i].id}" >
-            <div class="card-float py-5 px-5 sticky-element" style="top:98px"> 
+            <div class="card-float py-5 px-md-5 px-1 sticky-element" style="top:98px"> 
                 <p class="h4 h-25" style="color:${tarjetastotal.tarjetas[i].color};">
                     Actividades
                 </p>

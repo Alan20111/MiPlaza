@@ -183,12 +183,29 @@ body::before {
 #card-animation{
     transition: opacity 500ms;
 }
-.card-animation-active{
-    opacity: 0 !important;
+#bg-blanco{
+    background: linear-gradient(to bottom, #ffffff 50%, #f2f2f200) !important; 
 }
-.card-animation{
-    opacity: 1 !important;
+.card-grid{
+    box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.15)!important;
 }
+
+@keyframes animation-cards {
+    0% {
+        opacity: 1;
+    }
+    2% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.card-animation {
+    animation: animation-cards 700ms ease;
+}
+
 @media (max-width: 600px) {
     .main-element {
         margin-right: 0px;
