@@ -68,15 +68,15 @@ function agrega_cards(categoria) {
 
     switch (categoria) {
         case "ArtH":
-            cardis[0].src = base_url + "public/img/referencia.jpg";
+            cardis[0].src = base_url + "public/img/grid-aromatizante.jpg";
             p_cards[0].textContent = "Aromatizantes";
-            cardis[1].src = base_url + "public/img/referencia.jpg";
+            cardis[1].src = base_url + "public/img/grid-detergente.jpg";
             p_cards[1].textContent = "Detergentes para Ropa";
             cardis[2].src = base_url + "public/img/referencia.jpg";
             p_cards[2].textContent = "Suavisantes";
             cardis[3].src = base_url + "public/img/referencia.jpg";
             p_cards[3].textContent = "Detergentes para Cocina";
-            cardis[4].src = base_url + "public/img/referencia.jpg";
+            cardis[4].src = base_url + "public/img/grid-insecticida.jpg";
             p_cards[4].textContent = "Insecticidas";
             cardis[5].src = base_url + "public/img/referencia.jpg";
             p_cards[5].textContent = "Limpieza de Baños";
@@ -98,43 +98,43 @@ function agrega_cards(categoria) {
         case "AliB":
             cardis[0].src = base_url + "public/img/grid-harinas.jpg";
             p_cards[0].textContent = "Harinas y cereales";
-            cardis[1].src = base_url + "public/img/captura1.jpg";
+            cardis[1].src = base_url + "public/img/grid-lateria.jpg";
             p_cards[1].textContent = "Lateria";
-            cardis[2].src = base_url + "public/img/captura1.jpg";
+            cardis[2].src = base_url + "public/img/grid-bebidas.jpg";
             p_cards[2].textContent = "Bebidas";
-            cardis[3].src = base_url + "public/img/captura1.jpg";
+            cardis[3].src = base_url + "public/img/grid-carne.jpg";
             p_cards[3].textContent = "Carnes frias";
             cardis[4].src = base_url + "public/img/grid-basicos.jpg";
             p_cards[4].textContent = "Basicos";
-            cardis[5].src = base_url + "public/img/captura1.jpg";
+            cardis[5].src = base_url + "public/img/grid-botanas.jpg";
             p_cards[5].textContent = "Botanas";
             break;
         case "CuiB":
-            cardis[0].src = base_url + "public/img/referencia.jpg";
+            cardis[0].src = base_url + "public/img/grid-cremafacial.jpg";
             p_cards[0].textContent = "Crema facial";
-            cardis[1].src = base_url + "public/img/referencia.jpg";
+            cardis[1].src = base_url + "public/img/grid-cremacorporal.jpg";
             p_cards[1].textContent = "Crema corporal";
-            cardis[2].src = base_url + "public/img/referencia.jpg";
+            cardis[2].src = base_url + "public/img/grid-jabon.jpg";
             p_cards[2].textContent = "Jabón corporal";
-            cardis[3].src = base_url + "public/img/referencia.jpg";
+            cardis[3].src = base_url + "public/img/grid-desodorante.jpg";
             p_cards[3].textContent = "Desodorantes";
-            cardis[4].src = base_url + "public/img/referencia.jpg";
-            p_cards[4].textContent = "Shampoo y Acondicionadores";
-            cardis[5].src = base_url + "public/img/referencia.jpg";
+            cardis[4].src = base_url + "public/img/grid-shampoo.jpg";
+            p_cards[4].textContent = "Shampoo";
+            cardis[5].src = base_url + "public/img/grid-dental.jpg";
             p_cards[5].textContent = "Higiene bucal";
             break;
         case "HigD":
-            cardis[0].src = base_url + "public/img/referencia.jpg";
+            cardis[0].src = base_url + "public/img/grid-bolsasP.jpg";
             p_cards[0].textContent = "Bolsas plasticas";
-            cardis[1].src = base_url + "public/img/referencia.jpg";
+            cardis[1].src = base_url + "public/img/grid-aluminio.jpg";
             p_cards[1].textContent = "Papel alumínio";
-            cardis[2].src = base_url + "public/img/referencia.jpg";
+            cardis[2].src = base_url + "public/img/grid-higienico.jpg";
             p_cards[2].textContent = "Papel higienico";
-            cardis[3].src = base_url + "public/img/referencia.jpg";
+            cardis[3].src = base_url + "public/img/grid-femenina.jpg";
             p_cards[3].textContent = "Higiene Femenina";
-            cardis[4].src = base_url + "public/img/referencia.jpg";
+            cardis[4].src = base_url + "public/img/grid-desechable.jpg";
             p_cards[4].textContent = "Desechables";
-            cardis[5].src = base_url + "public/img/referencia.jpg";
+            cardis[5].src = base_url + "public/img/grid-pañaladulto.jpg";
             p_cards[5].textContent = "Pañales Adulto";
             break;
         default:
