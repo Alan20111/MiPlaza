@@ -72,13 +72,13 @@ function agrega_cards(categoria) {
             p_cards[0].textContent = "Aromatizantes";
             cardis[1].src = base_url + "public/img/grid-detergente.jpg";
             p_cards[1].textContent = "Detergentes para Ropa";
-            cardis[2].src = base_url + "public/img/referencia.jpg";
+            cardis[2].src = base_url + "public/img/grid-suavisantes.jpg";
             p_cards[2].textContent = "Suavisantes";
-            cardis[3].src = base_url + "public/img/referencia.jpg";
+            cardis[3].src = base_url + "public/img/grid-detercoci.jpg";
             p_cards[3].textContent = "Detergentes para Cocina";
             cardis[4].src = base_url + "public/img/grid-insecticida.jpg";
             p_cards[4].textContent = "Insecticidas";
-            cardis[5].src = base_url + "public/img/referencia.jpg";
+            cardis[5].src = base_url + "public/img/grid-deterbaño.jpg";
             p_cards[5].textContent = "Limpieza de Baños";
             break;
         case "ProB":
