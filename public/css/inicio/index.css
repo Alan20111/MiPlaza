@@ -71,8 +71,9 @@ body::before {
 }
 
 .main-element {
+    min-height: 98px !important;
     margin-right: 20%;
-    margin-left: 20%
+    margin-left: 20%;
 }
 
 .card-main,
@@ -168,9 +169,11 @@ body::before {
 #img-grid-4,
 #img-grid-5,
 #img-grid-6 {
-    transition: filter 500ms;
+    transition: filter 500ms, transform 1s;
+    transform: translateY(0px);
     filter: blur(0.7px) opacity(80%);
 }
+
 #img-grid-1:hover,
 #img-grid-2:hover,
 #img-grid-3:hover,
@@ -178,32 +181,43 @@ body::before {
 #img-grid-5:hover,
 #img-grid-6:hover {
     filter: blur(0px) opacity(90%);
-    transition: filter 500ms;
+    transform: translateY(-5px);
+    transition: filter 500ms, transform 1s;
+
 }
-#card-animation{
+
+#card-animation {
     transition: opacity 500ms;
 }
-#bg-blanco{
-    background: linear-gradient(to bottom, #ffffff 50%, #f2f2f200) !important; 
+
+#bg-blanco {
+    background: linear-gradient(to bottom, #ffffff 50%, #f2f2f200) !important;
 }
-.card-grid{
-    box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.15)!important;
+
+.card-grid {
+    box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
 @keyframes animation-cards {
     0% {
         opacity: 1;
     }
+
     2% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
 
 .card-animation {
     animation: animation-cards 700ms ease;
+}
+
+.logo {
+    min-height: 160px !important;
 }
 
 @media (max-width: 600px) {

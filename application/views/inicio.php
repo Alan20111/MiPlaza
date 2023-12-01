@@ -93,16 +93,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</div>
 		</div>
-		<div class="main-elements d-flex flex-column align-items-center justify-content-center text-center ">
+		<div class="main-elements  d-flex flex-column align-items-center justify-content-center text-center" >
 
 			<div class="w-100 d-flex flex-column align-items-center justify-content-center " id="bg-blanco"
-				style="min-height:80vh">
-				<div class="categorias bg-denger w-100">
-					<h1 class="DMVV d-flex flex-column align-items-center justify-content-center display-6 fw-bolder mx-4"
-						style="height: 15vh; margin-top: 2.5vh; margin-bottom: 2.5vh;">Nuestro Catalago
+				style="min-height:100px">
+				<div class="categorias w-100">
+					<div class="DMVV d-flex flex-column align-items-center justify-content-center display-6 fw-bolder mx-4"
+						style="max-height: 15vh; margin-top: 2.5vh; margin-bottom: 2.5vh; ">Nuestro Catalago
 						<div class="line w-25 mt-4" style=" background-color: #ff8d1c; min-height:5px;">
 						</div>
-					</h1>
+					</div>
 					<div class="bg-body d-flex flex-column mb-5  rounded-3 card-grid" style="max-width:900px">
 						<div class="b-categorias d-flex justify-content-start flex-wrap-reverse mx-3 mt-3"
 							style="min-height:10%;">
@@ -126,37 +126,37 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							id="card-animation" style="">
 							<div class="container-card  bg-light ratio2 h-100 position-relative container-card"
 								style="grid-row: span 2;"><img src="" alt="" id="img-grid-1"
-									class="w-100 h-100 object-fit-cover container-card ">
+									class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-1">
 									Articulo</p>
 							</div>
-							<div class="container-card border shadow  bg-light ratio1 h-100 position-relative container-card"
+							<div class="container-card    bg-light ratio1 h-100 position-relative container-card"
 								style="grid-row: span 1; "><img src="" alt="" id="img-grid-2"
-									class="w-100 h-100 object-fit-cover container-card">
+									class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-2">
 									Articulo</p>
 							</div>
-							<div class="container-card border shadow bg-light ratio2 h-100 position-relative container-card"
+							<div class="container-card  bg-light ratio2 h-100 position-relative container-card"
 								style="grid-row: span 2;"><img src="" alt="" id="img-grid-3"
-									class="w-100 h-100 object-fit-cover container-card">
+									class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-3">
 									Articulo</p>
 							</div>
-							<div class="container-card border shadow bg-light ratio1 h-100 position-relative container-card"
+							<div class="container-card  bg-light ratio1 h-100 position-relative container-card"
 								style="grid-row: span 1;"><img src="" alt="" id="img-grid-4"
-									class="w-100 h-100 object-fit-cover container-card">
+									class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-4">
 									Articulo</p>
 							</div>
-							<div class="container-card border shadow bg-light ratio1 h-100 position-relative container-card"
+							<div class="container-card  bg-light ratio1 h-100 position-relative container-card"
 								style="grid-row: span 1;"><img src="" alt="" id="img-grid-5"
-									class="w-100 h-100 object-fit-cover container-card">
+									class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-5">
 									Articulo</p>
 							</div>
-							<div class="container-card border shadow bg-light ratio1 h-100 position-relative container-card"
+							<div class="container-card  bg-light ratio1 h-100 position-relative container-card"
 								style="grid-row: span 1;"><img src="" alt="" id="img-grid-6"
-									class="w-100 h-100 object-fit-cover container-card">
+									class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-6">
 									Articulo</p>
 							</div>
