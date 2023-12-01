@@ -80,21 +80,7 @@ function agrega_cards(categoria) {
             p_cards[4].textContent = "Insecticidas";
             cardis[5].src = base_url + "public/img/grid-deterbaño.jpg";
             p_cards[5].textContent = "Limpieza de Baños";
-            break;
-        case "ProB":
-            cardis[0].src = base_url + "public/img/referencia1.jpg";
-            p_cards[0].textContent = "Pañales";
-            cardis[1].src = base_url + "public/img/referencia1.jpg";
-            p_cards[1].textContent = "Fórmula para bebés";
-            cardis[2].src = base_url + "public/img/referencia1.jpg";
-            p_cards[2].textContent = "Toallitas húmedas";
-            cardis[3].src = base_url + "public/img/referencia1.jpg";
-            p_cards[3].textContent = "Lociones para bebés";
-            cardis[4].src = base_url + "public/img/referencia1.jpg";
-            p_cards[4].textContent = "Shampoo para bebés";
-            cardis[5].src = base_url + "public/img/referencia1.jpg";
-            p_cards[5].textContent = "Accesorios";
-            break;
+            break; 
         case "AliB":
             cardis[0].src = base_url + "public/img/grid-harinas.jpg";
             p_cards[0].textContent = "Harinas y cereales";
@@ -151,9 +137,6 @@ cards[1].addEventListener("click", function () {
 });
 cards[2].addEventListener("click", function () {
     agrega_cards("ArtH");
-});
-cards[3].addEventListener("click", function () {
-    agrega_cards("ProB");
 });
 cards[4].addEventListener("click", function () {
     agrega_cards("HigD");
