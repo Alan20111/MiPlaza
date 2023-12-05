@@ -24,6 +24,25 @@ const elemento1 = document.getElementById('ubicacion');
 if (elemento1) {
     observador.observe(elemento1);
 }
+var pop = document.getElementById("pop-card");
+var blackground = document.getElementById("blackground");
+var body = document.querySelector("body");
+function popCard() {
+    pop.classList.toggle("pop-class");
+    blackground.classList.toggle("pop-class");
+    body.classList.toggle("overflow-hidden");
+    toggleButtonsAndLinks();
+}
+// Función para desactivar o habilitar todos los botones y enlaces
+function toggleButtonsAndLinks() {
+    // Obtener todos los botones y enlaces de la página
+    var buttonsAndLinks = document.querySelectorAll('button, a');
+
+    // Iterar sobre cada botón y enlace y cambiar su atributo "disabled"
+    buttonsAndLinks.forEach(function (element) {
+        element.disabled = !element.disabled;
+    });
+}
 
 /*
 Alimentos y Bebidas:
@@ -54,7 +73,6 @@ var cards = [];
 // Declaración de las cartas
 for (var i = 1; i <= 5; i++) {
     cards.push(document.getElementById("card-grid-" + i));
-    console.log("card-grid-" + i);
 }
 var cardis = [];
 
@@ -80,7 +98,7 @@ function agrega_cards(categoria) {
             p_cards[4].textContent = "Insecticidas";
             cardis[5].src = base_url + "public/img/grid-deterbaño.jpg";
             p_cards[5].textContent = "Limpieza de Baños";
-            break; 
+            break;
         case "AliB":
             cardis[0].src = base_url + "public/img/grid-harinas.jpg";
             p_cards[0].textContent = "Harinas y cereales";

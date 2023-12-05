@@ -71,17 +71,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					class="img-fluid position-absolute top-50 start-50 translate-middle w-100 h-100 object-fit-contain border-0 p-5"
 					alt="" id="logo">
 			</div>
-			<div class="descripcion text-center w-100 bg-body d-flex flex-column justify-content-center align-items-center"
+			<div class="descripcion text-center w-100 bg-light d-flex flex-column justify-content-center align-items-center"
 				style="height:98px">
-				<button class="btn rounded-pill h-50 w-50" type="button" data-bs-toggle="collapse"
-					data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				<button class="btn rounded-pill h-50 w-50" onclick="popCard()" type="button">
 					Lo que nos representa
 				</button>
 
 			</div>
-			<div class="collapse" id="collapseExample">
-				<div class="card card-body bg-light mx-auto border-0 rounded rounded-top-0 rounded-bottom-3 shadow p-4 pt-0 bg-body"
-					style="color: #634d1d;">
+			<div id="blackground">
+				<div class=" position-fixed top-50 start-50 translate-middle card  card-main  border-0 rounded rounded-3 shadow p-4 bg-body"
+					style="color: #634d1d;" id="pop-card">
+					<svg xmlns="http://www.w3.org/2000/svg" onclick="popCard()" width="40" height="40"
+						fill="currentColor" class="bi bi-x position-absolute top-0 end-0" viewBox="0 0 16 16">
+						<path
+							d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+					</svg>
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat soluta iste voluptatum praesentium
 					laborum a iure reprehenderit illum sit eius eos dolorem dicta optio similique consectetur, obcaecati
 					ex ratione laudantium rerum esse neque unde aspernatur nam. Veritatis possimus, omnis, cumque quasi
@@ -92,8 +96,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					veritatis quo ullam mollitia. Maxime.
 				</div>
 			</div>
+
 		</div>
-		<div class="main-elements  d-flex flex-column align-items-center justify-content-center text-center" >
+		<div class="main-elements  d-flex flex-column align-items-center justify-content-center text-center">
 
 			<div class="w-100 d-flex flex-column align-items-center justify-content-center " id="bg-blanco"
 				style="min-height:100px">
@@ -103,7 +108,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<div class="line w-25 mt-4" style=" background-color: #ff8d1c; min-height:5px;">
 						</div>
 					</div>
-					<div class="bg-body d-flex flex-column mb-5  rounded-3 card-grid" style="max-width:900px">
+					<div class="bg-light d-flex flex-column mb-5  rounded-3 card-grid" style="max-width:900px">
 						<div class="b-categorias d-flex justify-content-start flex-wrap-reverse mx-3 mt-3"
 							style="min-height:10%;">
 							<div class="bg-green m-2">
@@ -327,18 +332,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</div>
 			</div>
 			<div class="w-100 ubicacion my-5 opacity-0 shadow" id="ubicacion">
-				<div class=" w-100 bg-light rounded-3 shadow" style="height:100vh">
-					<div class="w-100" style="height: 15%">
+				<div class=" w-100 bg-light rounded-3 shadow" style="height:50vh; min-height:400px">
+					<div class="w-100 h-25">
 						<h1 class="display-6 fw-bolder p-3 m-0">Ubicación
 							<div class="line w-25 mt-2"
 								style=" background-color: #0080ff; min-height:5px; text-wrap: pretty;"></div>
 							<p class="fs-6 fw-normal">C. Bravo 32, Zona Centro, 38700 Tarimoro, Gto.</p>
 						</h1>
 					</div>
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d556.2967729511494!2d-100.7547100764793!3d20.287692794222625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cc92a7fb5a6d7%3A0xd853e0dbbfbe18da!2sC.%20Bravo%2032%2C%20Zona%20Centro%2C%2038700%20Tarimoro%2C%20Gto.!5e0!3m2!1ses!2smx!4v1700588230993!5m2!1ses!2smx"
-						width="100%" height="90%" style="border:0;" class=" rounded-bottom-3" allowfullscreen=""
-						loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					<div class="h-75">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d556.2967729511494!2d-100.7547100764793!3d20.287692794222625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cc92a7fb5a6d7%3A0xd853e0dbbfbe18da!2sC.%20Bravo%2032%2C%20Zona%20Centro%2C%2038700%20Tarimoro%2C%20Gto.!5e0!3m2!1ses!2smx!4v1700588230993!5m2!1ses!2smx"
+							width="100%" height="100%" style="border:0;" class=" rounded-bottom-3" allowfullscreen=""
+							loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+
 				</div>
 			</div>
 
