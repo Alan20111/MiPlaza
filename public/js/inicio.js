@@ -27,12 +27,21 @@ if (elemento1) {
 var pop = document.getElementById("pop-card");
 var blackground = document.getElementById("blackground");
 var body = document.querySelector("body");
+var count = 0;
 function popCard() {
+    count++;
+    pop.classList.remove("scale-0");
     pop.classList.toggle("pop-class");
-    blackground.classList.toggle("pop-class");
+    if (count > 1) {
+        pop.classList.toggle("pop-class-end");
+        blackground.classList.toggle("opacity-0");
+    }
+    console.log(count);
+    blackground.classList.toggle("visible");
     body.classList.toggle("overflow-hidden");
     toggleButtonsAndLinks();
 }
+
 // Función para desactivar o habilitar todos los botones y enlaces
 function toggleButtonsAndLinks() {
     // Obtener todos los botones y enlaces de la página

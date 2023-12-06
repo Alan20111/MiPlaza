@@ -90,11 +90,11 @@ function renderTarjetas(datosTarjetas) {
         tarjetaDiv.id = 'list-item-' + valor.id;
         tarjetaDiv.style.background = "white";
         tarjetaDiv.style.margin = '0 0 20vh 0';
-        tarjetaDiv.style.minHeight = "100vh";
+        tarjetaDiv.style.minHeight = "80vh";
         tarjetaDiv.style.height = "auto";
-        tarjetaDiv.style.maxWidth = "944px";
+        tarjetaDiv.style.maxWidth = "768px";
         var tarjetaContenido = `
-            <div class="row h-100 d-flex">
+            <div class="row h-100 d-flex p-5">
                 ${alternarHtml(datosTarjetas.length, i)}
             </div>
         `;
@@ -138,10 +138,10 @@ function alternarHtml(length, i) {
         atribute1 = "asi1";
     }
     const asides = `
-        <div class="col-lg-6 col-sm-12 position-relative p-5 ${atribute}" >
-            <div class="tittle position-relative h-75">
-                <img src="${base_url}${tarjetastotal.tarjetas[i].img}" alt="" class=" object-fit-cover rounded rounded w-100 h-100 position-absolute  start-50 translate-middle-x">
-                <p class=" fs-2 text-wrap text-center rounder rounder-1 px-2 display-6 position-absolute top-100 start-50 translate-middle text-${determinarColor(tarjetastotal.tarjetas[i].color)}" style="background: ${tarjetastotal.tarjetas[i].color};">
+        <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-center position-relative ${atribute} px-3" >
+            <div class="tittle position-relative img-card">
+                <img src="${base_url}${tarjetastotal.tarjetas[i].img}" alt="" class=" object-fit-cover rounded rounded-top-3 h-100 w-100 position-absolute  start-50 translate-middle-x">
+                <p class="w-100 rounded-bottom-3 fs-2 text-wrap text-center rounder rounder-1 px-2 display-6 position-absolute bottom-0 start-50 translate-middle-x m-0 text-${determinarColor(tarjetastotal.tarjetas[i].color)} " style="background: ${tarjetastotal.tarjetas[i].color};">
                     ${tarjetastotal.tarjetas[i].tittle}
                 </p>
             </div>
@@ -149,8 +149,8 @@ function alternarHtml(length, i) {
                 <p style="color:${tarjetastotal.tarjetas[i].color};">${tarjetastotal.tarjetas[i].descripcion}</p>
             </div>
         </div >
-        <div class="col-lg-6 col-sm-12 card-container ${atribute1} posiotion-relative" id="card-container-${tarjetastotal.tarjetas[i].id}" >
-            <div class="card-float py-5 px-md-5 px-1 sticky-element" style="top:98px"> 
+        <div class="col-md-6 col-sm-12 card-container ${atribute1} posiotion-relative" id="card-container-${tarjetastotal.tarjetas[i].id} px-3" >
+            <div class="card-float  sticky-element" style="top:198px"> 
                 <p class="h4 h-25" style="color:${tarjetastotal.tarjetas[i].color};">
                     Actividades
                 </p>

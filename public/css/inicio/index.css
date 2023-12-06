@@ -143,6 +143,7 @@ body::before {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, 150px);
+    grid-template-rows: repeat(auto-fit, 150px);
     justify-content: center;
     align-content: start;
 }
@@ -198,45 +199,82 @@ body::before {
 
 @keyframes appear {
     from {
+        transform: scale(0) translate(0, 0);
         opacity: 0;
-        transform: scale(0.8) translate(0, 0);
+        transform-origin: center center;
+    }
+
+    50% {
+        transform: scale(1.1) translate(0, 0);
+        opacity: 1;
+        transform-origin: center center;
+    }
+
+    to {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+        transform-origin: center center;
+    }
+}
+
+@keyframes appearbg {
+    from {
+        transform: scale(0) translate(0, 0);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+        transform: scale(1) translate(0, 0);
+    }
+
+    to {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes appear-end {
+    from {
+        opacity: 1;
+        transform: scale(1) translate(0, 0);
         transform-origin: center center;
     }
 
     50% {
         transform: scale(1.05) translate(0, 0);
+        opacity: 1;
     }
 
     to {
-        opacity: 1;
-        transform: scale(1) translate(0, 0);
+        opacity: 0;
+        transform: scale(0) translate(0, 0);
         transform-origin: center center;
     }
 }
 
 
-
-
 #pop-card {
     z-index: 6 !important;
-    display: none;
     box-sizing: border-box;
+    transform: scale(0);
 }
-
-#blackground {
+#blackground{
     display: none;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    right: 0;
+    background: #0000002a;
     z-index: 5 !important;
-    background: #0000001f;
+    transition: opacity 1000ms;
+}
+#blackground.visible {
+    display: block;
+    opacity: 1;
+}
+.pop-class-end {
+    animation: appear-end 700ms forwards;
 }
 
 .pop-class {
-    animation: appear 500ms ease-in-out;
-    display: block !important;
+    animation: appear 500ms forwards !important;
 }
 
 
@@ -295,10 +333,11 @@ body::before {
 }
 
 @media (max-width: 575.9px) {
-    #pop-card{
+    #pop-card {
         margin-top: 57px;
         height: 90%;
     }
+
     .valores,
     .VV {
         width: 150px;

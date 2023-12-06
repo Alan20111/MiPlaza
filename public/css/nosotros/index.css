@@ -65,8 +65,9 @@ body::before {
 
 #list-example a:hover {
     background: #71b34d13 !important;
-        border: 1px solid #70B34D;
+    border: 1px solid #70B34D;
 }
+
 .list-nav:hover {
     background: #ffffffc2 !important;
 }
@@ -92,7 +93,9 @@ body::before {
     top: 50px;
     /* Punto en el que se vuelve pegajoso */
 }
-
+.img-card{
+    aspect-ratio: 1/1;
+}
 .lorem {
     text-wrap: pretty;
     text-decoration: underline;
@@ -116,19 +119,29 @@ body::before {
 
 @media (max-width : 992.9px) {
 
-    .asi1,
-    .asi2 {
-        order: 0;
-        height: 50vh;
-        margin-bottom: 50px;
+
+    .card-float {
+        padding-bottom: 0 !important;
     }
+
+    .fondo {
+        height: 40% !important;
+    }
+
+    .lorem {
+        height: 40% !important;
+        width: 75% !important;
+    }
+}
+
+@media (max-width: 767.9px) {
+
 
     .sticky-element {
         position: -webkit-static;
         /* Safari */
         position: static;
     }
-
     .card-float,
     .tittle,
     .descripcion {
@@ -136,24 +149,23 @@ body::before {
         width: 75%;
     }
 
-    .card-float {
-        padding-bottom: 0 !important;
+    .asi1,
+    .asi2 {
+        order: 0;
+        height: 40vh;
+        margin-bottom: 50px;
     }
 
-    .fondo{
-        height: 40% !important;
-    }
-    .lorem{
-        height: 40% !important;
-        width: 75% !important;
-    }
 }
+
 
 @media (max-width:576.9px) {
 
-    .lorem, .fondo{
+    .lorem,
+    .fondo {
         display: none !important;
     }
+
     .card-float,
     .tittle,
     .descripcion {
@@ -169,10 +181,14 @@ body::before {
         height: 70vh;
     }
 }
+
 @media (max-height:500px) {
-    .row .tittle img,.card-float{
-        opacity: 0 !important;
+
+    .row .tittle img,
+    .card-float,.fondo {
+        scale: 0 !important;
     }
+
     .conteiner {
         height: 30vh !important;
     }

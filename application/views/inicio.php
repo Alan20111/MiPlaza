@@ -78,26 +78,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</button>
 
 			</div>
-			<div id="blackground">
-				<div class=" position-fixed top-50 start-50 translate-middle card  card-main  border-0 rounded rounded-3 shadow p-4 bg-body"
-					style="color: #634d1d;" id="pop-card">
-					<svg xmlns="http://www.w3.org/2000/svg" onclick="popCard()" width="40" height="40"
-						fill="currentColor" class="bi bi-x position-absolute top-0 end-0" viewBox="0 0 16 16">
-						<path
-							d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-					</svg>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat soluta iste voluptatum praesentium
-					laborum a iure reprehenderit illum sit eius eos dolorem dicta optio similique consectetur, obcaecati
-					ex ratione laudantium rerum esse neque unde aspernatur nam. Veritatis possimus, omnis, cumque quasi
-					totam excepturi optio numquam mollitia fugit consequuntur sit dicta? Hic tenetur, in assumenda error
-					totam ipsam, et id optio consequatur explicabo facilis similique necessitatibus doloremque ad dolore
-					laborum nemo quam mollitia tempore! Deserunt, error illo illum accusamus at cupiditate sit ratione
-					deleniti nostrum rerum quidem voluptatum blanditiis eaque hic ipsa maiores odit tenetur recusandae
-					veritatis quo ullam mollitia. Maxime.
-				</div>
-			</div>
 
 		</div>
+		<div class="fixed-top w-100 h-100" id="blackground"></div>
+		<div class="fixed-top m-auto top-50 card card-main  border-0 rounded rounded-3 shadow p-4 bg-body"
+			style="color: #634d1d;" id="pop-card">
+			<svg xmlns="http://www.w3.org/2000/svg" onclick="popCard()" width="40" height="40" fill="currentColor"
+				class="bi bi-x position-absolute top-0 end-0" viewBox="0 0 16 16">
+				<path
+					d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+			</svg>
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat soluta iste voluptatum praesentium
+			laborum a iure reprehenderit illum sit eius eos dolorem dicta optio similique consectetur, obcaecati
+			ex ratione laudantium rerum esse neque unde aspernatur nam. Veritatis possimus, omnis, cumque quasi
+			totam excepturi optio numquam mollitia fugit consequuntur sit dicta? Hic tenetur, in assumenda error
+			totam ipsam, et id optio consequatur explicabo facilis similique necessitatibus doloremque ad dolore
+			laborum nemo quam mollitia tempore! Deserunt, error illo illum accusamus at cupiditate sit ratione
+			deleniti nostrum rerum quidem voluptatum blanditiis eaque hic ipsa maiores odit tenetur recusandae
+			veritatis quo ullam mollitia. Maxime.
+		</div>
+
 		<div class="main-elements  d-flex flex-column align-items-center justify-content-center text-center">
 
 			<div class="w-100 d-flex flex-column align-items-center justify-content-center " id="bg-blanco"
@@ -129,39 +129,39 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						</div>
 						<div class="m-categorias text-light card-animation justify-content-center h-auto px-5 py-3 pb-5 opacity-1"
 							id="card-animation" style="">
-							<div class="container-card  bg-light ratio2 h-100 position-relative container-card"
-								style="grid-row: span 2;"><img src="" alt="" id="img-grid-1"
-									class="w-100 h-100 object-fit-cover container-card shadow">
+							<div class="container-card  bg-light ratio2 h-100 position-relative container-card "
+								style="grid-row: span 2;" onclick="grid(1,2)" id="grid-1"><img src="" alt=""
+									id="img-grid-1" class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-1">
 									Articulo</p>
 							</div>
-							<div class="container-card    bg-light ratio1 h-100 position-relative container-card"
-								style="grid-row: span 1; "><img src="" alt="" id="img-grid-2"
-									class="w-100 h-100 object-fit-cover container-card shadow">
+							<div class="container-card    bg-light ratio1 h-100 position-relative container-card "
+								style="grid-row: span 1; " onclick="grid(2,1)" id="grid-2"><img src="" alt=""
+									id="img-grid-2" class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-2">
 									Articulo</p>
 							</div>
-							<div class="container-card  bg-light ratio2 h-100 position-relative container-card"
-								style="grid-row: span 2;"><img src="" alt="" id="img-grid-3"
-									class="w-100 h-100 object-fit-cover container-card shadow">
+							<div class="container-card  bg-light ratio2 h-100 position-relative container-card "
+								style="grid-row: span 2;" onclick="grid(3,2)" id="grid-3"><img src="" alt=""
+									id="img-grid-3" class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-3">
 									Articulo</p>
 							</div>
-							<div class="container-card  bg-light ratio1 h-100 position-relative container-card"
-								style="grid-row: span 1;"><img src="" alt="" id="img-grid-4"
-									class="w-100 h-100 object-fit-cover container-card shadow">
+							<div class="container-card  bg-light ratio1 h-100 position-relative container-card "
+								style="grid-row: span 1;" onclick="grid(4,1)" id="grid-4"><img src="" alt=""
+									id="img-grid-4" class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-4">
 									Articulo</p>
 							</div>
-							<div class="container-card  bg-light ratio1 h-100 position-relative container-card"
-								style="grid-row: span 1;"><img src="" alt="" id="img-grid-5"
-									class="w-100 h-100 object-fit-cover container-card shadow">
+							<div class="container-card  bg-light ratio1 h-100 position-relative container-card "
+								style="grid-row: span 1;" onclick="grid(5,1)" id="grid-5"><img src="" alt=""
+									id="img-grid-5" class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-5">
 									Articulo</p>
 							</div>
-							<div class="container-card  bg-light ratio1 h-100 position-relative container-card"
-								style="grid-row: span 1;"><img src="" alt="" id="img-grid-6"
-									class="w-100 h-100 object-fit-cover container-card shadow">
+							<div class="container-card  bg-light ratio1 h-100 position-relative container-card "
+								style="grid-row: span 1;" onclick="grid(6,1)" id="grid-6"><img src="" alt=""
+									id="img-grid-6" class="w-100 h-100 object-fit-cover container-card shadow">
 								<p class="position-absolute top-50 start-50 translate-middle fs-5" id="p-grid-6">
 									Articulo</p>
 							</div>
