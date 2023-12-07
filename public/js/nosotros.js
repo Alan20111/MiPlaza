@@ -94,7 +94,7 @@ function renderTarjetas(datosTarjetas) {
         tarjetaDiv.style.height = "auto";
         tarjetaDiv.style.maxWidth = "768px";
         var tarjetaContenido = `
-            <div class="row h-100 d-flex p-5">
+            <div class="row h-100 d-flex p-sm-5 p-4">
                 ${alternarHtml(datosTarjetas.length, i)}
             </div>
         `;
@@ -105,7 +105,7 @@ function renderTarjetas(datosTarjetas) {
 
         if (aco === datosTarjetas.length) {
             var footer = document.createElement('footer');
-            footer.className = 'position-relative pt-5 rounded rounded-2 shadow';
+            footer.className = 'position-relative pt-5 shadow';
             footer.innerHTML = `
             <ul class="nav justify-content-center">
         </ul>
@@ -140,7 +140,7 @@ function alternarHtml(length, i) {
     const asides = `
         <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-center position-relative ${atribute} px-3" >
             <div class="tittle position-relative img-card">
-                <img src="${base_url}${tarjetastotal.tarjetas[i].img}" alt="" class=" object-fit-cover rounded rounded-top-3 h-100 w-100 position-absolute  start-50 translate-middle-x">
+                <img src="${base_url}${tarjetastotal.tarjetas[i].img}" alt="" class=" object-fit-cover rounded rounded-3 h-100 w-100 position-absolute  start-50 translate-middle-x">
                 <p class="w-100 rounded-bottom-3 fs-2 text-wrap text-center rounder rounder-1 px-2 display-6 position-absolute bottom-0 start-50 translate-middle-x m-0 text-${determinarColor(tarjetastotal.tarjetas[i].color)} " style="background: ${tarjetastotal.tarjetas[i].color};">
                     ${tarjetastotal.tarjetas[i].tittle}
                 </p>

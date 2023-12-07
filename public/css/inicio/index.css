@@ -257,24 +257,28 @@ body::before {
 #pop-card {
     z-index: 6 !important;
     box-sizing: border-box;
+    top: 150px !important;
     transform: scale(0);
 }
-#blackground{
+
+#blackground {
     display: none;
     background: #0000002a;
     z-index: 5 !important;
     transition: opacity 1000ms;
 }
+
 #blackground.visible {
     display: block;
     opacity: 1;
 }
+
 .pop-class-end {
-    animation: appear-end 700ms forwards;
+    animation: appear-end 400ms forwards;
 }
 
 .pop-class {
-    animation: appear 500ms forwards !important;
+    animation: appear 400ms forwards !important;
 }
 
 

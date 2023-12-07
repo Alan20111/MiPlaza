@@ -36,7 +36,6 @@ function popCard() {
         pop.classList.toggle("pop-class-end");
         blackground.classList.toggle("opacity-0");
     }
-    console.log(count);
     blackground.classList.toggle("visible");
     body.classList.toggle("overflow-hidden");
     toggleButtonsAndLinks();
