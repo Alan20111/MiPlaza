@@ -36,7 +36,7 @@ function loadData() {
                 const observador = new IntersectionObserver(cargarcard, {
                     root: null,
                     rootMargin: '0px',
-                    threshold: 0.45
+                    threshold: 0.6
                 });
                 tarjetastotal.tarjetas.forEach((tarjeta) => {
                     const elemento = document.getElementById('list-item-' + tarjeta.id);
@@ -90,11 +90,11 @@ function renderTarjetas(datosTarjetas) {
         tarjetaDiv.id = 'list-item-' + valor.id;
         tarjetaDiv.style.background = "white";
         tarjetaDiv.style.margin = '0 0 20vh 0';
-        tarjetaDiv.style.minHeight = "80vh";
+        tarjetaDiv.style.minHeight = "70vh";
         tarjetaDiv.style.height = "auto";
         tarjetaDiv.style.maxWidth = "768px";
         var tarjetaContenido = `
-            <div class="row h-100 d-flex p-sm-5 p-4">
+            <div class="row d-flex p-sm-5 p-4" style="height:100%">
                 ${alternarHtml(datosTarjetas.length, i)}
             </div>
         `;

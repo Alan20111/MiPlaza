@@ -1,3 +1,27 @@
+:root {
+    --verde: #70B34D;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--verde);
+    border-radius: 50px;
+}
+.bg-mvv{
+    background: var(--verde);
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+}
+.bg-mvv .col-4{
+    clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+}
+
 @keyframes moverr {
     0% {
         opacity: 0;
@@ -110,7 +134,7 @@ body::before {
 }
 
 .descripcion button {
-    background: #70B34D !important;
+    background: var(--verde) !important;
     animation: aparecer 500ms;
     color: white !important;
     border: none !important;
@@ -121,19 +145,19 @@ body::before {
 
 .descripcion button:hover {
     background: #71b34d13 !important;
-    color: #70B34D !important;
-    border: 1px solid #70B34D !important;
+    color: var(--verde)!important;
+    border: 1px solid var(--verde) !important;
 }
 
 .bg-green button {
     background: #71b34d13 !important;
-    color: #70B34D !important;
-    border: 1px solid #70B34D !important;
+    color: var(--verde) !important;
+    border: 1px solid var(--verde) !important;
     font-weight: 500 !important;
 }
 
 .bg-green button:hover {
-    background: #70B34D !important;
+    background: var(--verde) !important;
     animation: aparecer 500ms;
     color: white !important;
     border: none !important;

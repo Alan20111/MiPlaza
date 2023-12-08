@@ -39,7 +39,7 @@ body::before {
 }
 
 .backtittle {
-    background: #5e9ee8;
+
 }
 
 .img-post {
@@ -78,12 +78,12 @@ body::before {
 
 .asi1 {
     order: 1;
-    height: 100vh;
+    height: 100% !important;
 }
 
 .asi2 {
     order: 2;
-    height: 100vh;
+    height: 100% !important;
 }
 
 .sticky-element {

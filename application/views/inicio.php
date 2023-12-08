@@ -199,26 +199,39 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 			</div>
 
-			<div style="margin-bottom: 2.5vh; margin-top: 2.5vh;" class="w-100  d-flex flex-column justify-content-center">
+			<div style="margin-bottom: 2.5vh; margin-top: 2.5vh;"
+				class="w-100  d-flex flex-column justify-content-center ">
+				<div class="bg-mvv w-100 row " style="height:300px;">
+					<div class="col-8 h-100 object-fit-cover">
+
+					</div>
+					<div class="col-4 h-100 object-fit-cover bg-body">
+						<img src="<?= base_url() ?>public/img/referencia1.jpg" alt=""
+							class="w-100 h-100 object-fit-cover">
+					</div>
+				</div>
 				<h1
-					class="DMVV d-flex flex-column align-items-center justify-content-center display-6 fw-bolder p-2  rounded-1  w-100">
+					class="DMVV rounded-bottom-4 bg-body d-flex flex-column align-items-center justify-content-center display-6 fw-bolder p-2   w-100">
 					Declaracion
 					Misión, Visión y Valores
 
 				</h1>
 				<div class="row d-flex justify-content-center mx-5" style=" min-height:5px; text-wrap: pretty;">
-					<div class="  mx-2 rounded-pill" style=" background-color: #FFCF14; min-height:7px; max-width:40px;">
+					<div class="  mx-2 rounded-pill"
+						style=" background-color: #FFCF14; min-height:7px; max-width:40px;">
 					</div>
 					<div class=" mx-2 rounded-pill" style=" background-color: #FF4949; min-height:7px; max-width:40px;">
 					</div>
-					<div class="  mx-2 rounded-pill" style=" background-color: #77B04A; min-height:7px; max-width:40px;">
+					<div class="  mx-2 rounded-pill"
+						style=" background-color: #77B04A; min-height:7px; max-width:40px;">
 					</div>
 
 				</div>
 				<div class="row d-flex justify-content-center mx-5 mt-2" style=" min-height:5px; text-wrap: pretty;">
 					<div class=" mx-2 rounded-pill" style=" background-color: #5e9ee8; min-height:7px; max-width:40px;">
 					</div>
-					<div class="  mx-2 rounded-pill" style=" background-color: #ff7e7c; min-height:7px; max-width:40px;">
+					<div class="  mx-2 rounded-pill"
+						style=" background-color: #ff7e7c; min-height:7px; max-width:40px;">
 					</div>
 				</div>
 
