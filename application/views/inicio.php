@@ -200,21 +200,32 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</div>
 
 			<div style="margin-bottom: 2.5vh; margin-top: 2.5vh;"
-				class="w-100  d-flex flex-column justify-content-center ">
-				<div class="bg-mvv w-100 row " style="height:300px;">
-					<div class="col-8 h-100 object-fit-cover">
-
+				class="w-100  d-flex flex-column justify-content-center  position-relative">
+				<div class="bg-mvv w-100 row px-5 position-relative d-sm-block d-none" style="height:300px;">
+					<div class="col-6 h-100 object-fit-cover d-flex align-items-center justify-content-center">
+						<h1 class="text-light  text-start display-1 fw-medium" style="transform: rotate(-1deg);">
+							MiPlaza
+							<p class="fs-4">
+								¡Donde tus antojos encuentran
+								su hogar y tus compras son siempre un acierto!
+							</p>
+						</h1>
 					</div>
-					<div class="col-4 h-100 object-fit-cover bg-body">
-						<img src="<?= base_url() ?>public/img/referencia1.jpg" alt=""
-							class="w-100 h-100 object-fit-cover">
+					<div class="col-6 col-var h-100 object-fit-cover bg-body position-absolute top-0 end-0">
+						<div class="w-100 h-100 position-relative">
+							<div class="w-50 h-75 position-absolute bottom-0 start-50 translate-middle-x bg-danger"
+								style="max-width: 200px; clip-path: polygon(7% 100%, 13% 72%, 41% 64%, 41% 53%, 32% 47%, 32% 36%, 42% 25%, 57% 24%, 65% 32%, 66% 46%, 57% 53%, 57% 64%, 84% 71%, 91% 100%);">
+							</div>
+							<img src="<?= base_url() ?>public/img/referencia1.jpg" alt=""
+								class="w-100  h-100 object-fit-cover">
+						</div>
+
 					</div>
 				</div>
 				<h1
-					class="DMVV rounded-bottom-4 bg-body d-flex flex-column align-items-center justify-content-center display-6 fw-bolder p-2   w-100">
+					class="DMVV bg-body d-flex flex-column align-items-center justify-content-center display-6 fw-bolder p-2   w-100">
 					Declaracion
 					Misión, Visión y Valores
-
 				</h1>
 				<div class="row d-flex justify-content-center mx-5" style=" min-height:5px; text-wrap: pretty;">
 					<div class="  mx-2 rounded-pill"

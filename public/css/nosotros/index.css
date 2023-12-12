@@ -13,7 +13,22 @@ body::before {
     background-position: center;
     animation: aparecer 1.5s ease forwards, cambioDePosicion 30s linear infinite;
 }
+:root {
+    --verde: #70B34D;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
 
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--verde);
+    border-radius: 50px;
+}
 @keyframes aparecer {
     from {
         opacity: 0 !important;
@@ -38,9 +53,7 @@ body::before {
     }
 }
 
-.backtittle {
-
-}
+.backtittle {}
 
 .img-post {
     filter: brightness(70%) blur(5px);
@@ -77,13 +90,11 @@ body::before {
 }
 
 .asi1 {
-    order: 1;
-    height: 100% !important;
+    order: 1 !important;
 }
 
 .asi2 {
-    order: 2;
-    height: 100% !important;
+    order: 2 !important;
 }
 
 .sticky-element {
@@ -93,9 +104,11 @@ body::before {
     top: 50px;
     /* Punto en el que se vuelve pegajoso */
 }
-.img-card{
+
+.img-card {
     aspect-ratio: 1/1;
 }
+
 .lorem {
     text-wrap: pretty;
     text-decoration: underline;
@@ -136,26 +149,34 @@ body::before {
 
 @media (max-width: 767.9px) {
 
-
     .sticky-element {
         position: -webkit-static;
         /* Safari */
         position: static;
     }
+
     .card-float,
     .tittle,
     .descripcion {
-        margin: 0 auto;
-        width: 70%;
+        width: 100%;
+    }
+
+    .conteiner {
+        height: 140vh !important;
     }
 
     .asi1,
     .asi2 {
-        order: 0;
-        height: 40vh;
-        margin-bottom: 50px;
+        height: 70vh;
     }
 
+    .asi1 {
+        order: 0 !important;
+    }
+
+    .asi2 {
+        order: 0 !important;
+    }
 }
 
 
@@ -185,7 +206,8 @@ body::before {
 @media (max-height:500px) {
 
     .row .tittle img,
-    .card-float,.fondo {
+    .card-float,
+    .fondo {
         scale: 0 !important;
     }
 

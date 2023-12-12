@@ -14,11 +14,24 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--verde);
     border-radius: 50px;
 }
+.txt::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+}
+
+.txt::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.txt::-webkit-scrollbar-thumb {
+    background-color: #634d1d;
+    border-radius: 50px;
+}
 .bg-mvv{
     background: var(--verde);
     clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
 }
-.bg-mvv .col-4{
+.bg-mvv .col-var{
     clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
 }
 
@@ -86,7 +99,7 @@ body::before {
     background-size: contain;
     padding: 20px;
     border: none !important;
-    max-width: 75%;
+    max-width: 768px;
 }
 
 .main-element {
@@ -356,7 +369,7 @@ body::before {
 
     .valores,
     .VV {
-        width: 200px;
+        width: 150px;
     }
 }
 
@@ -366,10 +379,6 @@ body::before {
         height: 90%;
     }
 
-    .valores,
-    .VV {
-        width: 150px;
-    }
 
     #collapseExample {
         padding: 0 !important;

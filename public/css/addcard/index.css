@@ -19,7 +19,6 @@ body::before {
     background-position: center;
     animation: aparecer 1.5s ease forwards, cambioDePosicion 30s linear infinite;
 }
-
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -42,10 +41,19 @@ body::before {
         transform: translate(0, 0);
     }
 }
+.titulo-card{
+    width: 75%;
+}
+.desc-card{
+    width: 75%;
+}
 
 #contenedor::-webkit-scrollbar {
     width: 0;
     height: 0;
+}
+#contenedor{
+    max-height: calc(100vh - 150px);
 }
 
 .cardadd {

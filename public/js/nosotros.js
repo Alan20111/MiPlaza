@@ -149,8 +149,8 @@ function alternarHtml(length, i) {
                 <p style="color:${tarjetastotal.tarjetas[i].color};">${tarjetastotal.tarjetas[i].descripcion}</p>
             </div>
         </div >
-        <div class="col-md-6 col-sm-12 card-container ${atribute1} posiotion-relative" id="card-container-${tarjetastotal.tarjetas[i].id} px-3" >
-            <div class="card-float  sticky-element" style="top:198px"> 
+        <div class="col-md-6 col-sm-12 card-container ${atribute1} posiotion-relative" id="card-container-${tarjetastotal.tarjetas[i].id} px-3" style="height:65vh" >
+            <div class="card-float  sticky-element" style="top:198px;"> 
                 <p class="h4 h-25" style="color:${tarjetastotal.tarjetas[i].color};">
                     Actividades
                 </p>

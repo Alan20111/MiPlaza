@@ -296,9 +296,9 @@ for (var i = datosTarjetas.length - 1; i >= 0; i--) {
             <div class="col-md-6 col-sm-12 p-0 z-2 img-list shadow rounded m-auto rounded-start-pill">
                 <img src="${base_url + valor.img}"img-list  class="w-100 h-100 img-fluid object-fit-cover rounded m-auto rounded-start-pill" alt="" style="max-height: 300px; min-height: 250px;">
             </div>
-            <div class="col-md-6 col-sm-12 text-center shadow z-2 cardadd h-auto" style="background: ${valor.color};">
-                <p class="fs-5 badge text-wrap rounded-1 mt-3 mb-0 shadow z-1" style="color: ${valor.color}; background: ${determinarColor(valor.color)};">${valor.tittle}</p>
-                <p class="fs-6 fw-normal badge text-wrap  rounded-0 m-0 w-100 text-start d-inline-block text-truncate" style="color:${determinarColor(valor.color)}">${valor.descripcion}</p>
+            <div class="col-md-6 col-sm-12 text-center shadow z-2 cardadd h-auto d-flex flex-column align-items-center" style="background: ${valor.color};">
+                <p class="fs-5 titulo-card badge text-wrap rounded-1 mt-3 mb-0 shadow z-1" style="color: ${valor.color}; background: ${determinarColor(valor.color)};">${valor.tittle}</p>
+                <p class="fs-6 desc-card fw-normal badge text-wrap  rounded-0 m-0 text-start d-inline-block text-truncate" style="color:${determinarColor(valor.color)}">${valor.descripcion}</p>
             </div>
             <div class="d-flex flex-column col-12 p-0 ms-auto me-0 w-75">
                 <div class="container w-100 p-0 nav-item m-0">
