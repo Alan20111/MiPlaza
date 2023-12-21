@@ -16,34 +16,39 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body class="overflow-y-auto">
     <header class="shadow">
         <ul class="nav justify-content-center position-relative bg-danger p-2">
-            <a href="<?= base_url() ?>index.php/bienvenido/"><img src="<?= base_url() ?>public/img/miplaza-logo.png"
-                    alt="" class="img-fluid position-absolute top-50 start-0 translate-middle-y mx-2" id="icon-nav"
-                    style="width:45px"></a>
+            <li>
+                <a href="<?= base_url() ?>index.php/bienvenido/" title="regresar"><img
+                        src="<?= base_url() ?>public/img/miplaza-logo.png" alt=""
+                        class="img-fluid position-absolute top-50 start-0 translate-middle-y mx-2" id="icon-nav"
+                        style="width:45px"></a>
+            </li>
             <li class="nav-item">
                 <p class="fw-low fs-4 m-1 text-light">Administrador</p>
             </li>
         </ul>
         <ul class="nav justify-content-center position-relative bg-light">
-            <a class="icon-link icon-link-hover link-underline link-underline-opacity-0 link-danger position-absolute top-50 start-0 translate-middle-y mx-2"
-                style="--bs-icon-link-transform: translate3d(-2.5px,0, 0);" href="<?= base_url() ?>index.php/Admin/"
-                onclick="cleanstorage();">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    class="bi bi-arrow-left" viewBox="0 0 14 14">
-                    <path fill-rule="evenodd"
-                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
-                </svg>
-                <span class="d-none d-sm-block">
-                    Cerrar sesión
-                </span>
-
-            </a>
+            <li>
+                <a class="icon-link icon-link-hover link-underline link-underline-opacity-0 link-danger position-absolute top-50 start-0 translate-middle-y mx-2"
+                    title="regresar" style="--bs-icon-link-transform: translate3d(-2.5px,0, 0);"
+                    href="<?= base_url() ?>index.php/Admin/" onclick="cleanstorage();">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-arrow-left" viewBox="0 0 14 14">
+                        <path fill-rule="evenodd"
+                            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                    </svg>
+                    <span class="d-none d-sm-block">
+                        Cerrar sesión
+                    </span>
+                </a>
+            </li>
 
             <li class="nav-item">
-                <a href="" class="nav-link py-2 text-danger">Tarjetas</a>
+                <p class="nav-link py-2 text-danger m-0">Tarjetas</p>
             </li>
         </ul>
     </header>
-    <div class="conteiner h-auto m-md-4 p-md-4 m-sm-0 p-sm-4 w-auto h-auto bg-light bg-opacity-75 rounded shadow  text-danger">
+    <div
+        class="conteiner h-auto m-md-4 p-md-4 m-sm-0 p-sm-4 w-auto h-auto bg-light bg-opacity-75 rounded shadow  text-danger">
         <div class="row w-100 h-100 m-0">
             <div class="col-lg-6 col-sm-12 bg-light shadow p-0 text-center rounded-bottom">
 
@@ -61,7 +66,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 name="formFile" onchange="previewImage(this)">
                             <label
                                 class="border-danger w-100 icon-link icon-link-hover input-group-text rounded-0 rounded-bottom border"
-                                for="formFile" style="--bs-icon-link-transform: translate3d(0, -2.5px, 0); cursor: pointer;">
+                                for="formFile"
+                                style="--bs-icon-link-transform: translate3d(0, -2.5px, 0); cursor: pointer;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#dc3545"
                                     class="bi bi-upload mx-2" viewBox="0 0 16 16" id="fileIconSvg">
 
@@ -72,7 +78,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <path class="invalid d-none" fill="#dc3545"
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                                 </svg>
-                                <p id="svgId" class="m-0 d-inline-block text-truncate text-danger" style="max-width: 100%;"></p>
+                                <p id="svgId" class="m-0 d-inline-block text-truncate text-danger"
+                                    style="max-width: 100%;"></p>
                             </label>
                         </div>
                         <div class="mb-3  px-3 ">

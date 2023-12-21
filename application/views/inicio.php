@@ -13,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	<link rel="stylesheet" href="<?= base_url() ?>public/css/header.css">
 	<link rel="stylesheet" href="<?= base_url() ?>public/css/inicio/index.css">
 	<link rel="icon" href="<?= base_url() ?>public/img/miplaza-logo.png" type="image/x-icon">
-
+	<meta name="theme-color" content="#70B34D">
 </head>
 
 <body>
@@ -21,7 +21,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<nav class="top">
 			<ul class="nav justify-content-center">
 				<li class="nav-item">
-					<a href="https://www.facebook.com/profile.php?id=100053143824005">
+					<a href="https://www.facebook.com/profile.php?id=100053143824005" aria-label="Facebook">
 						<svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="white"
 							class="bi bi-facebook" viewBox="0 0 16 16">
 							<path
@@ -32,7 +32,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 			</ul>
 		</nav>
 		<nav>
-			<ul class="nav nav-underline h-100">
+			<nav class="nav nav-underline h-100">
 				<img src="<?= base_url() ?>public/img/miplaza-logo.png" alt="" class="img-fluid" id="icon-nav">
 				<ul class="navbar nav justify-content-center">
 					<li class="nav-item m-0">
@@ -44,7 +44,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				</ul>
 
 
-			</ul>
+			</nav>
 		</nav>
 	</header>
 	<main style="margin-top: 98px;">
@@ -54,16 +54,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<div class="carousel-inner main w-100 h-100">
 					<div class="carousel-item h-100 w-100 active">
 						<img src="<?= base_url() ?>public/img/referencia.jpg"
-							class="d-block w-100 h-100 object-fit-cover" alt="...">
+							class="d-block w-100 h-100 object-fit-cover" alt="..." loading="lazy">
 					</div>
 					<div class="carousel-item h-100 w-100">
 						<img src="<?= base_url() ?>public/img/referencia1.jpg"
-							class="d-block w-100 h-100 object-fit-cover" alt="...">
+							class="d-block w-100 h-100 object-fit-cover" alt="..." loading="lazy">
 
 					</div>
 					<div class="carousel-item h-100 w-100">
 						<img src="<?= base_url() ?>public/img/referencia1.jpg"
-							class="d-block w-100 h-100 object-fit-cover" alt="...">
+							class="d-block w-100 h-100 object-fit-cover" alt="..." loading="lazy">
 
 					</div>
 				</div>
@@ -310,7 +310,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</div>
 						</div>
 						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-							data-bs-slide="prev">
+							title="izquierda" data-bs-slide="prev">
 							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="secondary"
 								class="bi bi-chevron-left position-absolute top-0 start-0 m-2 my-3" viewBox="0 0 16 16">
 								<path fill-rule="evenodd"
@@ -318,7 +318,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							</svg>
 						</button>
 						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-							data-bs-slide="next">
+							title="derecha" data-bs-slide="next">
 							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="secondary"
 								class="bi bi-chevron-right position-absolute top-0 end-0 m-2 my-3" viewBox="0 0 16 16">
 								<path fill-rule="evenodd"
@@ -415,7 +415,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<iframe
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d556.2967729511494!2d-100.7547100764793!3d20.287692794222625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cc92a7fb5a6d7%3A0xd853e0dbbfbe18da!2sC.%20Bravo%2032%2C%20Zona%20Centro%2C%2038700%20Tarimoro%2C%20Gto.!5e0!3m2!1ses!2smx!4v1700588230993!5m2!1ses!2smx"
 							width="100%" height="100%" style="border:0;" class=" rounded-bottom-3" allowfullscreen=""
-							loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+							title="Mapa de ubicacion"></iframe>
 					</div>
 
 				</div>
@@ -431,8 +432,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</ul>
 		<div class="line"></div>
 		<p>© MiPlaza.com © 2023 - Todos los derechos reservados</p>
-		<div class="position-absolute bottom-0 end-0 m-2"><a href="<?= base_url() ?>index.php/admin"><svg
-					xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#795548"
+		<div class="position-absolute bottom-0 end-0 m-2"><a href="<?= base_url() ?>index.php/admin"
+				aria-label="Admin"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#795548"
 					class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
 					<path fill-rule="evenodd"
 						d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z" />

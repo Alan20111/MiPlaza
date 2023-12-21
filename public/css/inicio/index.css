@@ -94,12 +94,9 @@ body::before {
 
 #logo {
     z-index: 4;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
     padding: 20px;
-    border: none !important;
-    max-width: 768px;
+    max-width: 600px;
+    width: 100%;
 }
 
 .main-element {
@@ -341,23 +338,6 @@ body::before {
     min-height: 160px !important;
 }
 
-@media (max-width: 600px) {
-    .main-element {
-        margin-right: 0px;
-        margin-left: 0px;
-    }
-
-    #logo {
-        padding: 10px !important;
-        max-width: 100% !important;
-    }
-
-    .m-categorias {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
-}
-
 @media (max-width: 767.9px) {
 
     .card-main,
@@ -372,7 +352,20 @@ body::before {
         width: 150px;
     }
 }
+@media (max-width: 600px) {
+    .main-element {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
 
+    #logo {
+    }
+
+    .m-categorias {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
 @media (max-width: 575.9px) {
     #pop-card {
         margin-top: 57px;
@@ -386,5 +379,10 @@ body::before {
 
     .descripcion button {
         width: 75% !important;
+    }
+}
+@media (max-width: 200px) {
+    #logo{
+        display: none;
     }
 }

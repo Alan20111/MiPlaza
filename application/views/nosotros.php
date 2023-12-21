@@ -24,7 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <nav class="top">
                     <ul class="nav justify-content-center">
                         <li class="nav-item">
-                            <a href="https://www.facebook.com/profile.php?id=100053143824005">
+                            <a href="https://www.facebook.com/profile.php?id=100053143824005" aria-label="Facebook">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="white"
                                     class="bi bi-facebook" viewBox="0 0 16 16">
                                     <path
@@ -35,7 +35,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     </ul>
                 </nav>
                 <nav>
-                    <ul class="nav nav-underline h-100">
+                    <nav class="nav nav-underline h-100">
                         <img src="<?= base_url() ?>public/img/miplaza-logo.png" alt="" class="img-fluid" id="icon-nav">
                         <ul class="navbar nav justify-content-center">
                             <li class="nav-item m-0">
@@ -46,12 +46,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <a class="fs-5 nav-link" href="<?= base_url(); ?>index.php/bienvenido">Inicio</a>
                             </li>
                         </ul>
-
-
-                    </ul>
+                    </nav>
                 </nav>
             </header>
-            <div class="rounded-4 border border-4 border-light overflow-hidden  bg-light" >
+            <div class="rounded-4 border border-4 border-light overflow-hidden  bg-light">
                 <div class="tittle backtittle position-relative text-light" style="height:70vh; width: 100%;">
                     <img src="<?= base_url() ?>public/img/nosotros.jpg" alt=""
                         class="img-fluid object-fit-cover  w-100 h-100 img-post">
@@ -93,7 +91,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <ul class="navbar flex-row flex-nowrap w-100  px-5 mx-5" id="list-example" style="height:98px;">
             </ul>
         </nav>
-        <a href="<?= base_url(); ?>index.php/bienvenido/nosotros" class="sticky-top" style="top:40px">
+        <a href="<?= base_url(); ?>index.php/bienvenido/nosotros" aria-label="Arriba" class="sticky-top"
+            style="top:40px">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white"
                 class="bi bi-arrow-up m-2 p-1 rounded-circle" style="background: #70B34D;" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"

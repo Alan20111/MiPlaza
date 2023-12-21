@@ -111,7 +111,7 @@ function renderTarjetas(datosTarjetas) {
         </ul>
         <div class="line"></div>
         <p>© MiPlaza.com © 2023 - Todos los derechos reservados</p>
-        <div class="position-absolute bottom-0 end-0 m-2"><a href="../admin">
+        <div class="position-absolute bottom-0 end-0 m-2"><a href="../admin" title="Admin">
             <svg
             xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#795548"
             class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
