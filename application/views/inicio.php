@@ -117,7 +117,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 							itaque atque quaerat quia fugiat rerum obcaecati facilis possimus unde expedita?
 						</p>
 					</div>
-					<img src="" alt="" class="col-6 rounded-3" style="background: #634d1d; aspect-ratio: 1/1;">
+					<img src="<?= base_url() ?>public/img/profesionals.jpg" alt="" class="col-6 rounded-3 object-fit-cover" style="background: #634d1d; aspect-ratio: 1/1;">
 				</div>
 
 			</div>
@@ -213,9 +213,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 					</div>
 					<div class="col-6 col-var h-100 object-fit-cover bg-body position-absolute top-0 end-0">
 						<div class="w-100 h-100 position-relative">
-							<div class="w-50 h-75 position-absolute bottom-0 start-50 translate-middle-x bg-danger"
-								style="max-width: 200px; clip-path: polygon(7% 100%, 13% 72%, 41% 64%, 41% 53%, 32% 47%, 32% 36%, 42% 25%, 57% 24%, 65% 32%, 66% 46%, 57% 53%, 57% 64%, 84% 71%, 91% 100%);">
-							</div>
+							<img class="w-auto h-75 position-absolute bottom-0 start-50 translate-middle-x object-fit-cover"
+								style="" src="<?= base_url() ?>public/img/carnes-people.png">
+							</img>
 							<img src="<?= base_url() ?>public/img/referencia1.jpg" alt=""
 								class="w-100  h-100 object-fit-cover">
 						</div>
